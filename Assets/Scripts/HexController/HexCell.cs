@@ -8,6 +8,11 @@ public class HexCell : MonoBehaviour {
     [SerializeField]HexCell[] neighbors;
     [SerializeField] public int elevation;
     public RectTransform uiRect;
+    public Vector3 Position {
+		get {
+			return transform.localPosition;
+		}
+	}
 
     public Color Color { get{return this.material.color;} }
     public int Elevation {
@@ -19,10 +24,12 @@ public class HexCell : MonoBehaviour {
 
             Vector3 position = transform.localPosition;
             position.y = value * HexMetrics.elevationStep;
+            position.y += (HexMetrics.SampleNoise(position).y*2f -1f)*
+                HexMetrics.elevationPerturbStrength;
             transform.localPosition = position;
 
             Vector3 uiPosition = uiRect.localPosition;
-			uiPosition.z = elevation * -HexMetrics.elevationStep;
+			uiPosition.z = elevation * -position.y;
 			uiRect.localPosition = uiPosition;
         }
     }
@@ -46,5 +53,6 @@ public class HexCell : MonoBehaviour {
     public HexEdgeType GetEdgeType(HexCell otherCell){
         return HexMetrics.GetEdgeType(elevation,otherCell.elevation);
     }
+    
 
 }
