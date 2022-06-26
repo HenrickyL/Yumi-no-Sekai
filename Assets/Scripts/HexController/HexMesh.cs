@@ -10,10 +10,13 @@ public class HexMesh : MonoBehaviour
     List<Color> colors;
     MeshCollider meshCollider;
     [SerializeField]public bool withIrregulatity = true;
+    public static HexMesh Instance;
 
-
-    
+    public static bool GetWithIrregularity(){
+        return Instance.withIrregulatity;
+    }
     private void Awake() {
+        Instance = this;
         GetComponent<MeshFilter>().mesh = hexMesh = new Mesh();
         //We need to add a collider to the grid 
         meshCollider = gameObject.AddComponent<MeshCollider>();
