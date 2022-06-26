@@ -122,13 +122,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cellLabelPrefab: {fileID: 4117418732128722828, guid: 7c34c8024c698ca458963efaf0f78c27, type: 3}
-  width: 25
-  height: 25
+  width: 7
+  height: 7
   cellPrefab: {fileID: 794609253608524195, guid: e5f0790414584564bb6eb781aa442707, type: 3}
   touchedMaterial: {fileID: 2100000, guid: 120d7df532716d34c93dfec3cb14bfe5, type: 2}
   defaultMaterial: {fileID: 2100000, guid: d76a839d3f41be242ab993b31c9f9b5e, type: 2}
   noiseSource: {fileID: 2800000, guid: ce0c21003226b434897e52fc8e757f66, type: 3}
   editor: {fileID: -5630962005842197607, guid: 5e8d288b314ec744ca574a677d3bc037, type: 3}
+  hexMesh: {fileID: 0}
 --- !u!1 &8259449428104782919
 GameObject:
   m_ObjectHideFlags: 0

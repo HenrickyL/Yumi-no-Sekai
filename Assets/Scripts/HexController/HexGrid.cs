@@ -14,7 +14,7 @@ public class HexGrid : MonoBehaviour
 
     private HexCell[] cells;
 	private Canvas gridCanvas;
-	HexMesh hexMesh;
+	public HexMesh hexMesh;
 
 	void Awake () {
 		HexMetrics.noiseSource = noiseSource;
