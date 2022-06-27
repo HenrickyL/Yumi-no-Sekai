@@ -20,7 +20,6 @@ public class HexMapEditor : MonoBehaviour
     {
         cell.material = activeColor;
         cell.Elevation = activeElevation;
-        hexGrid.Refresh();
     }
     public void SetElevation (float elevation) {
 		activeElevation = (int)elevation;

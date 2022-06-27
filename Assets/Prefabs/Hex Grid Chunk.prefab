@@ -9,9 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8259449428076084638}
-  - component: {fileID: 8259449428076084639}
+  - component: {fileID: 5553588674348040903}
   m_Layer: 0
-  m_Name: HexGrid
+  m_Name: Hex Grid Chunk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8259449428076084639
+--- !u!114 &5553588674348040903
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -42,18 +42,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 8259449428076084704}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be44b5e9f1cf3f8478ea845ade5401ea, type: 3}
+  m_Script: {fileID: 11500000, guid: b563e9c0f2838b440b5b8fb33a8d01ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cellLabelPrefab: {fileID: 4117418732128722828, guid: 7c34c8024c698ca458963efaf0f78c27, type: 3}
-  cellPrefab: {fileID: 794609253608524195, guid: e5f0790414584564bb6eb781aa442707, type: 3}
-  touchedMaterial: {fileID: 2100000, guid: 120d7df532716d34c93dfec3cb14bfe5, type: 2}
-  defaultMaterial: {fileID: 2100000, guid: d76a839d3f41be242ab993b31c9f9b5e, type: 2}
-  noiseSource: {fileID: 2800000, guid: ce0c21003226b434897e52fc8e757f66, type: 3}
-  editor: {fileID: -5630962005842197607, guid: 5e8d288b314ec744ca574a677d3bc037, type: 3}
-  chunkCountX: 4
-  chunkCountZ: 3
-  chunkPrefab: {fileID: 0}
 --- !u!1 &8259449428619660500
 GameObject:
   m_ObjectHideFlags: 0
