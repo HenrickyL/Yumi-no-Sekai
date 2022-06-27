@@ -3,10 +3,8 @@ using UnityEngine;
 
 public class HexCell : MonoBehaviour {
     [SerializeField] public HexCoordinates coordinates;
-    [SerializeField] public Material material;
     [SerializeField] public bool selected = false;
     [SerializeField]HexCell[] neighbors;
-    [SerializeField] public int elevation = int.MinValue;
     public RectTransform uiRect;
     public HexGridChunk chunk;
     public Vector3 Position {
@@ -15,18 +13,20 @@ public class HexCell : MonoBehaviour {
 		}
 	}
 
+    Color color;
     public Color Color { 
         get{
-            return material.color;
+            return color;
         }
         set{
-            if(material.color == value){
+            if(color == value){
                 return;
             }
-            material.color = value;
+            color = value;
             Refresh();
         } 
     }
+    public int elevation = int.MinValue;
     public int Elevation {
         get{
             return elevation;
@@ -45,7 +45,7 @@ public class HexCell : MonoBehaviour {
             transform.localPosition = position;
 
             Vector3 uiPosition = uiRect.localPosition;
-			uiPosition.z = elevation * -position.y;
+			uiPosition.z = -position.y;
 			uiRect.localPosition = uiPosition;
             Refresh();
         }
@@ -56,9 +56,6 @@ public class HexCell : MonoBehaviour {
         return neighbors[(int) direction];
     }
     public void SetNeighbor (HexDirection direction, HexCell cell) {
-        if(neighbors[(int)direction] != null){
-            Debug.Log("already instantatate!");
-        }
 		neighbors[(int)direction] = cell;
         cell.neighbors[(int)direction.Opposite()] = this;
 	}
@@ -73,14 +70,13 @@ public class HexCell : MonoBehaviour {
     private void Refresh () {
         if(chunk){
 		    chunk.Refresh();
-        }
-        for (int i = 0; i < neighbors.Length; i++) {
-            HexCell neighbor = neighbors[i];
-            if (neighbor != null && neighbor.chunk != chunk) {
-                neighbor.chunk.Refresh();
+            for (int i = 0; i < neighbors.Length; i++) {
+                HexCell neighbor = neighbors[i];
+                if (neighbor != null && neighbor.chunk != chunk) {
+                    neighbor.chunk.Refresh();
+                }
             }
         }
-        
 	}
     
 

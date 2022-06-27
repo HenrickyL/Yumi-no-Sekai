@@ -2,26 +2,64 @@ using UnityEngine;
 
 public class HexMapEditor : MonoBehaviour
 {
-    public Material[] colors;
-    private Material activeColor;
-	int activeElevation;
+    public Color[] colors;
+    private Color activeColor;
+	private int activeElevation = 0;
+    private bool applyColor;
+    private bool applyElevation = true;
+    int brushSize;
+    public bool showUI = false;
+
 
     private void Awake() {
-        SelectColor(0);
         SetElevation(0);
+        SelectColor(0);
     }
    
     public void SelectColor(int index)
     {
-        activeColor = colors[index];
-    }
-
-    public void EditCell(HexCell cell, HexGrid hexGrid)
-    {
-        cell.material = activeColor;
-        cell.Elevation = activeElevation;
+        applyColor = index >= 0;
+		if (applyColor) {
+			activeColor = colors[index];
+		}
     }
     public void SetElevation (float elevation) {
 		activeElevation = (int)elevation;
 	}
+    public void EditCell(HexCell cell)
+    {
+        if(cell){
+            if (applyColor) 
+                cell.Color = activeColor;
+            if (applyElevation) 
+                cell.Elevation = activeElevation;
+        }
+    }
+    public void SetApplyElevation (bool toggle) {
+		applyElevation = toggle;
+	}
+
+	public void SetBrushSize (float size) {
+		brushSize = (int)size;
+	}
+
+    public void EditCells(HexCell center, HexGrid hexGrid)
+    {
+        int centerX = center.coordinates.X;
+		int centerZ = center.coordinates.Z;
+        for (int r = 0, z = centerZ - brushSize; z <= centerZ; z++, r++) {
+            for (int x = centerX - r; x <= centerX + brushSize; x++) {
+				EditCell(hexGrid.GetCell(new HexCoordinates(x, z)));
+			}
+		}
+        for (int r = 0, z = centerZ + brushSize; z > centerZ; z--, r++) {
+			for (int x = centerX - brushSize; x <= centerX + r; x++) {
+				EditCell(hexGrid.GetCell(new HexCoordinates(x, z)));
+			}
+		}
+    }
+    public void ShowUI (bool visible) {
+		showUI = visible;
+	}
+    
 }

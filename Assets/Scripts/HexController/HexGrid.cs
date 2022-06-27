@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,8 +5,7 @@ public class HexGrid : MonoBehaviour
 {
     [SerializeField]private Text cellLabelPrefab;
 	[SerializeField]private HexCell cellPrefab;
-	[SerializeField]public Material touchedMaterial;
-	[SerializeField]public Material defaultMaterial;
+	[SerializeField]public Color defaultColor;
 	[SerializeField]public Texture2D noiseSource;
 	[SerializeField] public HexMapEditor editor;
 	[SerializeField]public int chunkCountX = 4, chunkCountZ = 3;
@@ -23,7 +21,6 @@ public class HexGrid : MonoBehaviour
 		
 		CreateChunks();
 		CreateCells();
-		
 	}
 
     private void CreateChunks()
@@ -54,15 +51,16 @@ public class HexGrid : MonoBehaviour
         if (Input.GetMouseButton(0)) {
 			HandleInput();
 		}
+		
+			ShowUI(editor.showUI);
     }
     void HandleInput(){
         Ray inputRay = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         if(Physics.Raycast(inputRay,out hit)){
 			if(editor != null){
-				editor.EditCell(GetCell(hit.point),this);
+				editor.EditCells(GetCell(hit.point),this);
 			}else{
-
            		GetCell(hit.point);
 			}
         }
@@ -85,7 +83,7 @@ public class HexGrid : MonoBehaviour
 		HexCell cell = cells[i] = Instantiate<HexCell>(cellPrefab);
 		cell.transform.localPosition = position;
 		cell.coordinates = HexCoordinates.FromOffsetCoordinates(x, z);
-		cell.material = defaultMaterial;
+		cell.Color = defaultColor;
 
 		if(x>0){
 			cell.SetNeighbor(HexDirection.W, cells[i-1]);
@@ -125,4 +123,20 @@ public class HexGrid : MonoBehaviour
 		int localZ = z - chunkZ * HexMetrics.chunkSizeZ;
 		chunk.AddCell(localX + localZ * HexMetrics.chunkSizeX, cell);
     }
+	public HexCell GetCell (HexCoordinates coordinates) {
+		int z = coordinates.Z;
+		if (z < 0 || z >= cellCountZ) {
+			return null;
+		}
+		int x = coordinates.X + z / 2;
+		if (x < 0 || x >= cellCountX) {
+			return null;
+		}
+		return cells[x + z * cellCountX];
+	}
+	public void ShowUI (bool visible) {
+		for (int i = 0; i < chunks.Length; i++) {
+			chunks[i].ShowUI(visible);
+		}
+	}
 }

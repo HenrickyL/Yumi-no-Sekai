@@ -55,3 +55,6 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  uiRect: {fileID: 7673734821767339376, guid: 7c34c8024c698ca458963efaf0f78c27, type: 3}
+  chunk: {fileID: 2865551039720469954, guid: 2522d65e132bbf745b055e56d7e88d7b, type: 3}
+  elevation: -2147483648
