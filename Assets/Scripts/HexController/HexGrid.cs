@@ -7,7 +7,6 @@ public class HexGrid : MonoBehaviour
 	[SerializeField]private HexCell cellPrefab;
 	[SerializeField]public Color defaultColor;
 	[SerializeField]public Texture2D noiseSource;
-	[SerializeField] public HexMapEditor editor;
 	[SerializeField]public int chunkCountX = 4, chunkCountZ = 3;
 	private int cellCountX, cellCountZ;
 	HexGridChunk[] chunks;
@@ -47,24 +46,6 @@ public class HexGrid : MonoBehaviour
 		HexMetrics.noiseSource = noiseSource;
 	}
 	
-	private void Update() {
-        if (Input.GetMouseButton(0)) {
-			HandleInput();
-		}
-		
-			ShowUI(editor.showUI);
-    }
-    void HandleInput(){
-        Ray inputRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        if(Physics.Raycast(inputRay,out hit)){
-			if(editor != null){
-				editor.EditCells(GetCell(hit.point),this);
-			}else{
-           		GetCell(hit.point);
-			}
-        }
-    }
 	
     public HexCell GetCell(Vector3 position)
     {
