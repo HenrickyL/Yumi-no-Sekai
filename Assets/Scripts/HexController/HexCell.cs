@@ -80,7 +80,7 @@ public class HexCell : MonoBehaviour {
             elevation = value;
             Vector3 position = transform.localPosition;
             position.y = value * HexMetrics.elevationStep;
-            if(HexMesh.GetWithIrregularity()){
+            if(HexGridChunk.GetWithIrregularity()){
                 position.y += (HexMetrics.SampleNoise(position).y*2f -1f)*
                     HexMetrics.elevationPerturbStrength;
             }

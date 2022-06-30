@@ -46,8 +46,6 @@ MonoBehaviour:
   coordinates:
     x: 0
     z: 0
-  material: {fileID: 2100000, guid: 120d7df532716d34c93dfec3cb14bfe5, type: 2}
-  selected: 0
   neighbors:
   - {fileID: 0}
   - {fileID: 0}
@@ -56,5 +54,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   uiRect: {fileID: 7673734821767339376, guid: 7c34c8024c698ca458963efaf0f78c27, type: 3}
-  chunk: {fileID: 2865551039720469954, guid: 2522d65e132bbf745b055e56d7e88d7b, type: 3}
+  chunk: {fileID: 7739397902314822967, guid: ebd2dd2db4846c24287cb286eb1875bc, type: 3}
   elevation: -2147483648

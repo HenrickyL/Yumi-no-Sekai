@@ -150,6 +150,10 @@ PrefabInstance:
       propertyPath: showUI
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8329120167987418734, guid: 5e8d288b314ec744ca574a677d3bc037, type: 3}
+      propertyPath: hexGrid
+      value: 
+      objectReference: {fileID: 7589266964896497308, guid: 804a6a1ed44c6f143befc358927f9bf8, type: 3}
     - target: {fileID: 8329120167987418735, guid: 5e8d288b314ec744ca574a677d3bc037, type: 3}
       propertyPath: m_Name
       value: HexMapEditor
@@ -511,6 +515,10 @@ PrefabInstance:
     - target: {fileID: 7589266964896497311, guid: 804a6a1ed44c6f143befc358927f9bf8, type: 3}
       propertyPath: m_Name
       value: HexGrid
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589266965509022360, guid: 804a6a1ed44c6f143befc358927f9bf8, type: 3}
+      propertyPath: withIrregulatity
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 804a6a1ed44c6f143befc358927f9bf8, type: 3}
