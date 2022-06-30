@@ -47,6 +47,13 @@ public class HexCell : MonoBehaviour {
 			return hasIncomingRiver != hasOutgoingRiver;
 		}
 	}
+    public float StreamBedY {
+		get {
+			return
+				(elevation + HexMetrics.streamBedElevationOffset) *
+				HexMetrics.elevationStep;
+		}
+	}
 
     Color color;
     public Color Color { 
