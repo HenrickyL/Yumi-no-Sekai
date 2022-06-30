@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -21,6 +20,8 @@ public class HexMapEditor : MonoBehaviour
     bool isDrag;
 	HexDirection dragDirection;
 	HexCell previousCell;
+	int activeWaterLevel;
+	bool applyWaterLevel = true;
 
 
 
@@ -88,6 +89,8 @@ public class HexMapEditor : MonoBehaviour
                 cell.Color = activeColor;
             if (applyElevation) 
                 cell.Elevation = activeElevation;
+			if (applyWaterLevel) 
+				cell.WaterLevel = activeWaterLevel;
             if(riverMode == OptionalToggle.No)
                 cell.RemoveRiver();
             else if(isDrag && riverMode == OptionalToggle.Yes){
@@ -126,6 +129,12 @@ public class HexMapEditor : MonoBehaviour
 	}
     public void SetRiverMode (int mode) {
 		riverMode = (OptionalToggle)mode;
+	}
+	public void SetApplyWaterLevel (bool toggle) {
+		applyWaterLevel = toggle;
+	}
+	public void SetWaterLevel (float level) {
+		activeWaterLevel = (int)level;
 	}
     
 }
