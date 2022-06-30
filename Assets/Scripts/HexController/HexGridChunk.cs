@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 public class HexGridChunk: MonoBehaviour {
-    [SerializeField]public HexMesh terrain, rivers, water;
+    [SerializeField]public HexMesh terrain, rivers, water, waterShore;
     HexCell[] cells;
 	Canvas gridCanvas;
     [SerializeField]public static bool withIrregulatity = true;
@@ -38,12 +38,14 @@ public class HexGridChunk: MonoBehaviour {
         terrain.Clear();
         rivers.Clear();
 		water.Clear();
+		waterShore.Clear();
         for (int i = 0; i < cells.Length; i++){
             Triangulate(cells[i]);
         }
         terrain.Apply();
         rivers.Apply();
 		water.Apply();
+		waterShore.Apply();
 	}
     private void Triangulate(HexCell cell){
         for(HexDirection d = HexDirection.NE ; d<= HexDirection.NW; d++){
@@ -140,14 +142,23 @@ public class HexGridChunk: MonoBehaviour {
 			e1.v1 + bridge,
 			e1.v5 + bridge
 		);
-		water.AddQuad(e1.v1, e1.v2, e2.v1, e2.v2);
-		water.AddQuad(e1.v2, e1.v3, e2.v2, e2.v3);
-		water.AddQuad(e1.v3, e1.v4, e2.v3, e2.v4);
-		water.AddQuad(e1.v4, e1.v5, e2.v4, e2.v5);
+		waterShore.AddQuad(e1.v1, e1.v2, e2.v1, e2.v2);
+		waterShore.AddQuad(e1.v2, e1.v3, e2.v2, e2.v3);
+		waterShore.AddQuad(e1.v3, e1.v4, e2.v3, e2.v4);
+		waterShore.AddQuad(e1.v4, e1.v5, e2.v4, e2.v5);
+		waterShore.AddQuadUV(0f, 0f, 0f, 1f);
+		waterShore.AddQuadUV(0f, 0f, 0f, 1f);
+		waterShore.AddQuadUV(0f, 0f, 0f, 1f);
+		waterShore.AddQuadUV(0f, 0f, 0f, 1f);
 		HexCell nextNeighbor = cell.GetNeighbor(direction.Next());
 		if (nextNeighbor != null) {
-			water.AddTriangle(
+			waterShore.AddTriangle(
 				e1.v5, e2.v5, e1.v5 + HexMetrics.GetBridge(direction.Next())
+			);
+			waterShore.AddTriangleUV(
+				new Vector2(0f, 0f),
+				new Vector2(0f, 1f),
+				new Vector2(0f, nextNeighbor.IsUnderwater ? 0f : 1f)
 			);
 		}
 	}
