@@ -64,6 +64,7 @@ public class HexCell : MonoBehaviour {
 				return;
 			}
 			waterLevel = value;
+			ValidateRivers();
 			Refresh();
 		}
 	}
@@ -107,7 +108,7 @@ public class HexCell : MonoBehaviour {
             Vector3 uiPosition = uiRect.localPosition;
 			uiPosition.z = -position.y;
 			uiRect.localPosition = uiPosition;
-            RemoveIllegalsRivers();
+            ValidateRivers();
             Refresh();
         }
     }
@@ -191,37 +192,42 @@ public class HexCell : MonoBehaviour {
 		if (hasOutgoingRiver && outgoingRiver == direction) {
 			return;
 		}
-        HexCell neighbor = GetNeighbor(direction);
-		if (!neighbor || elevation < neighbor.elevation) {
+		HexCell neighbor = GetNeighbor(direction);
+		if (!IsValidRiverDestination(neighbor)) {
 			return;
 		}
-        RemoveOutgoingRiver();
+		RemoveOutgoingRiver();
 		if (hasIncomingRiver && incomingRiver == direction) {
 			RemoveIncomingRiver();
 		}
-        hasOutgoingRiver = true;
+		hasOutgoingRiver = true;
 		outgoingRiver = direction;
-		RefreshSelfOnly();
-        neighbor.RemoveIncomingRiver();
+
+		neighbor.RemoveIncomingRiver();
 		neighbor.hasIncomingRiver = true;
 		neighbor.incomingRiver = direction.Opposite();
-		neighbor.RefreshSelfOnly();
 	}
 
-    private void RemoveIllegalsRivers(){
-        if (
-				hasOutgoingRiver &&
-				elevation < GetNeighbor(outgoingRiver).elevation
-			) {
-				RemoveOutgoingRiver();
-			}
-			if (
-				hasIncomingRiver &&
-				elevation > GetNeighbor(incomingRiver).elevation
-			) {
-				RemoveIncomingRiver();
-			}
-    }
+	bool IsValidRiverDestination (HexCell neighbor) {
+		return neighbor && (
+			elevation >= neighbor.elevation || waterLevel == neighbor.elevation
+		);
+	}
+
+	void ValidateRivers () {
+		if (
+			hasOutgoingRiver &&
+			!IsValidRiverDestination(GetNeighbor(outgoingRiver))
+		) {
+			RemoveOutgoingRiver();
+		}
+		if (
+			hasIncomingRiver &&
+			!GetNeighbor(incomingRiver).IsValidRiverDestination(this)
+		) {
+			RemoveIncomingRiver();
+		}
+	}
     
 
 }

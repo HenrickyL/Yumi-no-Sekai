@@ -1,4 +1,4 @@
-Shader "Custom/Water Shore" {
+Shader "Custom/Estuaries" {
 	Properties {
 		_Color ("Color", Color) = (1,1,1,1)
 		_MainTex ("Albedo (RGB)", 2D) = "white" {}
@@ -10,7 +10,7 @@ Shader "Custom/Water Shore" {
 		LOD 200
 		
 		CGPROGRAM
-		#pragma surface surf Standard alpha
+		#pragma surface surf Standard alpha vertex:vert
 		#pragma target 3.0
 
 		// #include "Water.cginc"
@@ -19,6 +19,7 @@ Shader "Custom/Water Shore" {
 
 		struct Input {
 			float2 uv_MainTex;
+			float2 riverUV;
 			float3 worldPos;
 		};
 		float Foam (float shore, float2 worldXZ, sampler2D noiseTex) {
@@ -58,6 +59,23 @@ Shader "Custom/Water Shore" {
 				lerp(noise2.x, noise2.y, blendWave);
 			return smoothstep(0.75, 2, waves);
 		}
+		 float River (float2 riverUV, sampler2D noiseTex) {
+            float2 uv = riverUV;
+            uv.x = uv.x * 0.0625 + _Time.y * 0.005;
+            uv.y -= _Time.y * 0.25;
+            float4 noise = tex2D(noiseTex, uv);
+
+            float2 uv2 = riverUV;
+            uv2.x = uv2.x * 0.0625 - _Time.y * 0.0052;
+            uv2.y -= _Time.y * 0.23;
+            float4 noise2 = tex2D(noiseTex, uv2);
+            
+            return noise.x * noise2.w;
+        }
+		void vert (inout appdata_full v, out Input o) {
+			UNITY_INITIALIZE_OUTPUT(Input, o);
+			o.riverUV = v.texcoord1.xy;
+		}
 
 		half _Glossiness;
 		half _Metallic;
@@ -68,7 +86,10 @@ Shader "Custom/Water Shore" {
 			float foam = Foam(shore, IN.worldPos.xz, _MainTex);
 			float waves = Waves(IN.worldPos.xz, _MainTex);
 			waves *= 1 - shore;
-			fixed4 c = saturate(_Color + max(foam, waves));
+			float shoreWater = max(foam, waves);
+			float river = River(IN.riverUV, _MainTex);
+			float water = lerp(shoreWater, river, IN.uv_MainTex.x);
+			fixed4 c = saturate(_Color + water);
 			o.Albedo = c.rgb; 
 			o.Metallic = _Metallic;
 			o.Smoothness = _Glossiness;
