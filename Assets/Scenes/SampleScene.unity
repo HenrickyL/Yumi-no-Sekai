@@ -153,7 +153,7 @@ PrefabInstance:
     - target: {fileID: 8329120167987418734, guid: 5e8d288b314ec744ca574a677d3bc037, type: 3}
       propertyPath: hexGrid
       value: 
-      objectReference: {fileID: 7589266964896497308, guid: 804a6a1ed44c6f143befc358927f9bf8, type: 3}
+      objectReference: {fileID: 1841809021}
     - target: {fileID: 8329120167987418735, guid: 5e8d288b314ec744ca574a677d3bc037, type: 3}
       propertyPath: m_Name
       value: HexMapEditor
@@ -517,6 +517,10 @@ PrefabInstance:
       value: HexGrid
       objectReference: {fileID: 0}
     - target: {fileID: 7589266965509022360, guid: 804a6a1ed44c6f143befc358927f9bf8, type: 3}
+      propertyPath: useColors
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589266965509022360, guid: 804a6a1ed44c6f143befc358927f9bf8, type: 3}
       propertyPath: withIrregulatity
       value: 1
       objectReference: {fileID: 0}
@@ -584,6 +588,17 @@ Transform:
   m_Father: {fileID: 1496709578}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1841809021 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7589266964896497308, guid: 804a6a1ed44c6f143befc358927f9bf8, type: 3}
+  m_PrefabInstance: {fileID: 1252410266}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be44b5e9f1cf3f8478ea845ade5401ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1889811199
 GameObject:
   m_ObjectHideFlags: 0
