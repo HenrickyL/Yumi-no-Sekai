@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class HexCell : MonoBehaviour {
     [SerializeField] public HexCoordinates coordinates;
-    [SerializeField] public bool selected = false;
     [SerializeField]HexCell[] neighbors;
+    private bool hasIncomingRiver, hasOutgoingRiver;
+    private bool selected = false;
     public RectTransform uiRect;
     public HexGridChunk chunk;
-    bool hasIncomingRiver, hasOutgoingRiver;
     HexDirection incomingRiver, outgoingRiver;
     public Vector3 Position {
 		get {
