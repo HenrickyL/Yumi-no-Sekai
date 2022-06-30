@@ -1,5 +1,9 @@
 using UnityEngine;
 
+enum OptionalToggle {
+		Ignore, Yes, No
+}
+
 public class HexMapEditor : MonoBehaviour
 {
     public Color[] colors;
@@ -9,6 +13,8 @@ public class HexMapEditor : MonoBehaviour
     private bool applyElevation = true;
     int brushSize;
     public bool showUI = false;
+    OptionalToggle riverMode;
+
 
 
     private void Awake() {
@@ -60,6 +66,9 @@ public class HexMapEditor : MonoBehaviour
     }
     public void ShowUI (bool visible) {
 		showUI = visible;
+	}
+    public void SetRiverMode (int mode) {
+		riverMode = (OptionalToggle)mode;
 	}
     
 }
