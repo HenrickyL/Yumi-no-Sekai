@@ -93,6 +93,13 @@ public class HexCell : MonoBehaviour {
             Refresh();
         }
     }
+	public float RiverSurfaceY {
+		get {
+			return
+				(elevation + HexMetrics.riverSurfaceElevationOffset) *
+				HexMetrics.elevationStep;
+		}
+	}
     [SerializeField]public const float elevationStep = 5f;
     
     public HexCell GetNeighbor(HexDirection direction){

@@ -11,7 +11,7 @@ public static class HexMetrics
 	public const float solidFractor = 0.75f;
 	public const float blendFactor = 1f-solidFractor;
 	public static Texture2D noiseSource;
-	public const float cellPerturbStrength = 0f;//4f
+	public const float cellPerturbStrength = 4f;
 	public const float noiseScale = 0.003f;
 	public const float elevationPerturbStrength = 1.5f;
 	public const float elevationStep = 3f;
@@ -21,7 +21,9 @@ public static class HexMetrics
 	public const float horizontalTerraceStepSize = 1f / terraceSteps;
 	public const float verticalTerraceStepSize = 1f / (terracesPerSlope + 1);
 	public const int chunkSizeX = 5, chunkSizeZ = 5;
-	public const float streamBedElevationOffset = -1f;
+	public const float streamBedElevationOffset = -1.75f;
+	public const float riverSurfaceElevationOffset = -0.5f;
+
 
 
 
