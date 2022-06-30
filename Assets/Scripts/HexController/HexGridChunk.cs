@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class HexGridChunk: MonoBehaviour {
-    [SerializeField]public HexMesh terrain, rivers;
+    [SerializeField]public HexMesh terrain, rivers, water;
     HexCell[] cells;
 	Canvas gridCanvas;
     [SerializeField]public static bool withIrregulatity = true;
@@ -36,11 +36,13 @@ public class HexGridChunk: MonoBehaviour {
     public void Triangulate(HexCell[] cells){
         terrain.Clear();
         rivers.Clear();
+		water.Clear();
         for (int i = 0; i < cells.Length; i++){
             Triangulate(cells[i]);
         }
         terrain.Apply();
         rivers.Apply();
+		water.Apply();
 	}
     private void Triangulate(HexCell cell){
         for(HexDirection d = HexDirection.NE ; d<= HexDirection.NW; d++){
