@@ -20,7 +20,6 @@ public class HexMapEditor : MonoBehaviour
 	int activeWaterLevel;
 	bool applyWaterLevel = true;
 	int activeTerrainTypeIndex;
-	private int IOHeader = 1;
 
 
     void Update () {
@@ -126,36 +125,6 @@ public class HexMapEditor : MonoBehaviour
 	public void SetWaterLevel (float level) {
 		activeWaterLevel = (int)level;
 	}
-	public void Save () {
-		string path = Path.Combine(Application.persistentDataPath, "test.map");
-		using (
-			BinaryWriter writer =
-				new BinaryWriter(File.Open(path, FileMode.Create))
-		) {
-			//future editions
-			writer.Write(IOHeader);
-			//
-			hexGrid.Save(writer);
-		}
-	}
-
-	public void Load () {
-		string path = Path.Combine(Application.persistentDataPath, "test.map");
-		using (
-			
-			BinaryReader reader =
-				new BinaryReader(File.OpenRead(path))
-		) {
-			//
-			int header = reader.ReadInt32();
-			//
-			if (header <= IOHeader) {
-				hexGrid.Load(reader,header);
-				HexMapCamera.ValidatePosition();
-			}else{
-				Debug.LogWarning("Unknown map format " + header);
-			}
-		}
-	}
+	
     
 }
