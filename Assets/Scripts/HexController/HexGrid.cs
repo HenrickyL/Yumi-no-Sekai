@@ -6,20 +6,45 @@ public class HexGrid : MonoBehaviour
     [SerializeField]private Text cellLabelPrefab;
 	[SerializeField]private HexCell cellPrefab;
 	[SerializeField]public Texture2D noiseSource;
-	[SerializeField]public int chunkCountX = 4, chunkCountZ = 3;
-	private int cellCountX, cellCountZ;
+	public int cellCountX = 20, cellCountZ = 15;
+	int chunkCountX, chunkCountZ;
 	HexGridChunk[] chunks;
 	public HexGridChunk chunkPrefab;
     private HexCell[] cells;
 	public Color[] colors;
 	void Awake () {
 		HexMetrics.noiseSource = noiseSource;
-		cellCountX = chunkCountX * HexMetrics.chunkSizeX;
-		cellCountZ = chunkCountZ * HexMetrics.chunkSizeZ;
 		HexMetrics.colors = colors;
 		
+		CreateMap(cellCountX, cellCountZ);
+	}
+
+	public void CreateMap (int x, int z) {
+		ValidateMapSizes(x,z);
+		ClearOldData();
+		cellCountX = x;
+		cellCountZ = z;
+		chunkCountX = cellCountX / HexMetrics.chunkSizeX;
+		chunkCountZ = cellCountZ / HexMetrics.chunkSizeZ;
 		CreateChunks();
 		CreateCells();
+	}
+
+	private void ClearOldData(){
+		if (chunks != null) {
+			for (int i = 0; i < chunks.Length; i++) {
+				Destroy(chunks[i].gameObject);
+			}
+		}
+	}
+	private void ValidateMapSizes(int x, int z){
+		if (
+			x <= 0 || x % HexMetrics.chunkSizeX != 0 ||
+			z <= 0 || z % HexMetrics.chunkSizeZ != 0
+		) {
+			Debug.LogError("Unsupported map size.");
+			return;
+		}
 	}
 
     private void CreateChunks()
