@@ -6,20 +6,50 @@ public class HexGrid : MonoBehaviour
     [SerializeField]private Text cellLabelPrefab;
 	[SerializeField]private HexCell cellPrefab;
 	[SerializeField]public Texture2D noiseSource;
-	[SerializeField]public int chunkCountX = 4, chunkCountZ = 3;
-	private int cellCountX, cellCountZ;
+	public int cellCountX = 20, cellCountZ = 15;
+	int chunkCountX, chunkCountZ;
 	HexGridChunk[] chunks;
 	public HexGridChunk chunkPrefab;
     private HexCell[] cells;
 	public Color[] colors;
 	void Awake () {
 		HexMetrics.noiseSource = noiseSource;
-		cellCountX = chunkCountX * HexMetrics.chunkSizeX;
-		cellCountZ = chunkCountZ * HexMetrics.chunkSizeZ;
 		HexMetrics.colors = colors;
 		
-		CreateChunks();
-		CreateCells();
+		CreateMap(cellCountX, cellCountZ);
+	}
+
+	public bool CreateMap (int x, int z) {
+		if(ValidateMapSizes(x,z)){
+			ClearOldData();
+			cellCountX = x;
+			cellCountZ = z;
+			chunkCountX = cellCountX / HexMetrics.chunkSizeX;
+			chunkCountZ = cellCountZ / HexMetrics.chunkSizeZ;
+			CreateChunks();
+			CreateCells();
+			return true;
+		}else{
+			return false;
+		}
+	}
+
+	private void ClearOldData(){
+		if (chunks != null) {
+			for (int i = 0; i < chunks.Length; i++) {
+				Destroy(chunks[i].gameObject);
+			}
+		}
+	}
+	private bool ValidateMapSizes(int x, int z){
+		if (
+			x <= 0 || x % HexMetrics.chunkSizeX != 0 ||
+			z <= 0 || z % HexMetrics.chunkSizeZ != 0
+		) {
+			Debug.LogError("Unsupported map size.");
+			return false;
+		}
+		return true;
 	}
 
     private void CreateChunks()
@@ -124,12 +154,25 @@ public class HexGrid : MonoBehaviour
 	}
 
 	public void Save (BinaryWriter writer) {
+		writer.Write(cellCountX);
+		writer.Write(cellCountZ);
 		for (int i = 0; i < cells.Length; i++) {
 			cells[i].Save(writer);
 		}
 	}
 
-	public void Load (BinaryReader reader) {
+	public void Load (BinaryReader reader,  int header) {
+		//old version
+		int x = 20, z = 15;
+		if (header >= 1) {
+			x = reader.ReadInt32();
+			z = reader.ReadInt32();
+		}
+		if (x != cellCountX || z != cellCountZ) {
+			if(!CreateMap(x, z)){
+				return;
+			}
+		}
 		for (int i = 0; i < cells.Length; i++) {
 			cells[i].Load(reader);
 		}
