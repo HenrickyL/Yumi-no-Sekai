@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.IO;
 
 public class HexCell : MonoBehaviour {
     [SerializeField] public HexCoordinates coordinates;
@@ -100,17 +100,7 @@ public class HexCell : MonoBehaviour {
 				return;
 			}
             elevation = value;
-            Vector3 position = transform.localPosition;
-            position.y = value * HexMetrics.elevationStep;
-            if(HexGridChunk.GetWithIrregularity()){
-                position.y += (HexMetrics.SampleNoise(position).y*2f -1f)*
-                    HexMetrics.elevationPerturbStrength;
-            }
-            transform.localPosition = position;
-
-            Vector3 uiPosition = uiRect.localPosition;
-			uiPosition.z = -position.y;
-			uiRect.localPosition = uiPosition;
+            RefreshPosition();
             ValidateRivers();
             Refresh();
         }
@@ -231,6 +221,41 @@ public class HexCell : MonoBehaviour {
 			RemoveIncomingRiver();
 		}
 	}
+
+	public void Save (BinaryWriter writer) {
+		writer.Write(terrainTypeIndex);
+		writer.Write(elevation);
+		writer.Write(waterLevel);
+		writer.Write(hasIncomingRiver);
+		writer.Write((int)incomingRiver);
+		writer.Write(hasOutgoingRiver);
+		writer.Write((int)outgoingRiver);
+		
+	}
+
+	public void Load (BinaryReader reader) {
+		terrainTypeIndex = reader.ReadInt32();
+		elevation = reader.ReadInt32();
+		RefreshPosition();
+		waterLevel = reader.ReadInt32();
+		hasIncomingRiver = reader.ReadBoolean();
+		incomingRiver = (HexDirection)reader.ReadInt32();
+		hasOutgoingRiver = reader.ReadBoolean();
+		outgoingRiver = (HexDirection)reader.ReadInt32();
+	}
     
+	void RefreshPosition(){
+		Vector3 position = transform.localPosition;
+            position.y = Elevation * HexMetrics.elevationStep;
+            if(HexGridChunk.GetWithIrregularity()){
+                position.y += (HexMetrics.SampleNoise(position).y*2f -1f)*
+                    HexMetrics.elevationPerturbStrength;
+            }
+            transform.localPosition = position;
+
+            Vector3 uiPosition = uiRect.localPosition;
+			uiPosition.z = -position.y;
+			uiRect.localPosition = uiPosition;
+	}
 
 }
