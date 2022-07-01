@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System.IO;
 
 public class HexCell : MonoBehaviour {
     [SerializeField] public HexCoordinates coordinates;
@@ -73,19 +73,22 @@ public class HexCell : MonoBehaviour {
 			return waterLevel > elevation;
 		}
 	}
-
-    Color color;
+	int terrainTypeIndex;
+	public int TerrainTypeIndex {
+		get {
+			return terrainTypeIndex;
+		}
+		set {
+			if (terrainTypeIndex != value) {
+				terrainTypeIndex = value;
+				Refresh();
+			}
+		}
+	}
     public Color Color { 
         get{
-            return color;
+            return HexMetrics.colors[terrainTypeIndex];
         }
-        set{
-            if(color == value){
-                return;
-            }
-            color = value;
-            Refresh();
-        } 
     }
     public int elevation = int.MinValue;
     public int Elevation {
@@ -97,17 +100,7 @@ public class HexCell : MonoBehaviour {
 				return;
 			}
             elevation = value;
-            Vector3 position = transform.localPosition;
-            position.y = value * HexMetrics.elevationStep;
-            if(HexGridChunk.GetWithIrregularity()){
-                position.y += (HexMetrics.SampleNoise(position).y*2f -1f)*
-                    HexMetrics.elevationPerturbStrength;
-            }
-            transform.localPosition = position;
-
-            Vector3 uiPosition = uiRect.localPosition;
-			uiPosition.z = -position.y;
-			uiRect.localPosition = uiPosition;
+            RefreshPosition();
             ValidateRivers();
             Refresh();
         }
@@ -228,6 +221,62 @@ public class HexCell : MonoBehaviour {
 			RemoveIncomingRiver();
 		}
 	}
+
+	public void Save (BinaryWriter writer) {
+		writer.Write((byte)terrainTypeIndex);
+		writer.Write((byte)elevation);
+		writer.Write((byte)waterLevel);
+		if (hasIncomingRiver) {
+			writer.Write((byte)(incomingRiver + 128));
+		}
+		else {
+			writer.Write((byte)0);
+		}
+		if (hasOutgoingRiver) {
+			writer.Write((byte)(outgoingRiver + 128));
+		}
+		else {
+			writer.Write((byte)0);
+		}
+		
+	}
+
+	public void Load (BinaryReader reader) {
+		terrainTypeIndex = reader.ReadByte();
+		elevation = reader.ReadByte();
+		RefreshPosition();
+		waterLevel = reader.ReadByte();
+
+		byte riverData = reader.ReadByte();
+		if (riverData >= 128) {
+			hasIncomingRiver = true;
+			incomingRiver = (HexDirection)(riverData - 128);
+		}
+		else {
+			hasIncomingRiver = false;
+		}
+		riverData = reader.ReadByte();
+		if (riverData >= 128) {
+			hasOutgoingRiver = true;
+			outgoingRiver = (HexDirection)(riverData - 128);
+		}
+		else {
+			hasOutgoingRiver = false;
+		}
+	}
     
+	void RefreshPosition(){
+		Vector3 position = transform.localPosition;
+            position.y = Elevation * HexMetrics.elevationStep;
+            if(HexGridChunk.GetWithIrregularity()){
+                position.y += (HexMetrics.SampleNoise(position).y*2f -1f)*
+                    HexMetrics.elevationPerturbStrength;
+            }
+            transform.localPosition = position;
+
+            Vector3 uiPosition = uiRect.localPosition;
+			uiPosition.z = -position.y;
+			uiRect.localPosition = uiPosition;
+	}
 
 }

@@ -25,6 +25,7 @@ public static class HexMetrics
 	public const float waterElevationOffset = -0.5f;
 	public const float waterFactor = 0.6f;
 	public const float waterBlendFactor = 1f - waterFactor;
+	public static Color[] colors;
 
 
 
