@@ -223,25 +223,25 @@ public class HexCell : MonoBehaviour {
 	}
 
 	public void Save (BinaryWriter writer) {
-		writer.Write(terrainTypeIndex);
-		writer.Write(elevation);
-		writer.Write(waterLevel);
+		writer.Write((byte)terrainTypeIndex);
+		writer.Write((byte)elevation);
+		writer.Write((byte)waterLevel);
 		writer.Write(hasIncomingRiver);
-		writer.Write((int)incomingRiver);
+		writer.Write((byte)incomingRiver);
 		writer.Write(hasOutgoingRiver);
-		writer.Write((int)outgoingRiver);
+		writer.Write((byte)outgoingRiver);
 		
 	}
 
 	public void Load (BinaryReader reader) {
-		terrainTypeIndex = reader.ReadInt32();
-		elevation = reader.ReadInt32();
+		terrainTypeIndex = reader.ReadByte();
+		elevation = reader.ReadByte();
 		RefreshPosition();
-		waterLevel = reader.ReadInt32();
+		waterLevel = reader.ReadByte();
 		hasIncomingRiver = reader.ReadBoolean();
-		incomingRiver = (HexDirection)reader.ReadInt32();
+		incomingRiver = (HexDirection)reader.ReadByte();
 		hasOutgoingRiver = reader.ReadBoolean();
-		outgoingRiver = (HexDirection)reader.ReadInt32();
+		outgoingRiver = (HexDirection)reader.ReadByte();
 	}
     
 	void RefreshPosition(){
