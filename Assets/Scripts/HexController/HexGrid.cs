@@ -19,15 +19,19 @@ public class HexGrid : MonoBehaviour
 		CreateMap(cellCountX, cellCountZ);
 	}
 
-	public void CreateMap (int x, int z) {
-		ValidateMapSizes(x,z);
-		ClearOldData();
-		cellCountX = x;
-		cellCountZ = z;
-		chunkCountX = cellCountX / HexMetrics.chunkSizeX;
-		chunkCountZ = cellCountZ / HexMetrics.chunkSizeZ;
-		CreateChunks();
-		CreateCells();
+	public bool CreateMap (int x, int z) {
+		if(ValidateMapSizes(x,z)){
+			ClearOldData();
+			cellCountX = x;
+			cellCountZ = z;
+			chunkCountX = cellCountX / HexMetrics.chunkSizeX;
+			chunkCountZ = cellCountZ / HexMetrics.chunkSizeZ;
+			CreateChunks();
+			CreateCells();
+			return true;
+		}else{
+			return false;
+		}
 	}
 
 	private void ClearOldData(){
@@ -37,14 +41,15 @@ public class HexGrid : MonoBehaviour
 			}
 		}
 	}
-	private void ValidateMapSizes(int x, int z){
+	private bool ValidateMapSizes(int x, int z){
 		if (
 			x <= 0 || x % HexMetrics.chunkSizeX != 0 ||
 			z <= 0 || z % HexMetrics.chunkSizeZ != 0
 		) {
 			Debug.LogError("Unsupported map size.");
-			return;
+			return false;
 		}
+		return true;
 	}
 
     private void CreateChunks()
@@ -163,7 +168,11 @@ public class HexGrid : MonoBehaviour
 			x = reader.ReadInt32();
 			z = reader.ReadInt32();
 		}
-		CreateMap(reader.ReadInt32(), reader.ReadInt32());
+		if (x != cellCountX || z != cellCountZ) {
+			if(!CreateMap(x, z)){
+				return;
+			}
+		}
 		for (int i = 0; i < cells.Length; i++) {
 			cells[i].Load(reader);
 		}
