@@ -9,10 +9,7 @@ enum OptionalToggle {
 public class HexMapEditor : MonoBehaviour
 {
     public HexGrid hexGrid;
-    public Color[] colors;
-    private Color activeColor;
 	private int activeElevation = 0;
-    private bool applyColor;
     private bool applyElevation = true;
     int brushSize;
     public bool showUI = false;
@@ -22,13 +19,9 @@ public class HexMapEditor : MonoBehaviour
 	HexCell previousCell;
 	int activeWaterLevel;
 	bool applyWaterLevel = true;
+	int activeTerrainTypeIndex;
 
 
-
-    private void Awake() {
-        SetElevation(0);
-        SelectColor(0);
-    }
     void Update () {
 		if (
 			Input.GetMouseButton(0) &&
@@ -57,7 +50,9 @@ public class HexMapEditor : MonoBehaviour
 			previousCell = null;
 		}
 	}
-
+	public void SetTerrainTypeIndex (int index) {
+		activeTerrainTypeIndex = index;
+	}
     private void ValidateDrag (HexCell currentCell) {
 		for (
 			dragDirection = HexDirection.NE;
@@ -72,21 +67,15 @@ public class HexMapEditor : MonoBehaviour
 		isDrag = false;
 	}
 
-    public void SelectColor(int index)
-    {
-        applyColor = index >= 0;
-		if (applyColor) {
-			activeColor = colors[index];
-		}
-    }
+    
     public void SetElevation (float elevation) {
 		activeElevation = (int)elevation;
 	}
     public void EditCell(HexCell cell)
     {
         if(cell){
-            if (applyColor) 
-                cell.Color = activeColor;
+           if (activeTerrainTypeIndex >= 0) 
+				cell.TerrainTypeIndex = activeTerrainTypeIndex;
             if (applyElevation) 
                 cell.Elevation = activeElevation;
 			if (applyWaterLevel) 

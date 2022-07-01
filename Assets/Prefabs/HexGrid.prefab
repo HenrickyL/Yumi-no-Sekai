@@ -47,11 +47,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cellLabelPrefab: {fileID: 4117418732128722828, guid: 7c34c8024c698ca458963efaf0f78c27, type: 3}
   cellPrefab: {fileID: 794609253608524195, guid: e5f0790414584564bb6eb781aa442707, type: 3}
-  defaultColor: {r: 1, g: 1, b: 1, a: 0}
   noiseSource: {fileID: 2800000, guid: ce0c21003226b434897e52fc8e757f66, type: 3}
   chunkCountX: 5
   chunkCountZ: 5
   chunkPrefab: {fileID: 7739397902314822967, guid: ebd2dd2db4846c24287cb286eb1875bc, type: 3}
+  colors:
+  - {r: 1, g: 0.89632016, b: 0.007843137, a: 1}
+  - {r: 0, g: 1, b: 0.007030964, a: 1}
+  - {r: 0, g: 0.11251116, b: 1, a: 0}
+  - {r: 1, g: 0, b: 0, a: 1}
+  - {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &7589266965296828500
 GameObject:
   m_ObjectHideFlags: 0

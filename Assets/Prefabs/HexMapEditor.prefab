@@ -2099,7 +2099,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8329120167987418734}
         m_TargetAssemblyTypeName: HexMapEditor, Assembly-CSharp
-        m_MethodName: SelectColor
+        m_MethodName: SetTerrainTypeIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2498,7 +2498,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8329120167987418734}
         m_TargetAssemblyTypeName: HexMapEditor, Assembly-CSharp
-        m_MethodName: SelectColor
+        m_MethodName: SetTerrainTypeIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4107,11 +4107,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hexGrid: {fileID: 7589266964896497308, guid: 804a6a1ed44c6f143befc358927f9bf8, type: 3}
-  colors:
-  - {r: 1, g: 1, b: 1, a: 0.00000016706034}
-  - {r: 0.14751692, g: 0.8018868, b: 0.14751692, a: 0.00017470197}
-  - {r: 0, g: 0.1404357, b: 1, a: 3.2e-44}
-  - {r: 1, g: 0.87076914, b: 0, a: 0}
   showUI: 0
 --- !u!1 &8329120168014428546
 GameObject:
@@ -4544,7 +4539,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8329120167987418734}
         m_TargetAssemblyTypeName: HexMapEditor, Assembly-CSharp
-        m_MethodName: SelectColor
+        m_MethodName: SetTerrainTypeIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4642,7 +4637,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8329120167987418734}
         m_TargetAssemblyTypeName: HexMapEditor, Assembly-CSharp
-        m_MethodName: SelectColor
+        m_MethodName: SetTerrainTypeIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4740,7 +4735,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8329120167987418734}
         m_TargetAssemblyTypeName: HexMapEditor, Assembly-CSharp
-        m_MethodName: SelectColor
+        m_MethodName: SetTerrainTypeIndex
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
