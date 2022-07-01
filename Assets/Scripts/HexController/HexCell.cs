@@ -226,10 +226,18 @@ public class HexCell : MonoBehaviour {
 		writer.Write((byte)terrainTypeIndex);
 		writer.Write((byte)elevation);
 		writer.Write((byte)waterLevel);
-		writer.Write(hasIncomingRiver);
-		writer.Write((byte)incomingRiver);
-		writer.Write(hasOutgoingRiver);
-		writer.Write((byte)outgoingRiver);
+		if (hasIncomingRiver) {
+			writer.Write((byte)(incomingRiver + 128));
+		}
+		else {
+			writer.Write((byte)0);
+		}
+		if (hasOutgoingRiver) {
+			writer.Write((byte)(outgoingRiver + 128));
+		}
+		else {
+			writer.Write((byte)0);
+		}
 		
 	}
 
@@ -238,10 +246,23 @@ public class HexCell : MonoBehaviour {
 		elevation = reader.ReadByte();
 		RefreshPosition();
 		waterLevel = reader.ReadByte();
-		hasIncomingRiver = reader.ReadBoolean();
-		incomingRiver = (HexDirection)reader.ReadByte();
-		hasOutgoingRiver = reader.ReadBoolean();
-		outgoingRiver = (HexDirection)reader.ReadByte();
+
+		byte riverData = reader.ReadByte();
+		if (riverData >= 128) {
+			hasIncomingRiver = true;
+			incomingRiver = (HexDirection)(riverData - 128);
+		}
+		else {
+			hasIncomingRiver = false;
+		}
+		riverData = reader.ReadByte();
+		if (riverData >= 128) {
+			hasOutgoingRiver = true;
+			outgoingRiver = (HexDirection)(riverData - 128);
+		}
+		else {
+			hasOutgoingRiver = false;
+		}
 	}
     
 	void RefreshPosition(){
