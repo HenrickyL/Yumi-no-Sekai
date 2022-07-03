@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.EventSystems;
-using System.IO;
+using UnityEngine.UI;
 
 public class HexMapEditor : MonoBehaviour {
 
 	public HexGrid hexGrid;
 
 	public Material terrainMaterial;
+	public Texture2D[] textures;
+	public RawImage imageTerrain;
+	public Text textTerrain;
 
 	int activeElevation;
 	int activeWaterLevel;
@@ -32,8 +35,16 @@ public class HexMapEditor : MonoBehaviour {
 	HexDirection dragDirection;
 	HexCell previousCell;
 
-	public void SetTerrainTypeIndex (int index) {
-		activeTerrainTypeIndex = index;
+	public void SetTerrainTypeIndex (float index) {
+		activeTerrainTypeIndex = (int)index;
+		if(index >=0 && index < textures.Length){
+			var texture = textures[activeTerrainTypeIndex];
+			imageTerrain.texture = texture;
+			textTerrain.text = texture.name;
+		}else{
+			imageTerrain.texture = null;
+			textTerrain.text = "None";
+		}
 	}
 
 	public void SetApplyElevation (bool toggle) {
@@ -94,6 +105,9 @@ public class HexMapEditor : MonoBehaviour {
 
 	public void SetRoadMode (int mode) {
 		roadMode = (OptionalToggle)mode;
+	}
+	public void SetImage(int index){
+
 	}
 
 	public void SetWalledMode (int mode) {
@@ -204,12 +218,12 @@ public class HexMapEditor : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	void EditCell (HexCell cell) {
 		if (cell) {
 			if (activeTerrainTypeIndex >= 0) {
-				cell.TerrainTypeIndex = activeTerrainTypeIndex;
-			}
+			cell.TerrainTypeIndex = activeTerrainTypeIndex;
+		}
 			if (applyElevation) {
 				cell.Elevation = activeElevation;
 			}

@@ -240,7 +240,7 @@ public class HexCell : MonoBehaviour {
 
 	public HexCell NextWithSamePriority { get; set; }
 
-	int terrainTypeIndex;
+	int terrainTypeIndex = 39;
 
 	int elevation = int.MinValue;
 	int waterLevel;
