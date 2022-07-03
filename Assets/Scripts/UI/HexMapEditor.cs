@@ -32,7 +32,7 @@ public class HexMapEditor : MonoBehaviour {
 
 	bool isDrag;
 	HexDirection dragDirection;
-	HexCell previousCell;
+	HexCell previousCell,searchFromCell;
 
 	public void SetTerrainTypeIndex (int index) {
 		activeTerrainTypeIndex = index;
@@ -146,8 +146,15 @@ public class HexMapEditor : MonoBehaviour {
 			if (editMode) {
 				EditCells(currentCell);
 			}
-			else {
-				hexGrid.FindDistancesTo(currentCell);
+			else if (Input.GetKey(KeyCode.LeftShift)) {
+				if (searchFromCell) {
+					searchFromCell.DisableHighlight();
+				}
+				searchFromCell = currentCell;
+				searchFromCell.EnableHighlight(Color.blue);
+			}
+			else if (searchFromCell && searchFromCell != currentCell){
+				hexGrid.FindPath(searchFromCell, currentCell);
 			}
 			previousCell = currentCell;
 		}
