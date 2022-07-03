@@ -11112,7 +11112,7 @@ MonoBehaviour:
   m_MinValue: -1
   m_MaxValue: 45
   m_WholeNumbers: 1
-  m_Value: 0
+  m_Value: -0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -14228,7 +14228,6 @@ MonoBehaviour:
   textures:
   - {fileID: 2800000, guid: 321ede25646384242ac1d3c8920b93e1, type: 3}
   - {fileID: 2800000, guid: 8fdd893df76e5c84c9073312bbe7018a, type: 3}
-  - {fileID: 2800000, guid: 3368a0b773798f944ba613ef9c42922e, type: 3}
   - {fileID: 2800000, guid: 3368a0b773798f944ba613ef9c42922e, type: 3}
   - {fileID: 2800000, guid: f6b687562589f6345a424861c3a08207, type: 3}
   - {fileID: 2800000, guid: ce8d8725a560f5f479cdf588c0774194, type: 3}
