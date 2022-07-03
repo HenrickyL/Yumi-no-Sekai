@@ -221,11 +221,26 @@ public class HexCell : MonoBehaviour {
 		}
 		set {
 			distance = value;
-			UpdateDistanceLabel();
 		}
 	}
 
-	int terrainTypeIndex;
+	public HexUnit Unit { get; set; }
+
+	public HexCell PathFrom { get; set; }
+
+	public int SearchHeuristic { get; set; }
+
+	public int SearchPriority {
+		get {
+			return distance + SearchHeuristic;
+		}
+	}
+
+	public int SearchPhase { get; set; }
+
+	public HexCell NextWithSamePriority { get; set; }
+
+	int terrainTypeIndex = 39;
 
 	int elevation = int.MinValue;
 	int waterLevel;
@@ -406,11 +421,17 @@ public class HexCell : MonoBehaviour {
 					neighbor.chunk.Refresh();
 				}
 			}
+			if (Unit) {
+				Unit.ValidateLocation();
+			}
 		}
 	}
 
 	void RefreshSelfOnly () {
 		chunk.Refresh();
+		if (Unit) {
+			Unit.ValidateLocation();
+		}
 	}
 
 	public void Save (BinaryWriter writer) {
@@ -481,15 +502,16 @@ public class HexCell : MonoBehaviour {
 		}
 	}
 
-	void UpdateDistanceLabel () {
+	public void SetLabel (string text) {
 		UnityEngine.UI.Text label = uiRect.GetComponent<Text>();
-		label.text = distance == int.MaxValue ? "" : distance.ToString();
+		label.text = text;
 	}
+
 	public void DisableHighlight () {
 		Image highlight = uiRect.GetChild(0).GetComponent<Image>();
 		highlight.enabled = false;
 	}
-	
+
 	public void EnableHighlight (Color color) {
 		Image highlight = uiRect.GetChild(0).GetComponent<Image>();
 		highlight.color = color;
