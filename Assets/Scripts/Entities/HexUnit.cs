@@ -136,6 +136,9 @@ public class HexUnit : MonoBehaviour {
 			transform.localPosition = location.Position;
 		}
 	}
+	void OnSelect(){
+		
+	}
 
 //	void OnDrawGizmos () {
 //		if (pathToTravel == null || pathToTravel.Count == 0) {
