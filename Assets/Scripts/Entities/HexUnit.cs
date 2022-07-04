@@ -139,6 +139,13 @@ public class HexUnit : MonoBehaviour {
 	void OnSelect(){
 		
 	}
+	private void LateUpdate() {
+		var cam = Camera.main.transform.transform.forward;
+		var position = this.transform.position;
+		var adjust = new Vector3(position.x+cam.x,position.y,position.z+cam.z);
+		transform.LookAt( adjust);
+
+	}
 
 //	void OnDrawGizmos () {
 //		if (pathToTravel == null || pathToTravel.Count == 0) {
