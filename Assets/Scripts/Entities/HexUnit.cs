@@ -7,6 +7,16 @@ public class HexUnit : MonoBehaviour {
 
 	const float rotationSpeed = 180f;
 	const float travelSpeed = 4f;
+	public List<HexCell> MovePath { 
+		get{
+			return new List<HexCell>(){
+				Location.GetNeighbor(HexDirection.E),
+				Location.GetNeighbor(HexDirection.NE),
+				Location.GetNeighbor(HexDirection.NE),
+				Location.GetNeighbor(HexDirection.NE),
+			};
+		} 
+	}
 
 	public static HexUnit unitPrefab;
 
@@ -39,6 +49,7 @@ public class HexUnit : MonoBehaviour {
 	float orientation;
 
 	List<HexCell> pathToTravel;
+
 
 	public void ValidateLocation () {
 		transform.localPosition = location.Position;

@@ -14122,6 +14122,7 @@ GameObject:
   - component: {fileID: 2142000448}
   - component: {fileID: 2142000447}
   - component: {fileID: 2142000451}
+  - component: {fileID: 2142000452}
   m_Layer: 5
   m_Name: Hex Map Editor
   m_TagString: Untagged
@@ -14273,3 +14274,22 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 61cb2c4e1b969424c9d7eafac7694674, type: 3}
   imageTerrain: {fileID: 1277806562}
   textTerrain: {fileID: 2044644236}
+--- !u!95 &2142000452
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2142000446}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ec58fe5aaec0cab43abd15879a3a643f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

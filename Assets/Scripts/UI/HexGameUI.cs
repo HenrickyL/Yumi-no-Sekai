@@ -5,7 +5,8 @@ public class HexGameUI : MonoBehaviour {
 
 	public HexGrid grid;
 
-	HexCell currentCell;
+	HexCell currentCell, hoverCell;
+	bool hoverSelected = false;
 
 	HexUnit selectedUnit;
 
@@ -17,18 +18,37 @@ public class HexGameUI : MonoBehaviour {
 
 	void Update () {
 		if (!EventSystem.current.IsPointerOverGameObject()) {
-			if (Input.GetMouseButtonDown(0)) {
-				DoSelection();
-			}
-			else if (selectedUnit) {
-				if (Input.GetMouseButtonDown(1)) {
-					DoMove();
+			HoveredCell();
+				if (Input.GetMouseButtonDown(0)) {
+					DoSelection();
 				}
-				else {
-					DoPathfinding();
+				else if (selectedUnit) {
+					if (Input.GetMouseButtonDown(1)) {
+						DoMove();
+					}
+					else {
+						DoPathfinding();
+					}
 				}
-			}
 		}
+	}
+	void HoveredCell(){
+		Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+		HexCell previous = hoverCell;
+		if(!previous){
+			hoverCell = grid.GetCell(ray);
+			return;
+		}
+		HexCell next = grid.GetCell(ray);
+		if(next != previous && previous){
+			previous.DisableHighlight();
+			previous=hoverCell;	
+			hoverCell = next;
+			hoverCell.EnableHighlight(new Color(0,0,0,0.15f));
+		}
+	}
+	void SelectUnit(){
+
 	}
 
 	void DoSelection () {
@@ -36,6 +56,9 @@ public class HexGameUI : MonoBehaviour {
 		UpdateCurrentCell();
 		if (currentCell) {
 			selectedUnit = currentCell.Unit;
+			foreach(var cell in selectedUnit.MovePath){
+				
+			}
 		}
 	}
 
