@@ -9,12 +9,14 @@ public class HexUnit : MonoBehaviour {
 	const float travelSpeed = 4f;
 	public List<HexCell> MovePath { 
 		get{
-			return new List<HexCell>(){
-				Location.GetNeighbor(HexDirection.E),
-				Location.GetNeighbor(HexDirection.NE),
-				Location.GetNeighbor(HexDirection.NE),
-				Location.GetNeighbor(HexDirection.NE),
-			};
+			var response = new List<HexCell>();
+			for(int i = 0; i <= (int)HexDirection.NW ; i++){
+				var cell = Location.GetNeighbor((HexDirection)i);
+				if(this.IsValidDestination(cell)){
+					response.Add(cell);
+				}
+			}
+			return response;
 		} 
 	}
 
