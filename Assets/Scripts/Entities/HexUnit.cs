@@ -21,6 +21,8 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	public static HexUnit unitPrefab;
+	private int speed=1;
+	public int Speed { get{return speed;} }
 
 	public HexCell Location {
 		get {
