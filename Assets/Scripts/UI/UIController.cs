@@ -9,7 +9,6 @@ public class UIController : MonoBehaviour
 
     private void OnEnable() {
         SetModeEdit();
-        Debug.Log(mode);
     }
     public void SetModeStart(){
         mode  = GameModeEnum.Start;

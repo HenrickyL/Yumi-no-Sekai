@@ -14,7 +14,9 @@ public class HexGameUI : MonoBehaviour {
 		 colorAttack = new Color(1,0,0,0.5f),
 		 colorAttackHovered = Color.red,
 		 colorSelectedUnityHevered = Color.blue;
-	private List<Color> actionColor;
+	Color colorActiveAction, colorActiveActionHovered;
+	private List<Color> actionsColors, actionColorHovered;
+	
 	HexUnit selectedUnit, previosSelected;
 	bool isTravler = false;
 	UnitActionsEnum unitAction= UnitActionsEnum.Move;
@@ -30,10 +32,13 @@ public class HexGameUI : MonoBehaviour {
 	}
 
 	private void OnEnable() {
-		actionColor = new List<Color>();
-		actionColor.Add(colorMove);
-		actionColor.Add(colorAttack);
-		
+		actionsColors = new List<Color>(){
+			colorMove,colorAttack
+		};
+		actionColorHovered = new List<Color>(){
+			colorMoveHovered, colorAttackHovered
+		};
+		SetMoveMode();
 	}
 	void Update () {
 		if (!EventSystem.current.IsPointerOverGameObject()) {
@@ -75,24 +80,24 @@ public class HexGameUI : MonoBehaviour {
 		}
 		HexCell next = grid.GetCell(ray);
 		if( hoverCell && previous && next && next != previous ){
-			HighlightSelectUnitMove();
+			HighlightSelectUnitAction();
 			if(selectedUnit){
 				bool prevInSelect = selectedUnit.MovePath.Contains(previous);
 				bool nextInSelect = selectedUnit.MovePath.Contains(next);
 				if(prevInSelect && next == selectedUnit.Location){
-					SetHighlightHover(previous,next,colorMove, colorSelectedUnityHevered);
+					SetHighlightHover(previous,next,colorActiveAction, colorSelectedUnityHevered);
 				}
 				else if(prevInSelect && nextInSelect){
-					SetHighlightHover(previous,next,colorMove, colorMoveHovered);
+					SetHighlightHover(previous,next,colorActiveAction, colorActiveActionHovered);
 				}
 				else if(!prevInSelect && nextInSelect){
-					SetHighlightHover(previous,next,null, colorMoveHovered);
+					SetHighlightHover(previous,next,null, colorActiveActionHovered);
 				}
 				else if(prevInSelect && !nextInSelect){
-					SetHighlightHover(previous,next,colorMove, colorHover);
+					SetHighlightHover(previous,next,colorActiveAction, colorHover);
 				}
 				else if(previous == selectedUnit.Location && nextInSelect){
-					SetHighlightHover(previous,next,colorSelectedUnity, colorMoveHovered);
+					SetHighlightHover(previous,next,colorSelectedUnity, colorActiveActionHovered);
 				}
 				else{
 					SetHighlightHover(previous,next,null, colorHover);
@@ -112,15 +117,15 @@ public class HexGameUI : MonoBehaviour {
 			ClearPreviosSelectUnit(selectedUnit);
 			if(currentCell.Unit != selectedUnit){
 				SwapSelectedUnit(currentCell.Unit);
-				HighlightSelectUnitMove();
+				HighlightSelectUnitAction();
 			}
 		}
 	}
-	void HighlightSelectUnitMove(){
+	void HighlightSelectUnitAction(){
 		if(selectedUnit){
 			selectedUnit.Location.EnableHighlight(colorSelectedUnity);
 			foreach(var cell in selectedUnit.MovePath){
-				cell.EnableHighlight(colorMove);
+				cell.EnableHighlight(colorActiveAction);
 			}
 		}
 	}
@@ -167,7 +172,7 @@ public class HexGameUI : MonoBehaviour {
 	void CheckTravelEnd(){
 		if(selectedUnit && destinationCell){
 			if(selectedUnit.Location == destinationCell){
-				HighlightSelectUnitMove();
+				HighlightSelectUnitAction();
 				destinationCell = null;
 			}
 		}
@@ -181,5 +186,14 @@ public class HexGameUI : MonoBehaviour {
 			return true;
 		}
 		return false;
+	}
+
+	public void SetAttackMode(){
+		colorActiveAction = actionsColors[1];
+		colorActiveActionHovered = actionColorHovered[1];
+	}
+	public void SetMoveMode(){
+		colorActiveAction = actionsColors[0];
+		colorActiveActionHovered = actionColorHovered[0];
 	}
 }
