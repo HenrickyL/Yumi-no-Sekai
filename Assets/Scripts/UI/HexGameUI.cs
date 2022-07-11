@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class HexGameUI : MonoBehaviour {
@@ -10,9 +11,13 @@ public class HexGameUI : MonoBehaviour {
 		 colorSelectedUnity = new Color(0,0,1,0.3f),
 		 colorMove = new  Color(0.98f,0.83f,0.29f,0.5f),
 		 colorMoveHovered = Color.white,
+		 colorAttack = new Color(1,0,0,0.5f),
+		 colorAttackHovered = Color.red,
 		 colorSelectedUnityHevered = Color.blue;
+	private List<Color> actionColor;
 	HexUnit selectedUnit, previosSelected;
 	bool isTravler = false;
+	UnitActionsEnum unitAction= UnitActionsEnum.Move;
 	
 	public void SetEditMode (bool toggle) {
 		enabled = !toggle;
@@ -20,6 +25,16 @@ public class HexGameUI : MonoBehaviour {
 		grid.ClearPath();
 	}
 
+	void SetActionMode(int action){
+		unitAction = (UnitActionsEnum)action;
+	}
+
+	private void OnEnable() {
+		actionColor = new List<Color>();
+		actionColor.Add(colorMove);
+		actionColor.Add(colorAttack);
+		
+	}
 	void Update () {
 		if (!EventSystem.current.IsPointerOverGameObject()) {
 			HoveredCell();
