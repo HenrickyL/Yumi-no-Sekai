@@ -123,7 +123,7 @@ public class HexGameUI : MonoBehaviour {
 	void DoPathfinding () {
 		if (UpdateCurrentCell()) {
 			isTravler = true;
-			if (currentCell && selectedUnit.IsValidDestination(currentCell)) {
+			if (currentCell && selectedUnit.IsValidFullDestination(currentCell)) {
 				grid.FindPath(selectedUnit.Location, currentCell, 5*selectedUnit.Speed);
 			}
 			else {

@@ -59,8 +59,12 @@ public class HexUnit : MonoBehaviour {
 		transform.localPosition = location.Position;
 	}
 
-	public bool IsValidDestination (HexCell cell) {
+	public bool IsValidFullDestination (HexCell cell) {
 		return !cell.IsUnderwater && !cell.Unit;
+	}
+	public bool IsValidDestination (HexCell cell) {
+		return !cell.IsUnderwater && !cell.Unit
+				&& ( location.Elevation-1 <= cell.Elevation &&  cell.Elevation <= location.Elevation+1 );
 	}
 
 	public void Travel (List<HexCell> path) {
