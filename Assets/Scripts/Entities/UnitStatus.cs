@@ -17,8 +17,20 @@ public struct UnitStatus {
         MaxUlt = 5;
         Range = 1;
         Defense = 10;
-        Displacement = 1;
+        Displacement = 2;
         Strength = 25;
         Ability = 8;
+    }
+
+     public void SetValues(UnitStatus status){
+        MaxHp = status.HP;
+        HP = status.HP;
+        Ult = status.Ult;
+        MaxUlt = status.MaxUlt;
+        Range = status.Range;
+        Defense = status.Defense;
+        Displacement = status.Displacement;
+        Strength = status.Strength;
+        Ability = status.Ability;
     }
 }

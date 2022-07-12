@@ -44,16 +44,17 @@ public class HexGameUI : MonoBehaviour {
 		if (!EventSystem.current.IsPointerOverGameObject()) {
 			HoveredCell();
 			// CheckTravelEnd();
-			HexCell currentCell = grid.GetCell(Input.mousePosition);
+			UpdateCurrentCell();
 			if (Input.GetMouseButtonDown(0)) {
-				DoSelection();
-			}
-			else if (selectedUnit) {
-				if (Input.GetMouseButtonDown(1)) {
+				if(!selectedUnit){
+					DoSelection();
+				}else{
 					DoMove(currentCell);
 				}
-				else if(Input.GetKey(KeyCode.LeftShift)){
-					DoPathfinding();
+			}
+			else if(Input.GetKeyDown(KeyCode.LeftShift)){
+				if(Input.GetKey(KeyCode.LeftShift)){
+					DoPathfinding(currentCell);
 				}else if(isTravler){
 					grid.ClearPath();
 					isTravler = false;
@@ -129,45 +130,50 @@ public class HexGameUI : MonoBehaviour {
 			}
 		}
 	}
-	void ClearPreviosSelectUnit( HexUnit unit){
+	void ClearPreviosSelectUnit(HexUnit unit){
 		if(unit){
 			unit.Location.DisableHighlight();
 			previosCurrentCell?.DisableHighlight();
 			foreach(var c in unit.MovePath){
-					c.DisableHighlight();
+				c.DisableHighlight();
 			}
 		}
 	}
 	
 
-	void DoPathfinding () {
-		if (UpdateCurrentCell()) {
-			isTravler = true;
-			if (currentCell && selectedUnit.IsValidFullDestination(currentCell)) {
-				grid.FindPath(selectedUnit.Location, currentCell, 5*selectedUnit.Speed);
-			}
-			else {
-				grid.ClearPath();
-			}
+	void DoPathfinding (HexCell destination) {
+		isTravler = true;
+		grid.ClearPath();
+		if (currentCell && 
+			selectedUnit.IsValidFullDestination(currentCell) &&
+			selectedUnit.IsValidMoveDestination(currentCell)) 
+		{
+			grid.FindPath(selectedUnit.Location, destination, 5*selectedUnit.Speed);
+		}
+		else {
+			grid.ClearPath();
 		}
 	}
 
 	void DoMove (HexCell cell) {
-		if (grid.HasPath && cell) {
-			ClearPreviosSelectUnit(selectedUnit);
+		if (cell) {
 			destinationCell = cell;
-			// selectedUnit.Location = currentCell;
-			selectedUnit.Travel(grid.GetPath());
-			grid.ClearPath();
+			DoPathfinding(cell);
+			if(grid.HasPath){
+				ClearPreviosSelectUnit(selectedUnit);
+				selectedUnit.Travel(grid.GetPath());
+				grid.ClearPath();
+			}
 			SwapSelectedUnit(null);
-		}else{
 			destinationCell = null;
 		}
 	}
 
 	void SwapSelectedUnit(HexUnit unit){
+		ClearPreviosSelectUnit(selectedUnit);
 		previosSelected = selectedUnit;
 		selectedUnit = unit;
+		HighlightSelectUnitAction();
 	}
 	void CheckTravelEnd(){
 		if(selectedUnit && destinationCell){
