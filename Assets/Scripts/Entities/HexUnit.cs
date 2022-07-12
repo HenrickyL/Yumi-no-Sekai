@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 
+
 public class HexUnit : MonoBehaviour {
 
 	const float rotationSpeed = 180f;
@@ -19,7 +20,8 @@ public class HexUnit : MonoBehaviour {
 			return response;
 		} 
 	}
-
+	StatusBar statusBar;
+	UnitStatus status;
 	public static HexUnit unitPrefab;
 	private int speed=1;
 	public int Speed { get{return speed;} }
@@ -54,6 +56,13 @@ public class HexUnit : MonoBehaviour {
 
 	List<HexCell> pathToTravel;
 
+
+	private void Awake() {
+		statusBar = gameObject.GetComponentInChildren<StatusBar>();
+		status = new UnitStatus();
+		status.Default();
+		statusBar.SetStatus(status);
+	}
 
 	public void ValidateLocation () {
 		transform.localPosition = location.Position;
