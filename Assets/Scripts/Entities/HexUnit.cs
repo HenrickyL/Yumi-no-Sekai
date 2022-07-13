@@ -21,7 +21,7 @@ public class HexUnit : MonoBehaviour {
 	}
 	public List<HexCell> AttackPath { 
 		get{
-			var response = location.GetTriangleByDirection(HexDirection.NW,status.Range,c=>IsValidCellAttack(c,status.Range));
+			var response = location.GetTriangleByDirection(direction,status.Range,c=>IsValidCellAttack(c,status.Range));
 			return response;
 		} 
 	}
@@ -78,15 +78,15 @@ public class HexUnit : MonoBehaviour {
 
 	public float Orientation {
 		get {
-			return orientation;
+			return ((int)direction+1)*60f;
 		}
 		set {
-			orientation = value;
-			transform.localRotation = Quaternion.Euler(0f, value, 0f);
+			direction = (HexDirection)(value/60f);
+			transform.localRotation = Quaternion.Euler(0f, Orientation, 0f);
 		}
 	}
 
-	float orientation;
+	HexDirection direction;
 
 	List<HexCell> pathToTravel;
 
@@ -113,8 +113,7 @@ public class HexUnit : MonoBehaviour {
 				&& ( location.Elevation-1 <= cell.Elevation &&  cell.Elevation <= location.Elevation+1 );
 	}
 	public bool IsValidCellAttack (HexCell cell, int range=1) {
-		return !cell.IsUnderwater
-				&& ( location.Elevation-range <= cell.Elevation &&  cell.Elevation < location.Elevation+range );
+		return  ( location.Elevation-range <= cell.Elevation &&  cell.Elevation < location.Elevation+range );
 	}
 
 	public void Travel (List<HexCell> path) {
@@ -156,7 +155,7 @@ public class HexUnit : MonoBehaviour {
 		}
 
 		transform.localPosition = location.Position;
-		orientation = transform.localRotation.eulerAngles.y;
+		Orientation = transform.localRotation.eulerAngles.y;
 		ListPool<HexCell>.Add(pathToTravel);
 		pathToTravel = null;
 	}
@@ -179,7 +178,7 @@ public class HexUnit : MonoBehaviour {
 		}
 
 		transform.LookAt(point);
-		orientation = transform.localRotation.eulerAngles.y;
+		Orientation = transform.localRotation.eulerAngles.y;
 	}
 
 	public void Die () {
@@ -189,7 +188,6 @@ public class HexUnit : MonoBehaviour {
 
 	public void Save (BinaryWriter writer) {
 		location.coordinates.Save(writer);
-		writer.Write(orientation);
 	}
 
 	public static void Load (BinaryReader reader, HexGrid grid) {
@@ -207,10 +205,10 @@ public class HexUnit : MonoBehaviour {
 		RefreshStatusBar();
 	}
 	private void LateUpdate() {
-		var cam = Camera.main.transform.transform.forward;
-		var position = this.transform.position;
-		var adjust = new Vector3(position.x+cam.x,position.y,position.z+cam.z);
-		transform.LookAt( adjust);
+		// var cam = Camera.main.transform.transform.forward;
+		// var position = this.transform.position;
+		// var adjust = new Vector3(position.x+cam.x,position.y,position.z+cam.z);
+		// transform.LookAt( adjust);
 		RefreshStatusBar();
 	}
 

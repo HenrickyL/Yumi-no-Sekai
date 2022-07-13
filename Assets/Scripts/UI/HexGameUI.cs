@@ -228,7 +228,6 @@ public class HexGameUI : MonoBehaviour {
 			HighlightAttack();
 			yield return new WaitForSeconds(waitTime);
 			selectedUnit.BasicAttackTargets();
-			Debug.Log($"{selectedUnit.name} atacou {cell.Unit.name}");
 		}
 		SwapSelectedUnit(null);
 		SetMoveMode();

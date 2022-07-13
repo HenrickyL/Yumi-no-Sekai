@@ -1,3 +1,3 @@
 public enum UnitActionsEnum {
-    Move,Attack
+    Move,Attack, Rotate
 }
