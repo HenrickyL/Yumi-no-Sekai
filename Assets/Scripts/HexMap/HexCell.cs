@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.IO;
 using System.Collections.Generic;
+using System;
 
 public class HexCell : MonoBehaviour {
 
@@ -10,6 +11,7 @@ public class HexCell : MonoBehaviour {
 	public RectTransform uiRect;
 
 	public HexGridChunk chunk;
+	public bool check = false;
 
 	public int Elevation {
 		get {
@@ -525,4 +527,49 @@ public class HexCell : MonoBehaviour {
 		highlight.color = color;
 		highlight.enabled = true;
 	}
+
+	public List<HexCell> GetNeighborPerNivel(int nivel = 1, Func<HexCell,bool> test = null){
+		var res = new List<HexCell>();
+		if(nivel ==0) return res;
+		var queue = new Queue<HexCell>();
+		var useds = new Queue<HexCell>();
+		queue.Enqueue(this);
+		this.check = true;
+		AddRoundCellToQueue(ref queue,ref useds,this,test);
+		nivel--;
+		while(queue.Count>0 && nivel>0){
+			var currentCell = queue.Dequeue();
+			int count = queue.Count;
+			AddRoundCellToQueue(ref queue, ref useds, currentCell, test);
+			while(count>0){
+				var cell = queue.Dequeue();
+				AddRoundCellToQueue(ref queue, ref useds, cell, test);
+				count--;
+			}
+			nivel--;
+		}
+
+		//todos
+		while(useds.Count>0){
+			var currentCell = useds.Dequeue();
+			res.Add(currentCell);
+			currentCell.check = false;
+		}
+		
+
+		return res;
+	}
+
+	void AddRoundCellToQueue(ref Queue<HexCell> queue, ref Queue<HexCell> aux,
+	 HexCell cell,Func<HexCell,bool> test = null){
+		for(var dir = HexDirection.NE; dir <= HexDirection.NW; dir++){
+			var c = cell.GetNeighbor(dir);
+			if(c && !c.check && test(c)){
+				c.check =true;
+				queue.Enqueue(c);
+				aux.Enqueue(c);
+			}
+		}
+	}
+
 }

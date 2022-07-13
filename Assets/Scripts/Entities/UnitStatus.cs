@@ -16,7 +16,7 @@ public struct UnitStatus {
         MaxUlt = 5;
         Range = 1;
         Defense = 5;
-        Speed = 2;
+        Speed = 1;
         Strength = 75;
     }
 

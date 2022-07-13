@@ -15,13 +15,7 @@ public class HexUnit : MonoBehaviour {
 	}
 	public List<HexCell> MovePath { 
 		get{
-			var response = new List<HexCell>();
-			for(var  i = HexDirection.NE; i <= HexDirection.NW ; i++){
-				var cell = Location.GetNeighbor(i);
-				if(this.IsValidDestination(cell)){
-					response.Add(cell);
-				}
-			}
+			var response = location.GetNeighborPerNivel(status.Speed, c=>IsValidDestination(c));
 			return response;
 		} 
 	}
