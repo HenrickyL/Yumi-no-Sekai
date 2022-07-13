@@ -21,13 +21,7 @@ public class HexUnit : MonoBehaviour {
 	}
 	public List<HexCell> AttackPath { 
 		get{
-			var response = new List<HexCell>(){
-				location.GetNeighbor(HexDirection.W),
-				location.GetNeighbor(HexDirection.NW),
-				location.GetNeighbor(HexDirection.NE),
-				location.GetNeighbor(HexDirection.E)
-			};
-			
+			var response = location.GetTriangleByDirection(HexDirection.NW,status.Range,c=>IsValidCellAttack(c,status.Range));
 			return response;
 		} 
 	}
@@ -44,11 +38,9 @@ public class HexUnit : MonoBehaviour {
 				oldTargets = targets;
 				targets = null;
 			}
-			else if(value.Where(u => AttackPath.Contains(u.Location)).Any()){
+			else{
 				targets = value;
 				oldTargets = targets;
-			}else{
-				targets = oldTargets;
 			}
 		}
 	}
@@ -119,6 +111,10 @@ public class HexUnit : MonoBehaviour {
 	public bool IsValidDestination (HexCell cell) {
 		return !cell.IsUnderwater && !cell.Unit
 				&& ( location.Elevation-1 <= cell.Elevation &&  cell.Elevation <= location.Elevation+1 );
+	}
+	public bool IsValidCellAttack (HexCell cell, int range=1) {
+		return !cell.IsUnderwater
+				&& ( location.Elevation-range <= cell.Elevation &&  cell.Elevation < location.Elevation+range );
 	}
 
 	public void Travel (List<HexCell> path) {
@@ -234,8 +230,8 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	public void BasicAttackTargets(){
-		if(targets.Any()){
-			foreach(var t in targets){
+		if(Targets !=null && Targets.Any()){
+			foreach(var t in Targets){
 				t.TakeDamage(CalcDamageNormalAttack(this));
 			}
 		}

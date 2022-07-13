@@ -130,7 +130,10 @@ public class HexGrid : MonoBehaviour {
 		HexCoordinates coordinates = HexCoordinates.FromPosition(position);
 		int index =
 			coordinates.X + coordinates.Z * cellCountX + coordinates.Z / 2;
-		return cells[index];
+		if(index>=0 && index< cells.Length){
+			return cells[index];
+		}
+		return null;
 	}
 
 	public HexCell GetCell (HexCoordinates coordinates) {

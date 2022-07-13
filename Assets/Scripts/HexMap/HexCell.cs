@@ -266,7 +266,8 @@ public class HexCell : MonoBehaviour {
 	bool[] roads;
 
 	public HexCell GetNeighbor (HexDirection direction) {
-		return neighbors[(int)direction];
+		int d = (int)direction % 6;
+		return neighbors[(int)d];
 	}
 	public List<HexCell> GetNeighbors(){
 		var result =  new List<HexCell>();
@@ -555,8 +556,7 @@ public class HexCell : MonoBehaviour {
 			res.Add(currentCell);
 			currentCell.check = false;
 		}
-		
-
+		this.check=false;
 		return res;
 	}
 
@@ -572,4 +572,43 @@ public class HexCell : MonoBehaviour {
 		}
 	}
 
+
+	public List<HexCell> GetTriangleByDirection(HexDirection direction, int nivel=1, Func<HexCell,bool> test = null){
+		var response = new List<HexCell>();
+		if(nivel<=0){
+			return response;
+		}
+		HexDirection nextDirection = direction+2;
+		var currentCell = this.GetNeighbor(direction);
+		int count=1;
+		for(int i=0; i<=nivel; i++){
+			response.Add(currentCell);
+			if(currentCell && test(currentCell)){
+				var c= currentCell.GetNeighbor(nextDirection);
+				for(int j=0; j<count;j++){
+					if(c && test(c)){
+						response.Add(c);
+						c=c.GetNeighbor(nextDirection);
+					}else{
+						break;
+					}
+				}
+				count++;
+				currentCell = currentCell.GetNeighbor(direction);
+			}else{
+				break;
+			}
+		}
+		
+		return response;
+	}
+
+	public List<HexCell> GetFrontDirection(){
+		return new List<HexCell>(){
+				this.GetNeighbor(HexDirection.W),
+				this.GetNeighbor(HexDirection.NW),
+				this.GetNeighbor(HexDirection.NE),
+				this.GetNeighbor(HexDirection.E)
+			};
+	}
 }
