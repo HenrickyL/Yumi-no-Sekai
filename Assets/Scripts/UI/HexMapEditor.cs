@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class HexMapEditor : MonoBehaviour {
 
+	[SerializeField]
 	public HexGrid hexGrid;
 
 	public Material terrainMaterial;

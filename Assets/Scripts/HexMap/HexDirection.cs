@@ -3,7 +3,6 @@
 }
 
 public static class HexDirectionExtensions {
-
 	public static HexDirection Opposite (this HexDirection direction) {
 		return (int)direction < 3 ? (direction + 3) : (direction - 3);
 	}
@@ -24,5 +23,11 @@ public static class HexDirectionExtensions {
 	public static HexDirection Next2 (this HexDirection direction) {
 		direction += 2;
 		return direction <= HexDirection.NW ? direction : (direction - 6);
+	}
+	public static float ToDegrees (this HexDirection direction) {
+		return ((int)direction+1)*60f;
+	}
+	public static HexDirection ToHexDirection (this float degrees) {
+		return (HexDirection)(degrees/60f);
 	}
 }
