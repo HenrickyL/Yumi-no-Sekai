@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
+using System.Collections.Generic;
 
 public class HexCell : MonoBehaviour {
 
@@ -264,6 +265,13 @@ public class HexCell : MonoBehaviour {
 
 	public HexCell GetNeighbor (HexDirection direction) {
 		return neighbors[(int)direction];
+	}
+	public List<HexCell> GetNeighbors(){
+		var result =  new List<HexCell>();
+		for(int i=0; i<=(int)HexDirection.NW;i++){
+			result.Add(GetNeighbor((HexDirection)i));
+		}
+		return result;
 	}
 
 	public void SetNeighbor (HexDirection direction, HexCell cell) {

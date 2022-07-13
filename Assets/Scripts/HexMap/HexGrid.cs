@@ -272,7 +272,11 @@ public class HexGrid : MonoBehaviour {
 		}
 		currentPathFrom = currentPathTo = null;
 	}
+	void setPathMovable(List<HexCell> cells, Color color){
 
+	}
+
+	
 	void ShowPath (int speed) {
 		if (currentPathExists) {
 			HexCell current = currentPathTo;

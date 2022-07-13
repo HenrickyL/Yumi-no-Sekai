@@ -16,7 +16,7 @@ public class HexMapEditor : MonoBehaviour {
 
 	int activeUrbanLevel, activeFarmLevel, activePlantLevel, activeSpecialIndex;
 
-	int activeTerrainTypeIndex;
+	int activeTerrainTypeIndex = -1;
 
 	int brushSize;
 
@@ -114,9 +114,7 @@ public class HexMapEditor : MonoBehaviour {
 		walledMode = (OptionalToggle)mode;
 	}
 
-	public void SetEditMode (bool toggle) {
-		enabled = toggle;
-	}
+	
 
 	public void ShowGrid (bool visible) {
 		if (visible) {
@@ -129,7 +127,6 @@ public class HexMapEditor : MonoBehaviour {
 
 	void Awake () {
 		terrainMaterial.DisableKeyword("GRID_ON");
-		SetEditMode(false);
 	}
 
 	void Update () {

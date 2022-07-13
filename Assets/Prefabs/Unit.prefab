@@ -142,6 +142,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StatusBar
       objectReference: {fileID: 0}
+    - target: {fileID: 3137468939480479910, guid: 3fb4a0df9faae9f4695ebc3ea2f2e983, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4034656138135385473, guid: 3fb4a0df9faae9f4695ebc3ea2f2e983, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

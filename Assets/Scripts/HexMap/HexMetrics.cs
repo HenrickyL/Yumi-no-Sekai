@@ -58,6 +58,7 @@ public static class HexMetrics {
 	static HexHash[] hashGrid;
 
 	static Vector3[] corners = {
+		// pointy side up or flat side up
 		new Vector3(0f, 0f, outerRadius),
 		new Vector3(innerRadius, 0f, 0.5f * outerRadius),
 		new Vector3(innerRadius, 0f, -0.5f * outerRadius),
@@ -65,6 +66,15 @@ public static class HexMetrics {
 		new Vector3(-innerRadius, 0f, -0.5f * outerRadius),
 		new Vector3(-innerRadius, 0f, 0.5f * outerRadius),
 		new Vector3(0f, 0f, outerRadius)
+
+		//put a corner at the top
+		// new Vector3(-outerRadius/2, 0f, innerRadius),
+		// new Vector3(outerRadius/2, 0f, innerRadius),
+		// new Vector3(outerRadius, 0f, 0f),
+		// new Vector3(outerRadius/2, 0f, -innerRadius),
+		// new Vector3(-outerRadius/2, 0f, -innerRadius),
+		// new Vector3(-outerRadius,0f, 0f),
+		// new Vector3(-outerRadius/2, 0f, innerRadius),
 	};
 
 	static float[][] featureThresholds = {

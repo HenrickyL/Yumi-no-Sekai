@@ -36,7 +36,7 @@
 		}
 
 		float4 GetTerrainColor (Input IN, int index) {
-			float3 uvw = float3(IN.worldPos.xz * 0.3, IN.terrain[index]);
+			float3 uvw = float3(IN.worldPos.xz * 0.15, IN.terrain[index]);
 			float4 c = UNITY_SAMPLE_TEX2DARRAY(_MainTex, uvw);
 			return c * IN.color[index];
 		}
