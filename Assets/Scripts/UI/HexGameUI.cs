@@ -1,25 +1,29 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
 public class HexGameUI : MonoBehaviour {
 
 	public HexGrid grid;
-
+	float waitTime = 1f;
 	HexCell currentCell, hoverCell, previosCurrentCell, destinationCell;
 	private Color colorHover = new Color(0,0,0,0.15f),
 		 colorSelectedUnity = new Color(0,0,1,0.3f),
 		 colorMove = new  Color(0.98f,0.83f,0.29f,0.5f),
 		 colorMoveHovered = Color.white,
+		 colorSelected = Color.white,
 		 colorAttack = new Color(1,0,0,0.5f),
 		 colorAttackHovered = Color.red,
 		 colorSelectedUnityHevered = Color.blue;
 	Color colorActiveAction, colorActiveActionHovered;
 	private List<Color> actionsColors, actionColorHovered;
-	
+	public bool IsAttackMode { get{return unitActionType == UnitActionsEnum.Attack;} }
+	public bool IsMoveMode { get{return unitActionType == UnitActionsEnum.Move;} }
 	HexUnit selectedUnit, previosSelected;
-	bool isTravler = false;
-	UnitActionsEnum unitAction= UnitActionsEnum.Move;
+	bool inAction = false;
+	UnitActionsEnum unitActionType= UnitActionsEnum.Move;
 	
 	public void SetEditMode (bool toggle) {
 		enabled = !toggle;
@@ -28,7 +32,7 @@ public class HexGameUI : MonoBehaviour {
 	}
 
 	void SetActionMode(int action){
-		unitAction = (UnitActionsEnum)action;
+		unitActionType = (UnitActionsEnum)action;
 	}
 
 	private void OnEnable() {
@@ -49,21 +53,27 @@ public class HexGameUI : MonoBehaviour {
 				if(!selectedUnit){
 					DoSelection();
 				}else{
-					DoMove(currentCell);
+					if(IsMoveMode){
+						DoMove(currentCell);
+					}else if(IsAttackMode){
+						DoAttack(currentCell);
+					}
 				}
 			}
 			else if(Input.GetKeyDown(KeyCode.LeftShift)){
 				if(Input.GetKey(KeyCode.LeftShift)){
 					DoPathfinding(currentCell);
-				}else if(isTravler){
+				}else if(inAction){
 					grid.ClearPath();
-					isTravler = false;
+					inAction = false;
 				}
 			}
 		}
 	}
 
-	void SetHighlightHover(HexCell prev, HexCell next, Color? prevColor, Color nextColor){
+    
+
+    void SetHighlightHover(HexCell prev, HexCell next, Color? prevColor, Color nextColor){
 		if(prevColor== null || prevColor ==  Color.clear){
 			prev.DisableHighlight();
 		}else{
@@ -83,8 +93,12 @@ public class HexGameUI : MonoBehaviour {
 		if( hoverCell && previous && next && next != previous ){
 			HighlightSelectUnitAction();
 			if(selectedUnit){
-				bool prevInSelect = selectedUnit.MovePath.Contains(previous);
-				bool nextInSelect = selectedUnit.MovePath.Contains(next);
+				bool prevInSelect = IsAttackMode?
+					selectedUnit.IsValidAttackDestination(previous):
+					selectedUnit.IsValidMoveDestination(previous);
+				bool nextInSelect = IsAttackMode?
+					selectedUnit.IsValidAttackDestination(next):
+					selectedUnit.IsValidMoveDestination(next);
 				if(prevInSelect && next == selectedUnit.Location){
 					SetHighlightHover(previous,next,colorActiveAction, colorSelectedUnityHevered);
 				}
@@ -98,7 +112,9 @@ public class HexGameUI : MonoBehaviour {
 					SetHighlightHover(previous,next,colorActiveAction, colorHover);
 				}
 				else if(previous == selectedUnit.Location && nextInSelect){
-					SetHighlightHover(previous,next,colorSelectedUnity, colorActiveActionHovered);
+					SetHighlightHover(previous,next,
+						IsAttackMode? colorSelected:colorSelectedUnity,
+						IsAttackMode && next.Unit? colorAttackHovered: colorMoveHovered);
 				}
 				else{
 					SetHighlightHover(previous,next,null, colorHover);
@@ -125,8 +141,17 @@ public class HexGameUI : MonoBehaviour {
 	void HighlightSelectUnitAction(){
 		if(selectedUnit){
 			selectedUnit.Location.EnableHighlight(colorSelectedUnity);
-			foreach(var cell in selectedUnit.MovePath){
-				cell.EnableHighlight(colorActiveAction);
+			if(unitActionType == UnitActionsEnum.Move){
+				foreach(var cell in selectedUnit.MovePath){
+					cell.EnableHighlight(colorActiveAction);
+				}
+			}else{
+				foreach(var cell in selectedUnit.AttackPath){
+					if(cell.Unit)
+						cell.EnableHighlight(colorActiveActionHovered);
+					else
+						cell.EnableHighlight(colorActiveAction);
+				}
 			}
 		}
 	}
@@ -134,15 +159,21 @@ public class HexGameUI : MonoBehaviour {
 		if(unit){
 			unit.Location.DisableHighlight();
 			previosCurrentCell?.DisableHighlight();
-			foreach(var c in unit.MovePath){
-				c.DisableHighlight();
+			if(unitActionType == UnitActionsEnum.Move){
+				foreach(var c in unit.MovePath){
+					c.DisableHighlight();
+				}
+			}else{
+				foreach(var c in unit.AttackPath){
+					c.DisableHighlight();
+				}
 			}
 		}
 	}
 	
 
 	void DoPathfinding (HexCell destination) {
-		isTravler = true;
+		inAction = true;
 		grid.ClearPath();
 		if (currentCell && 
 			selectedUnit.IsValidFullDestination(currentCell) &&
@@ -166,6 +197,39 @@ public class HexGameUI : MonoBehaviour {
 			}
 			SwapSelectedUnit(null);
 			destinationCell = null;
+		}
+	}
+	private void DoAttack(HexCell cell){
+		if(cell){
+			StartCoroutine(DoAttackAsync(cell));
+		}else{
+			SwapSelectedUnit(null);
+			SetMoveMode();
+		}
+	}
+	private IEnumerator DoAttackAsync(HexCell cell)
+    {
+        if(cell && cell.Unit && selectedUnit.IsValidAttackDestination(cell)) {
+			selectedUnit.Targets = new List<HexUnit>(){
+				cell.Unit
+			};
+			HighlightAttack();
+			yield return new WaitForSeconds(waitTime);
+			selectedUnit.BasicAttackTargets();
+			Debug.Log($"{selectedUnit.name} atacou {cell.Unit.name}");
+		}
+		SwapSelectedUnit(null);
+		SetMoveMode();
+		
+    }
+	
+	void HighlightAttack(){
+		if(selectedUnit){
+			ClearPreviosSelectUnit(selectedUnit);
+			selectedUnit.Location.EnableHighlight(Color.white);
+			foreach(var unit in selectedUnit.Targets){
+				unit.Location.EnableHighlight(Color.gray);
+			}
 		}
 	}
 
@@ -195,11 +259,23 @@ public class HexGameUI : MonoBehaviour {
 	}
 
 	public void SetAttackMode(){
+		if(selectedUnit){
+			ClearPreviosSelectUnit(selectedUnit);
+		}
 		colorActiveAction = actionsColors[1];
 		colorActiveActionHovered = actionColorHovered[1];
+		unitActionType = UnitActionsEnum.Attack;
 	}
 	public void SetMoveMode(){
+		if(selectedUnit){
+			ClearPreviosSelectUnit(selectedUnit);
+		}
 		colorActiveAction = actionsColors[0];
 		colorActiveActionHovered = actionColorHovered[0];
+		unitActionType = UnitActionsEnum.Move;
 	}
+
+	
+
+	
 }

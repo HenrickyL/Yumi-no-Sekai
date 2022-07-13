@@ -5,21 +5,19 @@ public struct UnitStatus {
     public int MaxUlt { get; set; }
     public int Range { get; set; }
     public int Defense { get; set; }
-    public int Displacement { get; set; }
+    public int Speed { get; set; }
     public int Strength { get; set; }
-    public int Ability { get; set; }
 
 
     public void Default(){
-        MaxHp = 500;
         HP = 450;
+        MaxHp = 500;
         Ult = 4;
         MaxUlt = 5;
         Range = 1;
-        Defense = 10;
-        Displacement = 2;
-        Strength = 25;
-        Ability = 8;
+        Defense = 5;
+        Speed = 2;
+        Strength = 75;
     }
 
      public void SetValues(UnitStatus status){
@@ -29,8 +27,7 @@ public struct UnitStatus {
         MaxUlt = status.MaxUlt;
         Range = status.Range;
         Defense = status.Defense;
-        Displacement = status.Displacement;
+        Speed = status.Speed;
         Strength = status.Strength;
-        Ability = status.Ability;
     }
 }

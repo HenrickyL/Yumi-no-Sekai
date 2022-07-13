@@ -2,14 +2,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
-
+using System.Linq;
+using System;
 
 public class HexUnit : MonoBehaviour {
 
 	const float rotationSpeed = 180f;
 	public  float TravelSpeed {
 		get{
-			return  Status.Displacement;
+			return  status.Speed;
 		}
 	}
 	public List<HexCell> MovePath { 
@@ -26,24 +27,41 @@ public class HexUnit : MonoBehaviour {
 	}
 	public List<HexCell> AttackPath { 
 		get{
-			var response = new List<HexCell>();
-			for(int i = 0; i <= (int)HexDirection.NW ; i++){
-				var cell = Location.GetNeighbor((HexDirection)i);
-				if(this.IsValidDestination(cell)){
-					response.Add(cell);
-				}
-			}
+			var response = new List<HexCell>(){
+				location.GetNeighbor(HexDirection.W),
+				location.GetNeighbor(HexDirection.NW),
+				location.GetNeighbor(HexDirection.NE),
+				location.GetNeighbor(HexDirection.E)
+			};
+			
 			return response;
 		} 
 	}
+	List<HexUnit> targets;
+	List<HexUnit> oldTargets;
 
-	StatusBar statusBar;
-	UnitStatus status;
-	public UnitStatus Status { get{
-		return status;
-	} set{
-		status.SetValues(value);
-	}}
+	public List<HexUnit> OldTargets { get{return oldTargets;} }
+	public List<HexUnit> Targets {
+		get {
+			return targets;
+		}
+		set{
+			if(value == null){
+				oldTargets = targets;
+				targets = null;
+			}
+			else if(value.Where(u => AttackPath.Contains(u.Location)).Any()){
+				targets = value;
+				oldTargets = targets;
+			}else{
+				targets = oldTargets;
+			}
+		}
+	}
+
+	StatusBar _statusBar;
+	UnitStatus status= new UnitStatus();
+	
 	public static HexUnit unitPrefab;
 	private int speed=1;
 	public int Speed { get{return speed;} }
@@ -88,10 +106,13 @@ public class HexUnit : MonoBehaviour {
 
 
 	private void Awake() {
-		statusBar = gameObject.GetComponentInChildren<StatusBar>();
-		status = new UnitStatus();
+		_statusBar = gameObject.GetComponentInChildren<StatusBar>();
 		status.Default();
-		statusBar.SetStatus(status);
+		RefreshStatusBar();
+	}
+
+	private void RefreshStatusBar(){
+		_statusBar.SetStatus(status);
 	}
 
 	public void ValidateLocation () {
@@ -193,26 +214,46 @@ public class HexUnit : MonoBehaviour {
 		if (location) {
 			transform.localPosition = location.Position;
 		}
-	}
-	void OnSelect(){
-		
+		RefreshStatusBar();
 	}
 	private void LateUpdate() {
 		var cam = Camera.main.transform.transform.forward;
 		var position = this.transform.position;
 		var adjust = new Vector3(position.x+cam.x,position.y,position.z+cam.z);
 		transform.LookAt( adjust);
+		RefreshStatusBar();
 	}
 
 	public bool IsValidMoveDestination(HexCell cell){
-		var res =MovePath.Contains(cell);
-		Debug.Log(res);
-		return res;
+		return MovePath.Contains(cell);
+	}
+	public bool IsValidAttackDestination(HexCell cell){
+		return AttackPath.Contains(cell);
+	}
+	public bool IsOldTarget(HexUnit unit){
+		return AttackPath.Contains(unit.Location);
 	}
 
 	public void ShakeUnit(){
 		Vector3 position = this.transform.position;
 		//https://forum.unity.com/threads/shake-an-object-from-script.138382/
+	}
+
+	public void BasicAttackTargets(){
+		if(targets.Any()){
+			foreach(var t in targets){
+				t.TakeDamage(CalcDamageNormalAttack(this));
+			}
+		}
+	}
+
+	float CalcDamageNormalAttack(HexUnit unit){
+		return status.Strength*(1-status.Defense/100);
+	}
+
+	public void TakeDamage(float value){
+		this.status.HP = (int)Math.Round(status.HP - value);
+		RefreshStatusBar();
 	}
 
 	

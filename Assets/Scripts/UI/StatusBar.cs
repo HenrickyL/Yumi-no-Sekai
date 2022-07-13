@@ -8,16 +8,9 @@ public class StatusBar : MonoBehaviour
     public Slider ULTSlider;
     public Text hpText;
 
-    public void SetHealth(int health){
-        if(health>0){
-            HPSlider.value = health;
-            UpdateHP();
-        }
-    }
-
     public void SetStatus(UnitStatus status){
-        HPSlider.maxValue = status.MaxHp;
         HPSlider.value = status.HP;
+        HPSlider.maxValue = status.MaxHp;
         ULTSlider.maxValue = status.MaxUlt;
         ULTSlider.value = status.Ult;
         Refresh();
@@ -27,7 +20,12 @@ public class StatusBar : MonoBehaviour
             ULTSlider.value = value;
             Refresh();
         }
-        
+    }
+    public void SetHP(int value){
+        if(value>0){
+            HPSlider.value = value;
+            Refresh();
+        }
     }
     public void SetMaxHealth(int value){
         HPSlider.maxValue = value;
@@ -43,7 +41,7 @@ public class StatusBar : MonoBehaviour
     private void UpdateHP(){
         hpText.text =  string.Format("{0}/{1}",HPSlider.value,HPSlider.maxValue);
     } 
-
+    
     void Refresh(){
         UpdateHP();
     }
