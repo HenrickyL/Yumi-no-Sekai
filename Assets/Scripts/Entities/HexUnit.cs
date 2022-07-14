@@ -314,9 +314,9 @@ public class HexUnit : MonoBehaviour {
 					var way = path.Where(x=>MovePath.Contains(x)).ToList();
 					if(way.Any()){
 						Travel(way);
+						grid.ClearPath();
 					}else{
-
-						location.EnableHighlight(Color.green);
+						location.EnableHighlight(Color.black);
 					}
 				}
 			}
@@ -337,6 +337,44 @@ public class HexUnit : MonoBehaviour {
 				(nearLL,x)=>(nearLL == null || 
 					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,nearLL.transform.position) )
 					&& x.status.HP < nearLL.status.HP ? x : nearLL);
+	}
+
+	public void ClearHighlightMove(){
+		Location.DisableHighlight();
+		foreach(var c in MovePath){
+			c.DisableHighlight();
+		}
+	}
+	public void ClearHighlightAttack(){
+		Location.DisableHighlight();
+		foreach(var c in MovePath){
+			c.DisableHighlight();
+		}
+	}
+
+	public void EnableHighlightAttack(Color color){
+		Location.EnableHighlight(color);
+		foreach(var c in AttackPath){
+			c.EnableHighlight(color);
+		}
+	}
+
+	public void EnableHighlight(Color color){
+		Location.EnableHighlight(color);
+	}
+
+	public bool MoveTo(HexCell cell){
+		grid.ClearPath();
+		grid.FindPath(location,cell,(int)TravelSpeed);
+		var path = grid.GetPath();
+		if(path.Any()){
+			Travel(path);
+			grid.ClearPath();
+			return true;
+		}else{
+			grid.ClearPath();
+			return false;
+		}
 	}
 
 }
