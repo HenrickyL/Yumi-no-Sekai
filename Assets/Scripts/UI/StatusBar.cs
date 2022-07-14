@@ -6,6 +6,7 @@ public class StatusBar : MonoBehaviour
 {
     public Slider HPSlider;
     public Text hpText;
+    public bool isUnit = true;
 
     public void SetStatus(UnitStatus status){
         HPSlider.value = status.HP;

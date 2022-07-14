@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
+using UnityEngine.UI;
 
 public class HexUnit : MonoBehaviour {
 
 	public Animator animator;
 	public Transform body;
+	public RawImage perfil;
 	public HexGrid grid;
 	AnimationType animationType;
 	HexDirectionAll animationDirection;
@@ -67,7 +69,7 @@ public class HexUnit : MonoBehaviour {
     public int Speed = 2;
     public int Strength = 30;
 
-	StatusBar _statusBar;
+	public StatusBar _statusBar;
 	
 	public static HexUnit unitPrefab;
 	public HexCell Location {
@@ -110,7 +112,6 @@ public class HexUnit : MonoBehaviour {
 
 
 	private void OnEnable() {
-		_statusBar = gameObject.GetComponentInChildren<StatusBar>();
 		RefreshStatusBar();
 		animationType = AnimationType.Idle;
 		animationDirection = HexDirectionAll.N;
@@ -234,8 +235,8 @@ public class HexUnit : MonoBehaviour {
 		SwapAnimationType(AnimationType.Die);
 		live = false;
 		grid.Units.Remove(this);
-		this.enabled = false;
 		Destroy(_statusBar);
+		this.enabled = false;
 
 	}
 	

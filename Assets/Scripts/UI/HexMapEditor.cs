@@ -6,7 +6,6 @@ public class HexMapEditor : MonoBehaviour {
 
 	[SerializeField]
 	public HexGrid hexGrid;
-
 	public Material terrainMaterial;
 	public Texture2D[] textures;
 	public RawImage imageTerrain;
