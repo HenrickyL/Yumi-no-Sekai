@@ -35,6 +35,7 @@ public class HexGrid : MonoBehaviour {
 	bool currentPathExists;
 
 	List<HexUnit> units = new List<HexUnit>();
+	public List<HexUnit> Units { get{return units;} }
 
 	void Awake () {
 		HexMetrics.noiseSource = noiseSource;
@@ -45,6 +46,7 @@ public class HexGrid : MonoBehaviour {
 
 	public void AddUnit (HexUnit unit, HexCell location, float orientation) {
 		units.Add(unit);
+		unit.grid = this;
 		unit.transform.SetParent(transform, false);
 		unit.Location = location;
 		unit.Orientation = orientation;
@@ -130,7 +132,10 @@ public class HexGrid : MonoBehaviour {
 		HexCoordinates coordinates = HexCoordinates.FromPosition(position);
 		int index =
 			coordinates.X + coordinates.Z * cellCountX + coordinates.Z / 2;
-		return cells[index];
+		if(index>=0 && index< cells.Length){
+			return cells[index];
+		}
+		return null;
 	}
 
 	public HexCell GetCell (HexCoordinates coordinates) {

@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -56,17 +56,22 @@ public class HexGameUI : MonoBehaviour {
 					if(IsMoveMode){
 						DoMove(currentCell);
 					}else if(IsAttackMode){
-						DoAttack(currentCell);
+						DoNormalAttack(currentCell);
 					}
 				}
 			}
-			else if(Input.GetKeyDown(KeyCode.LeftShift)){
-				if(Input.GetKey(KeyCode.LeftShift)){
-					DoPathfinding(currentCell);
-				}else if(inAction){
-					grid.ClearPath();
-					inAction = false;
-				}
+			else if(Input.GetKeyUp(KeyCode.Space) && selectedUnit){
+				DoAreaAttack();
+			}
+			else if(Input.GetKey(KeyCode.LeftShift)){
+				// DoPathfinding();
+					if(!selectedUnit)
+						return;
+					selectedUnit.Enemies = grid.Units;
+					selectedUnit.AutomaticTraverEnemy();
+			}else if(inAction){
+				grid.ClearPath();
+				inAction = false;
 			}
 		}
 	}
@@ -175,11 +180,21 @@ public class HexGameUI : MonoBehaviour {
 	void DoPathfinding (HexCell destination) {
 		inAction = true;
 		grid.ClearPath();
-		if (currentCell && 
-			selectedUnit.IsValidFullDestination(currentCell) &&
-			selectedUnit.IsValidMoveDestination(currentCell)) 
+		if (currentCell && selectedUnit &&
+			selectedUnit.IsValidFullDestination(destination) &&
+			selectedUnit.IsValidMoveDestination(destination)) 
 		{
-			grid.FindPath(selectedUnit.Location, destination, 5*selectedUnit.Speed);
+			grid.FindPath(selectedUnit.Location, destination, 5*selectedUnit.Status.Speed+1);
+		}
+		else {
+			grid.ClearPath();
+		}
+	}
+	void DoPathfinding () {
+		grid.ClearPath();
+		if (currentCell) 
+		{
+			grid.FindPath(selectedUnit.Location, currentCell, 5*selectedUnit.Status.Speed+1);
 		}
 		else {
 			grid.ClearPath();
@@ -199,15 +214,16 @@ public class HexGameUI : MonoBehaviour {
 			destinationCell = null;
 		}
 	}
-	private void DoAttack(HexCell cell){
+	private void DoNormalAttack(HexCell cell){
 		if(cell){
-			StartCoroutine(DoAttackAsync(cell));
+			StartCoroutine(DoNormalAttackAsync(cell));
 		}else{
 			SwapSelectedUnit(null);
 			SetMoveMode();
 		}
 	}
-	private IEnumerator DoAttackAsync(HexCell cell)
+	
+	private IEnumerator DoNormalAttackAsync(HexCell cell)
     {
         if(cell && cell.Unit && selectedUnit.IsValidAttackDestination(cell)) {
 			selectedUnit.Targets = new List<HexUnit>(){
@@ -216,10 +232,26 @@ public class HexGameUI : MonoBehaviour {
 			HighlightAttack();
 			yield return new WaitForSeconds(waitTime);
 			selectedUnit.BasicAttackTargets();
-			Debug.Log($"{selectedUnit.name} atacou {cell.Unit.name}");
 		}
 		SwapSelectedUnit(null);
 		SetMoveMode();
+		
+    }
+	private void DoAreaAttack(){
+		StartCoroutine(DoAreaAttackAsync());
+		SwapSelectedUnit(null);
+		SetMoveMode();
+	}
+	private IEnumerator DoAreaAttackAsync()
+    {
+		if(selectedUnit){
+			selectedUnit.Targets = selectedUnit.AttackPath.Where(c=>c.Unit!= null).Select(c=>c.Unit).ToList();
+			HighlightAttack();
+			yield return new WaitForSeconds(waitTime);
+			selectedUnit.BasicAttackTargets();
+			SwapSelectedUnit(null);
+			SetMoveMode();
+		}
 		
     }
 	
@@ -227,6 +259,9 @@ public class HexGameUI : MonoBehaviour {
 		if(selectedUnit){
 			ClearPreviosSelectUnit(selectedUnit);
 			selectedUnit.Location.EnableHighlight(Color.white);
+			foreach(var cell in selectedUnit.AttackPath){
+				cell.EnableHighlight(colorAttack);
+			}
 			foreach(var unit in selectedUnit.Targets){
 				unit.Location.EnableHighlight(Color.gray);
 			}

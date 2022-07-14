@@ -7,65 +7,63 @@ using System;
 
 public class HexUnit : MonoBehaviour {
 
+	public Animator animator;
+	public Transform body;
+	public HexGrid grid;
+	AnimationType animationType;
+	HexDirectionAll animationDirection;
 	const float rotationSpeed = 180f;
 	public  float TravelSpeed {
 		get{
-			return  status.Speed;
+			return  status.Speed*3;
 		}
 	}
 	public List<HexCell> MovePath { 
 		get{
-			var response = new List<HexCell>();
-			for(var  i = HexDirection.NE; i <= HexDirection.NW ; i++){
-				var cell = Location.GetNeighbor(i);
-				if(this.IsValidDestination(cell)){
-					response.Add(cell);
-				}
-			}
+			var response = location.GetNeighborPerNivel(status.Speed, c=>IsValidDestination(c));
 			return response;
 		} 
 	}
 	public List<HexCell> AttackPath { 
 		get{
-			var response = new List<HexCell>(){
-				location.GetNeighbor(HexDirection.W),
-				location.GetNeighbor(HexDirection.NW),
-				location.GetNeighbor(HexDirection.NE),
-				location.GetNeighbor(HexDirection.E)
-			};
-			
+			var response = location.GetTriangleByDirection(direction,status.Range,c=>IsValidCellAttack(c,status.Range));
 			return response;
 		} 
 	}
-	List<HexUnit> targets;
-	List<HexUnit> oldTargets;
-
-	public List<HexUnit> OldTargets { get{return oldTargets;} }
-	public List<HexUnit> Targets {
-		get {
-			return targets;
+	List<HexUnit> attackTargets;
+	List<HexUnit> oldAttackTargets;
+	HexUnit target;
+	List<HexUnit> _enemies;
+	public List<HexUnit> Enemies {
+		get{
+			return _enemies;
 		}
 		set{
-			if(value == null){
-				oldTargets = targets;
-				targets = null;
+			_enemies = value.Where(x=>x!= this).ToList();
+		}}
+
+	public List<HexUnit> OldAttackTargets { get{return oldAttackTargets;} }
+	public List<HexUnit> Targets {
+		get {
+			return attackTargets;
+		}
+		set{
+			if(value == null || !value.Any()){
+				oldAttackTargets = attackTargets;
+				attackTargets = null;
 			}
-			else if(value.Where(u => AttackPath.Contains(u.Location)).Any()){
-				targets = value;
-				oldTargets = targets;
-			}else{
-				targets = oldTargets;
+			else{
+				attackTargets = value;
+				oldAttackTargets = attackTargets;
 			}
 		}
 	}
 
 	StatusBar _statusBar;
-	UnitStatus status= new UnitStatus();
+	UnitStatus status;
+	public UnitStatus Status { get{return status;} }
 	
 	public static HexUnit unitPrefab;
-	private int speed=1;
-	public int Speed { get{return speed;} }
-
 	public HexCell Location {
 		get {
 			return location;
@@ -92,23 +90,29 @@ public class HexUnit : MonoBehaviour {
 
 	public float Orientation {
 		get {
-			return orientation;
+			return ((int)direction+1)*60f;
 		}
 		set {
-			orientation = value;
-			transform.localRotation = Quaternion.Euler(0f, value, 0f);
+			direction = (HexDirection)(value/60f);
+			transform.localRotation = Quaternion.Euler(0f, Orientation, 0f);
 		}
 	}
 
-	float orientation;
-
+	HexDirection direction;
 	List<HexCell> pathToTravel;
 
 
-	private void Awake() {
+	private void OnEnable() {
 		_statusBar = gameObject.GetComponentInChildren<StatusBar>();
+		status= new UnitStatus();
 		status.Default();
+		
 		RefreshStatusBar();
+		animationType = AnimationType.Idle;
+		animationDirection = HexDirectionAll.N;
+		if (location) {
+			transform.localPosition = location.Position;
+		}
 	}
 
 	private void RefreshStatusBar(){
@@ -120,11 +124,14 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	public bool IsValidFullDestination (HexCell cell) {
-		return !cell.IsUnderwater && !cell.Unit;
+		return cell && !cell.IsUnderwater && !cell.Unit;
 	}
 	public bool IsValidDestination (HexCell cell) {
-		return !cell.IsUnderwater && !cell.Unit
+		return  cell && !cell.IsUnderwater && !cell.Unit
 				&& ( location.Elevation-1 <= cell.Elevation &&  cell.Elevation <= location.Elevation+1 );
+	}
+	public bool IsValidCellAttack (HexCell cell, int range=1) {
+		return  cell &&( location.Elevation-range <= cell.Elevation &&  cell.Elevation < location.Elevation+range );
 	}
 
 	public void Travel (List<HexCell> path) {
@@ -132,12 +139,14 @@ public class HexUnit : MonoBehaviour {
 		pathToTravel = path;
 		StopAllCoroutines();
 		StartCoroutine(TravelPath());
+
 	}
 
 	IEnumerator TravelPath () {
 		Vector3 a, b, c = pathToTravel[0].Position;
 		transform.localPosition = c;
-		yield return LookAt(pathToTravel[1].Position);
+		SwapAnimationType(AnimationType.Walk);
+		// yield return LookAt(pathToTravel[1].Position);
 
 		float t = Time.deltaTime * TravelSpeed;
 		for (int i = 1; i < pathToTravel.Count; i++) {
@@ -166,40 +175,41 @@ public class HexUnit : MonoBehaviour {
 		}
 
 		transform.localPosition = location.Position;
-		orientation = transform.localRotation.eulerAngles.y;
+		Orientation = transform.localRotation.eulerAngles.y;
 		ListPool<HexCell>.Add(pathToTravel);
 		pathToTravel = null;
+		SwapAnimationType(AnimationType.Idle);
 	}
+	
 
-	IEnumerator LookAt (Vector3 point) {
-		point.y = transform.localPosition.y;
-		Quaternion fromRotation = transform.localRotation;
-		Quaternion toRotation =
-			Quaternion.LookRotation(point - transform.localPosition);
-		float speed = rotationSpeed / Quaternion.Angle(fromRotation, toRotation);
+	// IEnumerator LookAt (Vector3 point) {
+	// 	point.y = transform.localPosition.y;
+	// 	Quaternion fromRotation = transform.localRotation;
+	// 	Quaternion toRotation =
+	// 		Quaternion.LookRotation(point - transform.localPosition);
+	// 	float speed = rotationSpeed / Quaternion.Angle(fromRotation, toRotation);
 
-		for (
-			float t = Time.deltaTime * speed;
-			t < 1f;
-			t += Time.deltaTime * speed
-		) {
-			transform.localRotation =
-				Quaternion.Slerp(fromRotation, toRotation, t);
-			yield return null;
-		}
+	// 	for (
+	// 		float t = Time.deltaTime * speed;
+	// 		t < 1f;
+	// 		t += Time.deltaTime * speed
+	// 	) {
+	// 		transform.localRotation =
+	// 			Quaternion.Slerp(fromRotation, toRotation, t);
+	// 		yield return null;
+	// 	}
 
-		transform.LookAt(point);
-		orientation = transform.localRotation.eulerAngles.y;
-	}
+	// 	transform.LookAt(point);
+	// 	Orientation = transform.localRotation.eulerAngles.y;
+	// }
 
 	public void Die () {
-		location.Unit = null;
-		Destroy(gameObject);
+		// location.Unit = null;
+		// Destroy(gameObject);
 	}
 
 	public void Save (BinaryWriter writer) {
 		location.coordinates.Save(writer);
-		writer.Write(orientation);
 	}
 
 	public static void Load (BinaryReader reader, HexGrid grid) {
@@ -210,18 +220,19 @@ public class HexUnit : MonoBehaviour {
 		);
 	}
 
-	void OnEnable () {
-		if (location) {
-			transform.localPosition = location.Position;
-		}
+	private void LateUpdate() {
+		CamAjust();
 		RefreshStatusBar();
 	}
-	private void LateUpdate() {
-		var cam = Camera.main.transform.transform.forward;
-		var position = this.transform.position;
-		var adjust = new Vector3(position.x+cam.x,position.y,position.z+cam.z);
-		transform.LookAt( adjust);
-		RefreshStatusBar();
+
+
+    void CamAjust(){
+		
+		var cam = Camera.main.transform.position;
+		var position = transform.position;
+		var adjust = new Vector3(cam.x, position.y,cam.z);
+		body.LookAt(adjust);
+		UpdateAnimationDirection(cam);
 	}
 
 	public bool IsValidMoveDestination(HexCell cell){
@@ -240,22 +251,97 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	public void BasicAttackTargets(){
-		if(targets.Any()){
-			foreach(var t in targets){
+		if(Targets !=null && Targets.Any()){
+			foreach(var t in Targets){
 				t.TakeDamage(CalcDamageNormalAttack(this));
 			}
 		}
 	}
 
-	float CalcDamageNormalAttack(HexUnit unit){
+	protected virtual float  CalcDamageNormalAttack(HexUnit unit){
 		return status.Strength*(1-status.Defense/100);
 	}
 
-	public void TakeDamage(float value){
+	public  virtual void TakeDamage(float value){
 		this.status.HP = (int)Math.Round(status.HP - value);
 		RefreshStatusBar();
 	}
 
-	
+	void UpdateAnimationDirection(Vector3 camPos){
+		var position = transform.position;
+		var pos = new Vector2(position.x, position.z);
+		var cam = new Vector2(camPos.x, camPos.z);
+		var v1 =  pos -Vector2.up;
+		var v2 =  pos - cam;
+		float angle = Mathf.Atan2(v2.x, v2.y) * Mathf.Rad2Deg;
+		animationDirection = angle.HalfCircleToDirection();
+		SwapAnimationType(animationType);
+	}
 
+	void SwapAnimationType(AnimationType type){
+		if(type != animationType){
+			Debug.Log($"State{animationType}");
+			Debug.Log($"Idle {animator.GetBool($"Idle")} - Walk {animator.GetBool($"Walk")} - Die {animator.GetBool($"Die")} - Attack {animator.GetBool($"Attack")}");
+			animator.SetBool($"Idle",false);
+			animator.SetBool($"Walk",false);
+			animator.SetBool($"Die",false);
+			animator.SetBool($"Attack",false);
+			animationType = type;
+			animator.SetBool($"{animationType}",true);
+		}
+		animator.SetBool($"{animationType}N", 
+				animationDirection.IsFront());
+		animator.SetBool($"{animationType}S",
+				animationDirection.IsBack());
+	}
+
+	public void AutomaticTraverEnemy(){
+		if(Enemies!=null && Enemies.Any() && grid){
+			target = FindNearTarget(Enemies);
+			if(target){
+				var enemyNeighbors = target.Location.GetNeighbors();
+				target.Location.EnableHighlight(Color.cyan);
+				grid.ClearPath();
+				grid.FindPath(location,target.Location,(int)TravelSpeed);
+				var path = grid.GetPath();
+				if(path!= null && path.Any()){
+					var way = path.Where(x=>MovePath.Contains(x)).ToList();
+					if(way.Any()){
+						foreach(var c in way){
+							c.EnableHighlight(Color.black);
+						}
+					}else{
+
+						location.EnableHighlight(Color.green);
+					}
+				}
+			}
+		}
+	}
+
+	HexUnit FindNearTarget(List<HexUnit> options){
+		var position = transform.position;
+	
+		return options.Aggregate(
+				(near,x)=>(near == null || 
+					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,near.transform.position) )? x : near);
+	}
+	
+	HexUnit FindNearTargetWithLessLife(List<HexUnit> options){
+		var position = transform.position;
+		return options.Aggregate(
+				(nearLL,x)=>(nearLL == null || 
+					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,nearLL.transform.position) )
+					&& x.status.HP < nearLL.status.HP ? x : nearLL);
+	}
+
+}
+
+public static class HexUnitExtensions {
+	public static List<HexCell> GetCells (this List<HexUnit> units) {
+		return units.Select(u=> u.Location).ToList();
+	}
+	public static List<Transform> GetCellsTrasforms (this List<HexUnit> units) {
+		return units.Select(u=> u.Location.transform).ToList();
+	}
 }
