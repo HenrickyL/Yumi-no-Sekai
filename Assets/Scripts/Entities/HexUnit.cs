@@ -17,18 +17,18 @@ public class HexUnit : MonoBehaviour {
 	public bool Dead { get{return !live;}}
 	public  float TravelSpeed {
 		get{
-			return  status.Speed*3;
+			return Speed*3;
 		}
 	}
 	public List<HexCell> MovePath { 
 		get{
-			var response = location?.GetNeighborPerNivel(status.Speed, c=>IsValidDestination(c));
+			var response = location?.GetNeighborPerNivel(Speed, c=>IsValidDestination(c));
 			return response;
 		} 
 	}
 	public List<HexCell> AttackPath { 
 		get{
-			var response = location?.GetTriangleByDirection(direction,status.Range,c=>IsValidCellAttack(c,status.Range));
+			var response = location?.GetTriangleByDirection(direction,Range,c=>IsValidCellAttack(c,Range));
 			return response;
 		} 
 	}
@@ -60,10 +60,14 @@ public class HexUnit : MonoBehaviour {
 			}
 		}
 	}
+	public int HP=450;
+    public int MaxHp=500;
+    public int Range = 3;
+    public int Defense = 5;
+    public int Speed = 2;
+    public int Strength = 30;
 
 	StatusBar _statusBar;
-	public UnitStatus status;
-	public UnitStatus Status { get{return status;} }
 	
 	public static HexUnit unitPrefab;
 	public HexCell Location {
@@ -107,9 +111,6 @@ public class HexUnit : MonoBehaviour {
 
 	private void OnEnable() {
 		_statusBar = gameObject.GetComponentInChildren<StatusBar>();
-		status= new UnitStatus();
-		status.Default();
-		
 		RefreshStatusBar();
 		animationType = AnimationType.Idle;
 		animationDirection = HexDirectionAll.N;
@@ -117,13 +118,32 @@ public class HexUnit : MonoBehaviour {
 			transform.localPosition = location.Position;
 		}
 	}
+	private UnitStatus GenUnitStatus(){
+		var _status = new UnitStatus();
+		_status.HP 		=	HP ;
+		_status.MaxHp 	= 	MaxHp ;
+		_status.Range 	= 	Range ;
+		_status.Defense 	= 	Defense ;
+		_status.Speed 	= 	Speed ;
+		_status.Strength = 	Strength ;
+		return _status;
+	}
+
+	private void UpdateStatusLocal(UnitStatus status){
+		HP 		=	status.HP ;
+		MaxHp 	= 	status.MaxHp ;
+		Range 	= 	status.Range ;
+		Defense = 	status.Defense ;
+		Speed 	= 	status.Speed ;
+		Strength= 	status.Strength ;
+	}
 	public void Destroy(){
 		location.Unit = null;
 		Destroy(gameObject);
 	}
 	private void RefreshStatusBar(){
 		if(_statusBar)
-			_statusBar.SetStatus(status);
+			_statusBar.SetStatus(GenUnitStatus());
 	}
 
 	public void ValidateLocation () {
@@ -276,14 +296,14 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	protected virtual float  CalcDamageNormalAttack(HexUnit unit){
-		return status.Strength*(1-status.Defense/100);
+		return Strength*(1-Defense/100);
 	}
 	public  virtual void TakeDamage(float value){
-		this.status.HP = (int)Math.Round(status.HP - value);
+		this.HP = (int)Math.Round(HP - value);
 		RefreshStatusBar();
 	}
 	public  virtual void TakeHeal(float value){
-		this.status.HP = (int)Math.Round(status.HP + value);
+		this.HP = (int)Math.Round(HP + value);
 		RefreshStatusBar();
 	}
 
@@ -389,7 +409,7 @@ public class HexUnit : MonoBehaviour {
 		return options.Aggregate(
 				(nearLL,x)=>(nearLL == null || 
 					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,nearLL.transform.position) )
-					&& x.status.HP < nearLL.status.HP  && !x.Dead? x : nearLL);
+					&& x.HP < nearLL.HP  && !x.Dead? x : nearLL);
 	}
 
 	public void ClearHighlights(){
@@ -425,7 +445,7 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	public virtual bool DieCondition(){
-		return status.HP <= 0 && !Dead;
+		return HP <= 0 && !Dead;
 	}
 
 	public bool MoveTo(HexCell cell){
