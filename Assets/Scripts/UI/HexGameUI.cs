@@ -67,7 +67,6 @@ public class HexGameUI : MonoBehaviour {
 			}
 			else if(Input.GetKeyUp(KeyCode.Space)){
 				foreach(var u in grid.Units){
-						u.Enemies = grid.Units;	
 						u.AutomaticAggressiveMovement();	
 				}
 			}

@@ -44,13 +44,17 @@ public class HexUnit : MonoBehaviour {
 	List<HexUnit> oldAttackTargets;
 	HexUnit target;
 	List<HexUnit> _enemies;
-	public List<HexUnit> Enemies {
+	public UnitType type = UnitType.Aly;
+	private List<HexUnit> Enemies {
 		get{
-			return _enemies;
+			if(grid){
+				return grid.Units.Where(
+					x=>x!= this && !x.Dead && x.type == UnitType.Enemy
+				).ToList();
+			}
+			return new List<HexUnit>();
 		}
-		set{
-			_enemies = value.Where(x=>x!= this && !x.Dead).ToList();
-		}}
+	}
 
 	public List<HexUnit> OldAttackTargets { get{return oldAttackTargets;} }
 	public List<HexUnit> Targets {

@@ -36,6 +36,8 @@ public class HexGrid : MonoBehaviour {
 	List<HexUnit> units = new List<HexUnit>();
 	public List<HexUnit> Units { get{return units;} }
 
+
+
 	void Awake () {
 		HexMetrics.noiseSource = noiseSource;
 		HexMetrics.InitializeHashGrid(seed);

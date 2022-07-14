@@ -22,4 +22,8 @@ public class UIController : MonoBehaviour
         editor.gameObject.SetActive(true);
     }
 
+    public void doExitGame() {
+         Application.Quit();
+    }
+
 }

@@ -17,6 +17,7 @@ public class HexMapEditor : MonoBehaviour {
 	public Slider unitSlider;
 	public RawImage unitPerfil;
 	public GameObject unitObject;
+	UnitType unitType;
 
 
 	int unitIndex = -1;
@@ -156,7 +157,7 @@ public class HexMapEditor : MonoBehaviour {
 					DestroyUnit();
 				}
 				else {
-					CreateUnit();
+					CreateUnit(unitType);
 				}
 				return;
 			}
@@ -169,11 +170,13 @@ public class HexMapEditor : MonoBehaviour {
 			hexGrid.GetCell(Camera.main.ScreenPointToRay(Input.mousePosition));
 	}
 
-	void CreateUnit () {
+	void CreateUnit (UnitType type = UnitType.Aly) {
 		HexCell cell = GetCellUnderCursor();
 		if (cell && !cell.Unit && unitIndex >=0&& unitIndex < unitsPrefabs.Length) {
+			var unit = unitsPrefabs[unitIndex];
+			unit.type = type;
 			hexGrid.AddUnit(
-				Instantiate(unitsPrefabs[unitIndex]), cell, Random.Range(0f, 360f)
+				Instantiate(unit), cell, Random.Range(0f, 360f)
 			);
 		}
 	}
@@ -252,6 +255,12 @@ public class HexMapEditor : MonoBehaviour {
 		}
 	}
 
+	public void SetUnitTypeAly(){
+		unitType = UnitType.Aly;
+	}
+	public void SetUnitTypeEnemy(){
+		unitType = UnitType.Enemy;
+	}
 	void EditCell (HexCell cell) {
 		if (cell) {
 			if (activeTerrainTypeIndex >= 0) {
