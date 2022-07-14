@@ -273,7 +273,7 @@ public class HexGrid : MonoBehaviour {
 		}
 		else if (currentPathFrom) {
 			currentPathFrom.DisableHighlight();
-			currentPathTo.DisableHighlight();
+			currentPathTo?.DisableHighlight();
 		}
 		currentPathFrom = currentPathTo = null;
 	}
@@ -305,6 +305,7 @@ public class HexGrid : MonoBehaviour {
 	}
 
 	bool Search (HexCell fromCell, HexCell toCell, int speed) {
+		if(!fromCell && !toCell) return false;
 		searchFrontierPhase += 2;
 		if (searchFrontier == null) {
 			searchFrontier = new HexCellPriorityQueue();

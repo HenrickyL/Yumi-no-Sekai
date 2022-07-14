@@ -13,6 +13,8 @@ public class HexUnit : MonoBehaviour {
 	AnimationType animationType;
 	HexDirectionAll animationDirection;
 	const float rotationSpeed = 180f;
+	bool live = true;
+	public bool Dead { get{return !live;}}
 	public  float TravelSpeed {
 		get{
 			return  status.Speed*3;
@@ -20,13 +22,13 @@ public class HexUnit : MonoBehaviour {
 	}
 	public List<HexCell> MovePath { 
 		get{
-			var response = location.GetNeighborPerNivel(status.Speed, c=>IsValidDestination(c));
+			var response = location?.GetNeighborPerNivel(status.Speed, c=>IsValidDestination(c));
 			return response;
 		} 
 	}
 	public List<HexCell> AttackPath { 
 		get{
-			var response = location.GetTriangleByDirection(direction,status.Range,c=>IsValidCellAttack(c,status.Range));
+			var response = location?.GetTriangleByDirection(direction,status.Range,c=>IsValidCellAttack(c,status.Range));
 			return response;
 		} 
 	}
@@ -39,7 +41,7 @@ public class HexUnit : MonoBehaviour {
 			return _enemies;
 		}
 		set{
-			_enemies = value.Where(x=>x!= this).ToList();
+			_enemies = value.Where(x=>x!= this && !x.Dead).ToList();
 		}}
 
 	public List<HexUnit> OldAttackTargets { get{return oldAttackTargets;} }
@@ -116,7 +118,8 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	private void RefreshStatusBar(){
-		_statusBar.SetStatus(status);
+		if(_statusBar)
+			_statusBar.SetStatus(status);
 	}
 
 	public void ValidateLocation () {
@@ -135,18 +138,17 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	public void Travel (List<HexCell> path) {
+		ClearHighlights();
 		Location = path[path.Count - 1];
 		pathToTravel = path;
 		StopAllCoroutines();
 		StartCoroutine(TravelPath());
-
 	}
 
 	IEnumerator TravelPath () {
 		Vector3 a, b, c = pathToTravel[0].Position;
 		transform.localPosition = c;
 		SwapAnimationType(AnimationType.Walk);
-		// yield return LookAt(pathToTravel[1].Position);
 
 		float t = Time.deltaTime * TravelSpeed;
 		for (int i = 1; i < pathToTravel.Count; i++) {
@@ -203,10 +205,16 @@ public class HexUnit : MonoBehaviour {
 	// 	Orientation = transform.localRotation.eulerAngles.y;
 	// }
 
-	public void Die () {
-		// location.Unit = null;
-		// Destroy(gameObject);
+	public void Die() {
+		ClearHighlights();
+		SwapAnimationType(AnimationType.Die);
+		live = false;
+		grid.Units.Remove(this);
+		this.enabled = false;
+		Destroy(_statusBar);
+
 	}
+	
 
 	public void Save (BinaryWriter writer) {
 		location.coordinates.Save(writer);
@@ -221,6 +229,9 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	private void LateUpdate() {
+		if(DieCondition()){
+			Die();
+		}
 		CamAjust();
 		RefreshStatusBar();
 	}
@@ -250,20 +261,25 @@ public class HexUnit : MonoBehaviour {
 		//https://forum.unity.com/threads/shake-an-object-from-script.138382/
 	}
 
-	public void BasicAttackTargets(){
+	public virtual bool BasicAttackTargets(){
 		if(Targets !=null && Targets.Any()){
 			foreach(var t in Targets){
 				t.TakeDamage(CalcDamageNormalAttack(this));
 			}
+			return true;
 		}
+		return false;
 	}
 
 	protected virtual float  CalcDamageNormalAttack(HexUnit unit){
 		return status.Strength*(1-status.Defense/100);
 	}
-
 	public  virtual void TakeDamage(float value){
 		this.status.HP = (int)Math.Round(status.HP - value);
+		RefreshStatusBar();
+	}
+	public  virtual void TakeHeal(float value){
+		this.status.HP = (int)Math.Round(status.HP + value);
 		RefreshStatusBar();
 	}
 
@@ -280,8 +296,6 @@ public class HexUnit : MonoBehaviour {
 
 	void SwapAnimationType(AnimationType type){
 		if(type != animationType){
-			Debug.Log($"State{animationType}");
-			Debug.Log($"Idle {animator.GetBool($"Idle")} - Walk {animator.GetBool($"Walk")} - Die {animator.GetBool($"Die")} - Attack {animator.GetBool($"Attack")}");
 			animator.SetBool($"Idle",false);
 			animator.SetBool($"Walk",false);
 			animator.SetBool($"Die",false);
@@ -295,36 +309,72 @@ public class HexUnit : MonoBehaviour {
 				animationDirection.IsBack());
 	}
 
-	public void AutomaticTraverEnemy(){
+	public virtual bool AutomaticTraverToEnemy(bool indicators = false){
 		if(Enemies!=null && Enemies.Any() && grid){
 			target = FindNearTarget(Enemies);
 			if(target){
 				var enemyNeighbors = target.Location.GetNeighbors();
-				target.Location.EnableHighlight(Color.cyan);
+				var cell = target.Location.GetNeighbor( (HexDirection) new System.Random().Next(0,6));
+				Debug.Log(cell);
+				if(indicators){
+					target.Location.EnableHighlight(Color.cyan);
+				}
 				grid.ClearPath();
-				grid.FindPath(location,target.Location,(int)TravelSpeed);
+				grid.FindPath(location,cell,(int)TravelSpeed);
 				var path = grid.GetPath();
 				if(path!= null && path.Any()){
 					var way = path.Where(x=>MovePath.Contains(x)).ToList();
 					if(way.Any()){
-						foreach(var c in way){
-							c.EnableHighlight(Color.black);
+						Travel(way);
+						if(!indicators){
+							grid.ClearPath();
 						}
+						return true;
 					}else{
-
-						location.EnableHighlight(Color.green);
+						location.EnableHighlight(Color.black);
 					}
 				}
 			}
 		}
+		return false;
 	}
 
+	public virtual bool AutomaticAttackNearEnemy(){
+		if(Enemies!=null && Enemies.Any() && grid){
+			target = FindNearTargetWithLessLife(Enemies);
+			if(target){
+				var isAttackable = AttackPath.Contains(target.location);
+				if(!isAttackable) return false;
+				Targets = new List<HexUnit>(){target};
+				return BasicAttackTargets();
+			}
+		}
+		return false;
+	}
+	
+	public virtual bool AutomaticAggressiveMovement(){
+		bool heAttacked = false;
+		DefineTarget();
+		if(!target)
+			return false;
+		if( AttackPath!=null && AttackPath.Contains(target.location)){
+			Targets = new List<HexUnit>(){target};
+			heAttacked = BasicAttackTargets();
+		}
+		if(!heAttacked){
+			return AutomaticTraverToEnemy();
+		}else{
+			return AutomaticAttackNearEnemy();
+		}
+	}
+	void DefineTarget(){
+		target = FindNearTarget(Enemies);
+	}
 	HexUnit FindNearTarget(List<HexUnit> options){
 		var position = transform.position;
-	
-		return options.Aggregate(
+		return options?.Aggregate(
 				(near,x)=>(near == null || 
-					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,near.transform.position) )? x : near);
+					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,near.transform.position) && !x.Dead)? x : near);
 	}
 	
 	HexUnit FindNearTargetWithLessLife(List<HexUnit> options){
@@ -332,7 +382,57 @@ public class HexUnit : MonoBehaviour {
 		return options.Aggregate(
 				(nearLL,x)=>(nearLL == null || 
 					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,nearLL.transform.position) )
-					&& x.status.HP < nearLL.status.HP ? x : nearLL);
+					&& x.status.HP < nearLL.status.HP  && !x.Dead? x : nearLL);
+	}
+
+	public void ClearHighlights(){
+		ClearHighlightMove();
+		ClearHighlightAttack();
+		ClearHighlight();
+	}
+	public void ClearHighlightMove(){
+		Location.DisableHighlight();
+		foreach(var c in MovePath){
+			c.DisableHighlight();
+		}
+	}
+	public void ClearHighlightAttack(){
+		Location.DisableHighlight();
+		foreach(var c in MovePath){
+			c.DisableHighlight();
+		}
+	}
+
+	public void EnableHighlightAttack(Color color){
+		Location.EnableHighlight(color);
+		foreach(var c in AttackPath){
+			c.EnableHighlight(color);
+		}
+	}
+
+	public void EnableHighlight(Color color){
+		Location.EnableHighlight(color);
+	}
+	public void ClearHighlight(){
+		Location.DisableHighlight();
+	}
+
+	public virtual bool DieCondition(){
+		return status.HP <= 0 && !Dead;
+	}
+
+	public bool MoveTo(HexCell cell){
+		grid.ClearPath();
+		grid.FindPath(location,cell,(int)TravelSpeed);
+		var path = grid.GetPath();
+		if(path.Any()){
+			Travel(path);
+			grid.ClearPath();
+			return true;
+		}else{
+			grid.ClearPath();
+			return false;
+		}
 	}
 
 }

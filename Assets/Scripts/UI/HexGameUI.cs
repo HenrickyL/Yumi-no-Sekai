@@ -63,12 +63,13 @@ public class HexGameUI : MonoBehaviour {
 			else if(Input.GetKeyUp(KeyCode.Space) && selectedUnit){
 				DoAreaAttack();
 			}
-			else if(Input.GetKey(KeyCode.LeftShift)){
+			else if(Input.GetKeyUp(KeyCode.LeftShift)){
 				// DoPathfinding();
-					if(!selectedUnit)
-						return;
-					selectedUnit.Enemies = grid.Units;
-					selectedUnit.AutomaticTraverEnemy();
+					
+					foreach(var u in grid.Units){
+						u.Enemies = grid.Units;	
+						u.AutomaticAggressiveMovement();	
+					}
 			}else if(inAction){
 				grid.ClearPath();
 				inAction = false;
