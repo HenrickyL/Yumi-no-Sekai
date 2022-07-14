@@ -13,6 +13,7 @@ public class HexUnit : MonoBehaviour {
 	AnimationType animationType;
 	HexDirectionAll animationDirection;
 	const float rotationSpeed = 180f;
+	public bool Dead { get;set;}
 	public  float TravelSpeed {
 		get{
 			return  status.Speed*3;
@@ -135,11 +136,11 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	public void Travel (List<HexCell> path) {
+		ClearHighlights();
 		Location = path[path.Count - 1];
 		pathToTravel = path;
 		StopAllCoroutines();
 		StartCoroutine(TravelPath());
-
 	}
 
 	IEnumerator TravelPath () {
@@ -250,20 +251,25 @@ public class HexUnit : MonoBehaviour {
 		//https://forum.unity.com/threads/shake-an-object-from-script.138382/
 	}
 
-	public void BasicAttackTargets(){
+	public virtual bool BasicAttackTargets(){
 		if(Targets !=null && Targets.Any()){
 			foreach(var t in Targets){
 				t.TakeDamage(CalcDamageNormalAttack(this));
 			}
+			return true;
 		}
+		return false;
 	}
 
 	protected virtual float  CalcDamageNormalAttack(HexUnit unit){
 		return status.Strength*(1-status.Defense/100);
 	}
-
 	public  virtual void TakeDamage(float value){
 		this.status.HP = (int)Math.Round(status.HP - value);
+		RefreshStatusBar();
+	}
+	public  virtual void TakeHeal(float value){
+		this.status.HP = (int)Math.Round(status.HP + value);
 		RefreshStatusBar();
 	}
 
@@ -280,8 +286,6 @@ public class HexUnit : MonoBehaviour {
 
 	void SwapAnimationType(AnimationType type){
 		if(type != animationType){
-			// Debug.Log($"State{animationType}");
-			// Debug.Log($"Idle {animator.GetBool($"Idle")} - Walk {animator.GetBool($"Walk")} - Die {animator.GetBool($"Die")} - Attack {animator.GetBool($"Attack")}");
 			animator.SetBool($"Idle",false);
 			animator.SetBool($"Walk",false);
 			animator.SetBool($"Die",false);
@@ -295,38 +299,71 @@ public class HexUnit : MonoBehaviour {
 				animationDirection.IsBack());
 	}
 
-	public void AutomaticTraverEnemy(){
+	public virtual bool AutomaticTraverToEnemy(bool indicators = false){
 		if(Enemies!=null && Enemies.Any() && grid){
 			target = FindNearTarget(Enemies);
 			var dir = transform.position - target.transform.position;
 			var direction = Vector3.Angle(dir,Vector3.back).ToHexDirection();
-			Debug.Log(direction);
 			if(target){
 				var enemyNeighbors = target.Location.GetNeighbors();
 				var cell = target.Location.GetNeighbor(direction);
 				Debug.Log(cell);
-				target.Location.EnableHighlight(Color.cyan);
+				if(indicators){
+					target.Location.EnableHighlight(Color.cyan);
+				}
 				grid.ClearPath();
 				grid.FindPath(location,cell,(int)TravelSpeed);
 				var path = grid.GetPath();
-				Debug.Log(path);
 				if(path!= null && path.Any()){
 					var way = path.Where(x=>MovePath.Contains(x)).ToList();
 					if(way.Any()){
 						Travel(way);
-						grid.ClearPath();
+						if(!indicators){
+							grid.ClearPath();
+						}
+						return true;
 					}else{
 						location.EnableHighlight(Color.black);
 					}
 				}
 			}
 		}
+		return false;
 	}
 
+	public virtual bool AutomaticAttackNearEnemy(){
+		if(Enemies!=null && Enemies.Any() && grid){
+			target = FindNearTargetWithLessLife(Enemies);
+			if(target){
+				var isAttackable = AttackPath.Contains(target.location);
+				Targets = new List<HexUnit>(){target};
+				return BasicAttackTargets();
+			}
+		}
+		return false;
+	}
+	
+	public virtual bool AutomaticAggressiveMovement(){
+		bool heAttacked = false;
+		DefineTarget();
+		if(!target)
+			return false;
+		if(this.AttackPath.Contains(target.location)){
+			Targets = new List<HexUnit>(){target};
+			heAttacked = BasicAttackTargets();
+		}
+		if(!heAttacked){
+			return AutomaticTraverToEnemy();
+		}else{
+			return AutomaticAttackNearEnemy();
+		}
+	}
+	void DefineTarget(){
+		target = FindNearTarget(Enemies);
+	}
 	HexUnit FindNearTarget(List<HexUnit> options){
 		var position = transform.position;
-	
-		return options.Aggregate(
+		return options?.Aggregate(
 				(near,x)=>(near == null || 
 					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,near.transform.position) )? x : near);
 	}
@@ -339,6 +376,11 @@ public class HexUnit : MonoBehaviour {
 					&& x.status.HP < nearLL.status.HP ? x : nearLL);
 	}
 
+	public void ClearHighlights(){
+		ClearHighlightMove();
+		ClearHighlightAttack();
+		ClearHighlight();
+	}
 	public void ClearHighlightMove(){
 		Location.DisableHighlight();
 		foreach(var c in MovePath){
@@ -361,6 +403,13 @@ public class HexUnit : MonoBehaviour {
 
 	public void EnableHighlight(Color color){
 		Location.EnableHighlight(color);
+	}
+	public void ClearHighlight(){
+		Location.DisableHighlight();
+	}
+
+	public virtual bool DeadCondition(){
+		return status.HP <= 0;
 	}
 
 	public bool MoveTo(HexCell cell){

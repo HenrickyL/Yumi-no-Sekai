@@ -67,13 +67,8 @@ public class HexGameUI : MonoBehaviour {
 				// DoPathfinding();
 					if(!selectedUnit)
 						return;
-					
-					foreach(var u in grid.Units){
-						u.Enemies = new List<HexUnit>(){selectedUnit};	
-					}
-					foreach(var u in grid.Units){
-						u.AutomaticTraverEnemy();	
-					}
+					selectedUnit.Enemies = grid.Units;	
+					selectedUnit.AutomaticAggressiveMovement();	
 			}else if(inAction){
 				grid.ClearPath();
 				inAction = false;
