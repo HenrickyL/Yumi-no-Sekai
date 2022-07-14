@@ -10,6 +10,16 @@ public class HexMapEditor : MonoBehaviour {
 	public Texture2D[] textures;
 	public RawImage imageTerrain;
 	public Text textTerrain;
+	public HexUnit[] unitsPrefabs;
+	public static HexUnit[] UnitsPrefabs;
+
+	public Text unitText; 
+	public Slider unitSlider;
+	public RawImage unitPerfil;
+	public GameObject unitObject;
+
+
+	int unitIndex = -1;
 
 	int activeElevation;
 	int activeWaterLevel;
@@ -44,6 +54,12 @@ public class HexMapEditor : MonoBehaviour {
 		}else{
 			imageTerrain.texture = null;
 			textTerrain.text = "None";
+		}
+	}
+	private void OnEnable() {
+		UnitsPrefabs = unitsPrefabs;
+		if(unitSlider){
+			unitSlider.maxValue = unitsPrefabs.Length-1;
 		}
 	}
 
@@ -155,9 +171,9 @@ public class HexMapEditor : MonoBehaviour {
 
 	void CreateUnit () {
 		HexCell cell = GetCellUnderCursor();
-		if (cell && !cell.Unit) {
+		if (cell && !cell.Unit && unitIndex >=0&& unitIndex < unitsPrefabs.Length) {
 			hexGrid.AddUnit(
-				Instantiate(HexUnit.unitPrefab), cell, Random.Range(0f, 360f)
+				Instantiate(unitsPrefabs[unitIndex]), cell, Random.Range(0f, 360f)
 			);
 		}
 	}
@@ -216,6 +232,26 @@ public class HexMapEditor : MonoBehaviour {
 		}
 	}
 	
+	public void SetUnitTypeIndex(float index){
+		if(index>=0 && index < unitsPrefabs.Length){
+			unitIndex = (int)index;
+		}else{
+			unitIndex =-1;
+		}
+		UpdateUnitUi();
+	}
+	private void UpdateUnitUi(){
+		if(unitIndex>=0 && unitIndex < unitsPrefabs.Length){
+			unitPerfil.texture = unitsPrefabs[unitIndex].perfil;
+			unitText.text = unitsPrefabs[unitIndex].Name;
+			unitObject = unitsPrefabs[unitIndex].gameObject;
+		}else{
+			unitPerfil.texture = null;
+			unitText.text = "None";
+			unitObject =null;
+		}
+	}
+
 	void EditCell (HexCell cell) {
 		if (cell) {
 			if (activeTerrainTypeIndex >= 0) {

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4421854725932508}
   - component: {fileID: 114701888605048992}
   m_Layer: 0
-  m_Name: Unit
+  m_Name: Unit Ranged
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,14 +48,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1161324388933410698}
   body: {fileID: 5916693375790465057}
-  perfil: {fileID: 2800000, guid: b9e771cceafab6d47a0189e8751f18fb, type: 3}
+  perfil: {fileID: 2800000, guid: 9a8df9619e2556a4aa8f64f986eacf31, type: 3}
   grid: {fileID: 0}
-  HP: 450
-  MaxHp: 500
+  Name: Maga
+  MaxHp: 350
   Range: 3
   Defense: 5
   Speed: 2
-  Strength: 30
+  Strength: 45
   _statusBar: {fileID: 4030458802579632403}
   attackType: 0
 --- !u!1 &186004951557299114

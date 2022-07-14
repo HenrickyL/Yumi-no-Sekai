@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-using UnityEngine.UI;
 
 public class HexUnit : MonoBehaviour {
 
@@ -14,6 +13,8 @@ public class HexUnit : MonoBehaviour {
 	public HexGrid grid;
 	AnimationType animationType;
 	HexDirectionAll animationDirection;
+	public int prefabIndex=0;
+	
 	const float rotationSpeed = 180f;
 	bool live = true;
 	public bool Dead { get{return !live;}}
@@ -24,13 +25,18 @@ public class HexUnit : MonoBehaviour {
 	}
 	public List<HexCell> MovePath { 
 		get{
-			var response = location?.GetNeighborPerNivel(Speed, c=>IsValidDestination(c));
+			var response = location?.GetAroundPerNivel(Speed, c=>IsValidDestination(c));
 			return response;
 		} 
 	}
 	public List<HexCell> AttackPath { 
 		get{
-			var response = location?.GetTriangleByDirection(direction,Range,c=>IsValidCellAttack(c,Range));
+			List<HexCell> response;
+			if(attackType == AttackType.Range){
+				response = location?.GetTriangleByDirection(direction,Range,c=>IsValidCellAttack(c,Range));
+			}else{
+				response = location?.GetAroundPerNivel(Range,c=>IsValidCellAttack(c,Range));
+			}
 			return response;
 		} 
 	}
@@ -62,7 +68,8 @@ public class HexUnit : MonoBehaviour {
 			}
 		}
 	}
-	public int HP=450;
+	public string Name;
+	public int HP { get; set; }
     public int MaxHp=500;
     public int Range = 3;
     public int Defense = 5;
@@ -71,7 +78,6 @@ public class HexUnit : MonoBehaviour {
 
 	public StatusBar _statusBar;
 	
-	public static HexUnit unitPrefab;
 	public HexCell Location {
 		get {
 			return location;
@@ -113,6 +119,7 @@ public class HexUnit : MonoBehaviour {
 
 	private void OnEnable() {
 		RefreshStatusBar();
+		HP = MaxHp;
 		animationType = AnimationType.Idle;
 		animationDirection = HexDirectionAll.N;
 		if (location) {
@@ -256,11 +263,11 @@ public class HexUnit : MonoBehaviour {
 		location.coordinates.Save(writer);
 	}
 
-	public static void Load (BinaryReader reader, HexGrid grid) {
+	public void Load (BinaryReader reader, HexGrid grid) {
 		HexCoordinates coordinates = HexCoordinates.Load(reader);
 		float orientation = reader.ReadSingle();
 		grid.AddUnit(
-			Instantiate(unitPrefab), grid.GetCell(coordinates), orientation
+			Instantiate(HexMapEditor.UnitsPrefabs[prefabIndex]), grid.GetCell(coordinates), orientation
 		);
 	}
 

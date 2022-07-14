@@ -1,3 +1,3 @@
 public enum AttackType{
-    Range, Melee
+    Range, Melee, Area
 }
