@@ -1,0 +1,1564 @@
+fileFormatVersion: 2
+guid: 8c3df65094b489445981588eed93788e
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_0
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 291
+        width: 54
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b136ee8b3ebb5347a54248959c1a7a0
+      internalID: 1455482624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 295
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc371bba348a6144a3de720946cde2b
+      internalID: 11720935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_2
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 295
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 472bdbce3491d7b41a6cf5ff5eb72718
+      internalID: 1151180919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_3
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 296
+        width: 61
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a03237837b6cb6a43b228476ad6a376f
+      internalID: 2050748224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_4
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 296
+        width: 60
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ebca7d1265f74b4aa8128e9549f4eac
+      internalID: 66961446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_5
+      rect:
+        serializedVersion: 2
+        x: 417
+        y: 296
+        width: 58
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f58406b6c6723b4899350d72213a9b9
+      internalID: 11691609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_6
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 290
+        width: 46
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 746d792666c9975468dd79326aa15a2a
+      internalID: -1630882315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_7
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 291
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8115d3f8ec32794c9cc648141c7b2ec
+      internalID: 359582857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_8
+      rect:
+        serializedVersion: 2
+        x: 639
+        y: 292
+        width: 51
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ff6d53ec7867542807cac8948f2ae2
+      internalID: -1597452398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_9
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 293
+        width: 52
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 475f310f103074f4bb0a8dcbb3db7058
+      internalID: -1078105623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_10
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 294
+        width: 50
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9af049f326b31b941b8aee3be2046453
+      internalID: 1082342364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_11
+      rect:
+        serializedVersion: 2
+        x: 859
+        y: 292
+        width: 48
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8de68cc8076ac46ab93d2391a06f18
+      internalID: -1795563860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_12
+      rect:
+        serializedVersion: 2
+        x: 930
+        y: 330
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1b96ef07ea62ec4caa3970700ed860a
+      internalID: 89751879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_13
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 330
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c74f29cfabbc01d4cab45da7dced879a
+      internalID: 334490215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_14
+      rect:
+        serializedVersion: 2
+        x: 950
+        y: 330
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 745a5cec3305db547b514fdfe038be37
+      internalID: 1719213885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_15
+      rect:
+        serializedVersion: 2
+        x: 957
+        y: 330
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f890d3fe03f3ea84796155820a8b2726
+      internalID: -1454786848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_16
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 330
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5979c60df2a92a5438ca37abe9b1a892
+      internalID: -1822979969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_17
+      rect:
+        serializedVersion: 2
+        x: 974
+        y: 327
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 860236a5aa72c0d40ae1d2d265d4b5a9
+      internalID: -1092095676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_18
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 189
+        width: 62
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db7d5659ee4b6064ebff4c8b9ff629d0
+      internalID: -446710968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_19
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 196
+        width: 64
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3d20d736e4649544bda9f421a935c7f
+      internalID: 330193152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_20
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 197
+        width: 73
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c402afcaea8aa344c949027a30f5a2d8
+      internalID: 720757085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_21
+      rect:
+        serializedVersion: 2
+        x: 262
+        y: 200
+        width: 66
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92457ecb64704cc4eac09e21e0a2d60f
+      internalID: 1370739275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_22
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 201
+        width: 66
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e2992d52790f7b40a2581a6235a7073
+      internalID: -805096316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_23
+      rect:
+        serializedVersion: 2
+        x: 431
+        y: 200
+        width: 63
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e09bc7f551576843ad34dd6a2eecc08
+      internalID: -1161975488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_24
+      rect:
+        serializedVersion: 2
+        x: 517
+        y: 191
+        width: 48
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d6484f769d1452469999d93a353e7b4
+      internalID: 589702940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_25
+      rect:
+        serializedVersion: 2
+        x: 583
+        y: 197
+        width: 56
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 660b3d319d624c04a80ffb9185ea127c
+      internalID: -2523819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_26
+      rect:
+        serializedVersion: 2
+        x: 652
+        y: 198
+        width: 56
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8228cb7963517943aa3152d58930bca
+      internalID: 1989821954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_27
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 197
+        width: 57
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0676cc1273244674ba3738f92d0a3d36
+      internalID: -584234478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_28
+      rect:
+        serializedVersion: 2
+        x: 798
+        y: 196
+        width: 61
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7405b8b40b88bc1429d05eaf899cc093
+      internalID: 578481793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_29
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 194
+        width: 52
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7556e9863fd09eb4e9eed34916842480
+      internalID: -1972412913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_30
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 233
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3382a96540c2a64459849f9e1a3027ea
+      internalID: -2086018597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_31
+      rect:
+        serializedVersion: 2
+        x: 969
+        y: 233
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9fc06d083b11e040a00aabe627c3d39
+      internalID: 430883813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_32
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 233
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b38f14e20b5c94bb8386f43b087637
+      internalID: 1534798860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_33
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 102
+        width: 58
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af0f6131c425b9f4d8e6f087ffbfdf6b
+      internalID: -1826150896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_34
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 103
+        width: 60
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc0768b2db80e04aadd1be6dfe50b4e
+      internalID: 740534469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_35
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 107
+        width: 71
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b24ed6f9eac48348864b890be1fdd3e
+      internalID: 1653835394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_36
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 105
+        width: 69
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c3baf3be28ada14a8d8aa34f87a3994
+      internalID: 655803610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_37
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 103
+        width: 68
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a86b5e5f7bc274459245d5abd4e8f80
+      internalID: 651645171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_38
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 95
+        width: 47
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c361fa94780d831479ae5af8e1487491
+      internalID: 8103206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_39
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 96
+        width: 47
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae595b8fed6a7f4595408d363ed30a2
+      internalID: 1043097155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_40
+      rect:
+        serializedVersion: 2
+        x: 569
+        y: 95
+        width: 69
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3779dac3cf4720044886fc42650dfe0e
+      internalID: -647440519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_41
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 99
+        width: 71
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3265318b48f2f0647a368eb25479f690
+      internalID: 302745733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_42
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 99
+        width: 78
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451088ce051889042ba6df6a6d779acd
+      internalID: -2044151064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_43
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 131
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f482aad956ec5746902e1bd5bd29dc9
+      internalID: -82018759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_44
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 131
+        width: 10
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf475f26f3e84eb4e967b25a5d8815eb
+      internalID: 1946823648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_45
+      rect:
+        serializedVersion: 2
+        x: 876
+        y: 131
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c577c312d035541408d8f33305268e55
+      internalID: -10985063
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_46
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 131
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d520c366abddde047a19c7697b7be430
+      internalID: -789129673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_47
+      rect:
+        serializedVersion: 2
+        x: 893
+        y: 131
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3dc754b9724c6d14cb8dbb7798173979
+      internalID: 1196898293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_48
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 128
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85be05b00dad7ec44b0d4b45fcc242dc
+      internalID: 1672379075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a240e42920ae9ff45a0fca217aaec989
+      internalID: -1984741018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_50
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 8
+        width: 64
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b69fade10a8a3b247bbb2c0bf17d9b1e
+      internalID: 1625785531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_51
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 15
+        width: 66
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9eaee7933eb4b44ab19dfc08444f7ad
+      internalID: -2043485798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_52
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 20
+        width: 49
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 462e85ed85108d740ab3a389214ffdce
+      internalID: -1358893474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_53
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 5
+        width: 50
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a9e86eb1605004a95c84c05e4a79e3
+      internalID: -922045628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_54
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 7
+        width: 48
+        height: 61
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928e10396ae2591428f520d6098851f9
+      internalID: 823029377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_55
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 7
+        width: 52
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d3a83bdfae3974aa4bf6172852bf01
+      internalID: -40886513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_56
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 15
+        width: 44
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c5c6135c31ba441ac2d22c763232e5
+      internalID: 290662266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_57
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 47
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dff880fd5c4c8ca4b8c94421a363d853
+      internalID: -120417919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_58
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 47
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e24e363fbcd18a449d79ac08ac4ce09
+      internalID: -1864387527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_59
+      rect:
+        serializedVersion: 2
+        x: 572
+        y: 47
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40c2ca2a0e8b0940bba3747e55ee35d
+      internalID: -442940651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_60
+      rect:
+        serializedVersion: 2
+        x: 584
+        y: 47
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e8b5971bc769e84487247f5538b7eb8
+      internalID: 1016694191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_61
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 31
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 264cc9818fe6fbf41be5c97c407437d0
+      internalID: 1720679467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_62
+      rect:
+        serializedVersion: 2
+        x: 565
+        y: 28
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e9e2f0e05a0cc45913de55af77f44d
+      internalID: -498497564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_63
+      rect:
+        serializedVersion: 2
+        x: 575
+        y: 31
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9b56b7feec5d654ba7c5dba4af6f328
+      internalID: 1041114585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Galion_64
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 28
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb38460af41410e47a2c1d85889c715a
+      internalID: -992879678
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: b107b15abf78ef445a8b054f1db4d105
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PC Computer - Ragnarok Online - Galion_3: 2050748224
+      PC Computer - Ragnarok Online - Galion_7: 359582857
+      PC Computer - Ragnarok Online - Galion_15: -1454786848
+      PC Computer - Ragnarok Online - Galion_11: -1795563860
+      PC Computer - Ragnarok Online - Galion_61: 1720679467
+      PC Computer - Ragnarok Online - Galion_41: 302745733
+      PC Computer - Ragnarok Online - Galion_48: 1672379075
+      PC Computer - Ragnarok Online - Galion_62: -498497564
+      PC Computer - Ragnarok Online - Galion_13: 334490215
+      PC Computer - Ragnarok Online - Galion_8: -1597452398
+      PC Computer - Ragnarok Online - Galion_50: 1625785531
+      PC Computer - Ragnarok Online - Galion_5: 11691609
+      PC Computer - Ragnarok Online - Galion_19: 330193152
+      PC Computer - Ragnarok Online - Galion_26: 1989821954
+      PC Computer - Ragnarok Online - Galion_58: -1864387527
+      PC Computer - Ragnarok Online - Galion_63: 1041114585
+      PC Computer - Ragnarok Online - Galion_59: -442940651
+      PC Computer - Ragnarok Online - Galion_60: 1016694191
+      PC Computer - Ragnarok Online - Galion_52: -1358893474
+      PC Computer - Ragnarok Online - Galion_46: -789129673
+      PC Computer - Ragnarok Online - Galion_1: 11720935
+      PC Computer - Ragnarok Online - Galion_28: 578481793
+      PC Computer - Ragnarok Online - Galion_17: -1092095676
+      PC Computer - Ragnarok Online - Galion_0: 1455482624
+      PC Computer - Ragnarok Online - Galion_51: -2043485798
+      PC Computer - Ragnarok Online - Galion_29: -1972412913
+      PC Computer - Ragnarok Online - Galion_44: 1946823648
+      PC Computer - Ragnarok Online - Galion_39: 1043097155
+      PC Computer - Ragnarok Online - Galion_16: -1822979969
+      PC Computer - Ragnarok Online - Galion_4: 66961446
+      PC Computer - Ragnarok Online - Galion_53: -922045628
+      PC Computer - Ragnarok Online - Galion_40: -647440519
+      PC Computer - Ragnarok Online - Galion_27: -584234478
+      PC Computer - Ragnarok Online - Galion_10: 1082342364
+      PC Computer - Ragnarok Online - Galion_54: 823029377
+      PC Computer - Ragnarok Online - Galion_23: -1161975488
+      PC Computer - Ragnarok Online - Galion_55: -40886513
+      PC Computer - Ragnarok Online - Galion_38: 8103206
+      PC Computer - Ragnarok Online - Galion_14: 1719213885
+      PC Computer - Ragnarok Online - Galion_35: 1653835394
+      PC Computer - Ragnarok Online - Galion_25: -2523819
+      PC Computer - Ragnarok Online - Galion_2: 1151180919
+      PC Computer - Ragnarok Online - Galion_9: -1078105623
+      PC Computer - Ragnarok Online - Galion_47: 1196898293
+      PC Computer - Ragnarok Online - Galion_37: 651645171
+      PC Computer - Ragnarok Online - Galion_21: 1370739275
+      PC Computer - Ragnarok Online - Galion_20: 720757085
+      PC Computer - Ragnarok Online - Galion_34: 740534469
+      PC Computer - Ragnarok Online - Galion_30: -2086018597
+      PC Computer - Ragnarok Online - Galion_45: -10985063
+      PC Computer - Ragnarok Online - Galion_56: 290662266
+      PC Computer - Ragnarok Online - Galion_22: -805096316
+      PC Computer - Ragnarok Online - Galion_32: 1534798860
+      PC Computer - Ragnarok Online - Galion_33: -1826150896
+      PC Computer - Ragnarok Online - Galion_49: -1984741018
+      PC Computer - Ragnarok Online - Galion_31: 430883813
+      PC Computer - Ragnarok Online - Galion_18: -446710968
+      PC Computer - Ragnarok Online - Galion_36: 655803610
+      PC Computer - Ragnarok Online - Galion_43: -82018759
+      PC Computer - Ragnarok Online - Galion_42: -2044151064
+      PC Computer - Ragnarok Online - Galion_6: -1630882315
+      PC Computer - Ragnarok Online - Galion_57: -120417919
+      PC Computer - Ragnarok Online - Galion_64: -992879678
+      PC Computer - Ragnarok Online - Galion_24: 589702940
+      PC Computer - Ragnarok Online - Galion_12: 89751879
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

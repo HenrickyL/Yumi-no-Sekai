@@ -1,0 +1,3214 @@
+fileFormatVersion: 2
+guid: 4dc25603110e29247a65f5d5961d41ec
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMasterTextureLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1990
+        width: 317
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8a3acfe8d2de546b848c2a43f4b235
+      internalID: 744337281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_1
+      rect:
+        serializedVersion: 2
+        x: 281
+        y: 1991
+        width: 188
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 524d86b4c693c2747a7ea3f9bd37af64
+      internalID: 1824197869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_2
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 1998
+        width: 192
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d3ef2f1ebda52944a8a8a432fff3685
+      internalID: -1234842771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_3
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 2001
+        width: 195
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7d55a297eb4f824884322ee1f72e239
+      internalID: 206718247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_4
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 2004
+        width: 197
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0426cfcccfa889a4ea756f65a7e14833
+      internalID: 231253952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_5
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 1994
+        width: 190
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b572ab8bd79864694c33288ee5ff61
+      internalID: 365279076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_6
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 2064
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42062be06c79a2743ab59d9dcf8777b1
+      internalID: -176731703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_7
+      rect:
+        serializedVersion: 2
+        x: 1554
+        y: 2018
+        width: 66
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa7e956908ffa894da4b5d260559d48d
+      internalID: 1570627067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_8
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 1961
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a197af4083bda41ab0a927c9b9cbcd
+      internalID: 1234614579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_9
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 1784
+        width: 203
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01402e509e945ef419f2d06eed3b7025
+      internalID: -1834054726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_10
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1782
+        width: 208
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65a5656eabdf14e4bb03d63f3be5e5c1
+      internalID: 1382990160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_11
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 1779
+        width: 202
+        height: 147
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54fccb3dedadf514498e9d49fa37010b
+      internalID: -1961489228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_12
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 1778
+        width: 204
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71d8db9a353882a4a832678d6dc9dd31
+      internalID: -957929668
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_13
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1782
+        width: 205
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f698c543322ef1840adb5ae7d93ca648
+      internalID: 895142333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_14
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 1785
+        width: 205
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35ce625431ddef84884b43da259eca0c
+      internalID: 10322302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_15
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 1552
+        width: 175
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c34472293f428542ab76cbd159e47e6
+      internalID: 1990448930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_16
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 1550
+        width: 183
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7a3db8d906c9e24fad3252e4e95255c
+      internalID: -1212363177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_17
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 1560
+        width: 189
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d8d3ca78fad7174ebcdd264ceec4860
+      internalID: -652636676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_18
+      rect:
+        serializedVersion: 2
+        x: 776
+        y: 1561
+        width: 197
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a30e0101c798abd43b59638637a3aef4
+      internalID: 473786674
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_19
+      rect:
+        serializedVersion: 2
+        x: 1026
+        y: 1561
+        width: 198
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bad18fc1a2912341aa72d51bcd19c7c
+      internalID: 865415778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_20
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 1557
+        width: 187
+        height: 151
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d836033574cb4b84594ada425cd8bd99
+      internalID: -212890398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_21
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 1564
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88f27e9282f6ee848b8d578547ee0562
+      internalID: 426782572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_22
+      rect:
+        serializedVersion: 2
+        x: 1556
+        y: 1529
+        width: 64
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 344a5b9e9c5b9b44087a7d409d66efb0
+      internalID: -1445020921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_23
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 1494
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97800f87f73af0347a9ee306fa59caf5
+      internalID: -153943522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_24
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 1345
+        width: 212
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5d82cabc8b7e4b4c8eed8408066a4ef
+      internalID: 1469314046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_25
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 1343
+        width: 207
+        height: 140
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c3ca62008950fd49aca54dda9379f71
+      internalID: 1241639433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_26
+      rect:
+        serializedVersion: 2
+        x: 526
+        y: 1345
+        width: 198
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4fdc50af2fb4744a8aba3c5b8ae59b3
+      internalID: 1236510953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_27
+      rect:
+        serializedVersion: 2
+        x: 777
+        y: 1356
+        width: 195
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f61b7802e77fee40b15a47895c3e7c9
+      internalID: -747019692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_28
+      rect:
+        serializedVersion: 2
+        x: 1020
+        y: 1349
+        width: 209
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17db92ccdc06e6247b57e049edf32a8c
+      internalID: -590186107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_29
+      rect:
+        serializedVersion: 2
+        x: 1274
+        y: 1345
+        width: 202
+        height: 134
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 161a1fe9196c8c2488c74c2153f1bdfb
+      internalID: -1867811007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_30
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 1110
+        width: 183
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 069949101b324d54084dcc49e2b59742
+      internalID: -1830604585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_31
+      rect:
+        serializedVersion: 2
+        x: 282
+        y: 1098
+        width: 186
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ac1f8f57717354a93a65030865430b
+      internalID: -956259069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_32
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 1092
+        width: 167
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af145cced54b8e046aa8a2a240d8347b
+      internalID: 1605807813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_33
+      rect:
+        serializedVersion: 2
+        x: 803
+        y: 1089
+        width: 144
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 814aa7d98138a7949b11c1f367a2e91e
+      internalID: 1306679987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_34
+      rect:
+        serializedVersion: 2
+        x: 1022
+        y: 1117
+        width: 204
+        height: 150
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d8afdf668cbd2141bc517bfd91d032c
+      internalID: 196013195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_35
+      rect:
+        serializedVersion: 2
+        x: 1279
+        y: 1124
+        width: 192
+        height: 137
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c28343b0d42e245939e8c4355a0721
+      internalID: 1127831885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_36
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 1142
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2661e84844f1e447a748d025fd537d3
+      internalID: -1732953315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_37
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 1099
+        width: 53
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cabdfcd2312829844b0f94fa4a23499f
+      internalID: 1605857743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_38
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 904
+        width: 203
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f886ce259fe9246817cab729567286
+      internalID: 1404497250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_39
+      rect:
+        serializedVersion: 2
+        x: 285
+        y: 881
+        width: 179
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 285036dca2fe0a245bdc95b6cc8ded0c
+      internalID: -1952747571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_40
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 877
+        width: 172
+        height: 190
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd46839557dbe64faaf9110a986aa71
+      internalID: -354235700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_41
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 875
+        width: 161
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c218849f095ca2f43bee16b824b4195e
+      internalID: 1573436417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_42
+      rect:
+        serializedVersion: 2
+        x: 1013
+        y: 896
+        width: 225
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38cf5b469d9446f468d3f8c801460afa
+      internalID: -1143358736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_43
+      rect:
+        serializedVersion: 2
+        x: 1595
+        y: 1038
+        width: 22
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e6200214dd309446a5e5e818b45bb6e
+      internalID: 420147772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_44
+      rect:
+        serializedVersion: 2
+        x: 1251
+        y: 908
+        width: 248
+        height: 127
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1569b9db1b27a4147a4b1e26bb283c14
+      internalID: -1099252764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_45
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 670
+        width: 183
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69ab759fb2f55544a9dfcc6e305b90e2
+      internalID: -1098079316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_46
+      rect:
+        serializedVersion: 2
+        x: 287
+        y: 678
+        width: 176
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8469d585521c2464394a5330889a357f
+      internalID: 1740204666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_47
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 679
+        width: 172
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8133bf4f285ba34cbee46f10549df52
+      internalID: 180840602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_48
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 679
+        width: 173
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82118eab7e54c2648963ef4ac49465e1
+      internalID: -913319885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_49
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 676
+        width: 173
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381fc010f420a574d92dacaf0a7a7176
+      internalID: -859627279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_50
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 674
+        width: 167
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04319149630e9004681a9169bbe49d45
+      internalID: 1850204579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_51
+      rect:
+        serializedVersion: 2
+        x: 1456
+        y: 791
+        width: 5
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa8a2bed3515c4d4fb69a50f762b1605
+      internalID: -1075772060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_52
+      rect:
+        serializedVersion: 2
+        x: 101
+        y: 564
+        width: 16
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ff9bf8d5d51b648a68cd77a5934b7d
+      internalID: 1633405481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_53
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 564
+        width: 12
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d023862b030196478bbabaa7c3e0f31
+      internalID: 1346798361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_54
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 566
+        width: 16
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe41983e6367aa4eade16fc29240529
+      internalID: 218857820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_55
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 593
+        width: 4
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45c02a74de5c7c14b978884f03e2d4f1
+      internalID: 154580998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_56
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 559
+        width: 20
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 186f55e6937e8424196f3e154826f510
+      internalID: 587400117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_57
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 464
+        width: 203
+        height: 136
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ee483d6899496245a924e561ce4b81c
+      internalID: -385601787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_58
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 463
+        width: 208
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e65baf34a6353ab49881ec724bc038f0
+      internalID: 274720181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_59
+      rect:
+        serializedVersion: 2
+        x: 1025
+        y: 463
+        width: 199
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd3092fd4f8616141aeed7519aa8f1de
+      internalID: 1894006459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_60
+      rect:
+        serializedVersion: 2
+        x: 1275
+        y: 460
+        width: 199
+        height: 146
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec42cd5e3bde90d48a7c7956edac2e96
+      internalID: 544212299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_61
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 566
+        width: 5
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd969a589bc255548a2e1fdd16bca798
+      internalID: -668777852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_62
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 567
+        width: 8
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17e4170391788f4d9c1bdabe423c9de
+      internalID: -1404980014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_63
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 564
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd85e8697ecb09a40bbf44cb99379383
+      internalID: -1072026979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_64
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 576
+        width: 4
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2067dcfbd16dc244ab8565268e5a1203
+      internalID: 114883205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_65
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 564
+        width: 6
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ec87bf6a5ff3844f8e9fff6ff264f5d
+      internalID: -1485507034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_66
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 574
+        width: 4
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6776523c56d331408e92fd2ffbcbdcb
+      internalID: -964389036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_67
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 565
+        width: 45
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d91fdbc7c07244d88d55a22818154f
+      internalID: -1917732583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_68
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 540
+        width: 4
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a927e8027b10cf478b8363bbbd164eb
+      internalID: -1143722747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_69
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 480
+        width: 36
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffab3f1045ab1e848a5fe6a25d358b49
+      internalID: 1217254114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_70
+      rect:
+        serializedVersion: 2
+        x: 70
+        y: 558
+        width: 5
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8fad67329b50c344b7a56fe3a5ac430
+      internalID: -1718590921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_71
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 500
+        width: 38
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 629773983b1eb26418d403319226503b
+      internalID: 1196310129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_72
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 505
+        width: 13
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2f6d9d2eb96c194dae112c9ea00abbb
+      internalID: -1767925661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_73
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 523
+        width: 22
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f41aadc61c0690a4caf57177ef4e96ad
+      internalID: -1537726592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_74
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 558
+        width: 7
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5061059bd95b94899efdf237e4de9d
+      internalID: -340265116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_75
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 526
+        width: 7
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e63198f57f91b04cabea2490a7024dc
+      internalID: 1262812046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_76
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 535
+        width: 4
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1ac696b91495d2409191803f51cc665
+      internalID: 502393228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_77
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 496
+        width: 13
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe97e64bbe9772d4d8255035e52e8bfd
+      internalID: 271697471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_78
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 509
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 757f8aaebdf0846498b9c6d07897f553
+      internalID: -115398494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_79
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 509
+        width: 4
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6d1f79484aef84d9030e7d3829e861
+      internalID: -455604364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_80
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 514
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5a9f987ac0d1a34fbee4d833d9cd43c
+      internalID: 1274808590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_81
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 495
+        width: 6
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a462103f2d8cf49ab748de652e3c40
+      internalID: 93166849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_82
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 486
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a88aec1dbe46ca4490dffe6ec8801f3
+      internalID: 1844333728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_83
+      rect:
+        serializedVersion: 2
+        x: 349
+        y: 507
+        width: 6
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f78fed0d1cb294e91a6573f546bcb2
+      internalID: -1087148697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_84
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 509
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6cc39f96c5a6f446aeb8bc5f10e80ac
+      internalID: -26780860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_85
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 489
+        width: 5
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d1a146b819f1744b7841116db08405
+      internalID: -2043545324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_86
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 493
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d883c38e96bc34a4ba70e117e5cc46e5
+      internalID: 1710659249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_87
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 485
+        width: 15
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2288bc9e08e7a5a439f6387dee8e7155
+      internalID: -589084029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_88
+      rect:
+        serializedVersion: 2
+        x: 397
+        y: 502
+        width: 4
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88400f84d538e074bb717a3b6e29f597
+      internalID: -902850716
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_89
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 490
+        width: 4
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef139fec4f740114ebeb7495ffaf94da
+      internalID: -1190159685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_90
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 475
+        width: 10
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 579928576b74df8479ee3aff6ae91430
+      internalID: 1803175738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_91
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 492
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e495e5a701368364ebe2ccaf1f56092f
+      internalID: -2101384927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_92
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 464
+        width: 6
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ba2437b2d2e3a2489eff35ff0c02768
+      internalID: -298235062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_93
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 474
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64db8017c5e095c49a1a834b8b847401
+      internalID: 1447968031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_94
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 481
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e41af272c3f97c14db860ca3dba8aa2c
+      internalID: -462653234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_95
+      rect:
+        serializedVersion: 2
+        x: 343
+        y: 469
+        width: 4
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53c27d7457b69a94fa17fa15f0ee7346
+      internalID: 976977040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_96
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 458
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ceaf5f87479633f4b9f78e1c730387e6
+      internalID: 1733829984
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_97
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 234
+        width: 199
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 603a4cd1d77966a45b348bf21b9b499f
+      internalID: -1812977269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_98
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 233
+        width: 142
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab61d4c5b96ef894c86d913b29d062fd
+      internalID: -384494057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_99
+      rect:
+        serializedVersion: 2
+        x: 1380
+        y: 387
+        width: 8
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5c6b50809554f342985e32339b62de3
+      internalID: 1227813134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_100
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 298
+        width: 38
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec828c4106157db4badb405f2e474d36
+      internalID: 1098057043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_101
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 297
+        width: 15
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38d8c9fb44cf97549bbc3682dbd6f4f7
+      internalID: 1955221403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_102
+      rect:
+        serializedVersion: 2
+        x: 609
+        y: 247
+        width: 35
+        height: 131
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c7615dbb2038ff48bd6b4462cba45d6
+      internalID: -1361437949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_103
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 271
+        width: 30
+        height: 97
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84f7c09e720ba4948a7b104c9993a0f7
+      internalID: -509268874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_104
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 322
+        width: 18
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97ed84a858030b14ea9892c8fe838fa2
+      internalID: 110831705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_105
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 337
+        width: 9
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7a57a02ca120d4c9b2ef95d06432f4
+      internalID: -1937055577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_106
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 328
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c6d53be757c0c04dbe0105b67bb5f7a
+      internalID: -1737403489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_107
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 334
+        width: 4
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5346dd18546f2468933ccb0977fd16
+      internalID: 501716608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_108
+      rect:
+        serializedVersion: 2
+        x: 892
+        y: 341
+        width: 5
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91b60074b955504e940467bc154a9e9
+      internalID: 995986098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_109
+      rect:
+        serializedVersion: 2
+        x: 898
+        y: 306
+        width: 17
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 325b229461fdcf94eaf9bf931177d33b
+      internalID: -492116474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_110
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 0
+        width: 274
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af89663e8b283de4cb8245ef3900e869
+      internalID: 1018268853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_111
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 305
+        width: 11
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01e12cd961886d4aa00e368b3dc2caf
+      internalID: 107020218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_112
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 291
+        width: 11
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdc619d0c8a1c014884280b936fb05ec
+      internalID: -1612073749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_113
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 288
+        width: 7
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a496a9cb3e3fb2e4ea580ccc4265bbab
+      internalID: -880532733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_114
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 290
+        width: 14
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d925e0d61d22bf2469f4d2003653893f
+      internalID: -650710043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_115
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 296
+        width: 14
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57d477ac83ccfa94c83d6244bbed6c12
+      internalID: 1120770142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_116
+      rect:
+        serializedVersion: 2
+        x: 528
+        y: 298
+        width: 7
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 821918ba4779e634da9d75927fb14976
+      internalID: -2010446310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_117
+      rect:
+        serializedVersion: 2
+        x: 541
+        y: 299
+        width: 6
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 316925f68cffc9442b48f89fc4c163f6
+      internalID: 809442369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_118
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 294
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 558a7de4c9caf424da1b2e5b128deeeb
+      internalID: -90353963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_119
+      rect:
+        serializedVersion: 2
+        x: 809
+        y: 305
+        width: 6
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2eaa8cd5b607545a7abd6687309f21
+      internalID: -1460804883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_120
+      rect:
+        serializedVersion: 2
+        x: 817
+        y: 306
+        width: 4
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abd9f62718e65f54cab5b5e5fb9b5a36
+      internalID: -1504112896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_121
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 302
+        width: 4
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bd2615d1764bd0469e769757b72b85b
+      internalID: 170451234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_122
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 307
+        width: 5
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 957e86b9c29d7b04f9fbecb1a45e4b17
+      internalID: 1509029576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_123
+      rect:
+        serializedVersion: 2
+        x: 847
+        y: 298
+        width: 11
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c5168ab469b57449973c0c8f99c994b
+      internalID: -1217002627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_124
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 254
+        width: 19
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eaf7951a35507874eba4b9e7ac14d8eb
+      internalID: 1537953209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_125
+      rect:
+        serializedVersion: 2
+        x: 891
+        y: 311
+        width: 9
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0ab3176943bbae40b053931d70c259a
+      internalID: 889053466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_126
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 294
+        width: 4
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87e59235a1f8861419a46941e48782db
+      internalID: 1938230209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_127
+      rect:
+        serializedVersion: 2
+        x: 1364
+        y: 285
+        width: 23
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edf106a7bba1da74683be23dfef160dc
+      internalID: 1789151292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_128
+      rect:
+        serializedVersion: 2
+        x: 277
+        y: 285
+        width: 9
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d12fdec5c09e2548b479461c27f566e
+      internalID: 44232449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_129
+      rect:
+        serializedVersion: 2
+        x: 461
+        y: 262
+        width: 14
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dea0e65e74a630459dcc62436f262bd
+      internalID: -2125294338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_130
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 275
+        width: 22
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ff596841880d864cab7fcb9e14e67e8
+      internalID: 1789089945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_131
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 283
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99606270694ce024db27ce8d29120517
+      internalID: 515170192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_132
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 286
+        width: 5
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a8898a2a51a3c7438b60f3ec4782924
+      internalID: -1475824585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_133
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 252
+        width: 25
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59ff2073176af6743b70bbe935a79f1b
+      internalID: 889340388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_134
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 277
+        width: 13
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc8da5e4c04ddd844bf33ec572e5f25f
+      internalID: 1586434064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_135
+      rect:
+        serializedVersion: 2
+        x: 913
+        y: 270
+        width: 9
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87f425825ac457146bbb386ad69eac29
+      internalID: -1468891890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_136
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 273
+        width: 4
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22fbb38711b72524294962c870a6c397
+      internalID: -471762914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_137
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 317
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e071415eb6220ff43925d54eb4dbbf47
+      internalID: 789538409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_138
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 72
+        width: 125
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e280a1c0a1d644b8fd4a467574bf14
+      internalID: -799763696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PC Computer - Ragnarok Online - Evil Fanatic_139
+      rect:
+        serializedVersion: 2
+        x: 1047
+        y: 55
+        width: 315
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7db742ca1f9a0a442ad3f9d6a6a0668c
+      internalID: 1351679450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0835b65b4fd7e684e81cacd67141df80
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      PC Computer - Ragnarok Online - Evil Fanatic_139: 1351679450
+      PC Computer - Ragnarok Online - Evil Fanatic_1: 1824197869
+      PC Computer - Ragnarok Online - Evil Fanatic_108: 995986098
+      PC Computer - Ragnarok Online - Evil Fanatic_58: 274720181
+      PC Computer - Ragnarok Online - Evil Fanatic_77: 271697471
+      PC Computer - Ragnarok Online - Evil Fanatic_39: -1952747571
+      PC Computer - Ragnarok Online - Evil Fanatic_100: 1098057043
+      PC Computer - Ragnarok Online - Evil Fanatic_59: 1894006459
+      PC Computer - Ragnarok Online - Evil Fanatic_78: -115398494
+      PC Computer - Ragnarok Online - Evil Fanatic_131: 515170192
+      PC Computer - Ragnarok Online - Evil Fanatic_62: -1404980014
+      PC Computer - Ragnarok Online - Evil Fanatic_21: 426782572
+      PC Computer - Ragnarok Online - Evil Fanatic_26: 1236510953
+      PC Computer - Ragnarok Online - Evil Fanatic_97: -1812977269
+      PC Computer - Ragnarok Online - Evil Fanatic_126: 1938230209
+      PC Computer - Ragnarok Online - Evil Fanatic_14: 10322302
+      PC Computer - Ragnarok Online - Evil Fanatic_34: 196013195
+      PC Computer - Ragnarok Online - Evil Fanatic_69: 1217254114
+      PC Computer - Ragnarok Online - Evil Fanatic_13: 895142333
+      PC Computer - Ragnarok Online - Evil Fanatic_103: -509268874
+      PC Computer - Ragnarok Online - Evil Fanatic_6: -176731703
+      PC Computer - Ragnarok Online - Evil Fanatic_65: -1485507034
+      PC Computer - Ragnarok Online - Evil Fanatic_132: -1475824585
+      PC Computer - Ragnarok Online - Evil Fanatic_134: 1586434064
+      PC Computer - Ragnarok Online - Evil Fanatic_111: 107020218
+      PC Computer - Ragnarok Online - Evil Fanatic_36: -1732953315
+      PC Computer - Ragnarok Online - Evil Fanatic_66: -964389036
+      PC Computer - Ragnarok Online - Evil Fanatic_79: -455604364
+      PC Computer - Ragnarok Online - Evil Fanatic_93: 1447968031
+      PC Computer - Ragnarok Online - Evil Fanatic_130: 1789089945
+      PC Computer - Ragnarok Online - Evil Fanatic_15: 1990448930
+      PC Computer - Ragnarok Online - Evil Fanatic_83: -1087148697
+      PC Computer - Ragnarok Online - Evil Fanatic_84: -26780860
+      PC Computer - Ragnarok Online - Evil Fanatic_44: -1099252764
+      PC Computer - Ragnarok Online - Evil Fanatic_49: -859627279
+      PC Computer - Ragnarok Online - Evil Fanatic_67: -1917732583
+      PC Computer - Ragnarok Online - Evil Fanatic_76: 502393228
+      PC Computer - Ragnarok Online - Evil Fanatic_3: 206718247
+      PC Computer - Ragnarok Online - Evil Fanatic_68: -1143722747
+      PC Computer - Ragnarok Online - Evil Fanatic_98: -384494057
+      PC Computer - Ragnarok Online - Evil Fanatic_55: 154580998
+      PC Computer - Ragnarok Online - Evil Fanatic_24: 1469314046
+      PC Computer - Ragnarok Online - Evil Fanatic_38: 1404497250
+      PC Computer - Ragnarok Online - Evil Fanatic_90: 1803175738
+      PC Computer - Ragnarok Online - Evil Fanatic_7: 1570627067
+      PC Computer - Ragnarok Online - Evil Fanatic_57: -385601787
+      PC Computer - Ragnarok Online - Evil Fanatic_46: 1740204666
+      PC Computer - Ragnarok Online - Evil Fanatic_60: 544212299
+      PC Computer - Ragnarok Online - Evil Fanatic_87: -589084029
+      PC Computer - Ragnarok Online - Evil Fanatic_99: 1227813134
+      PC Computer - Ragnarok Online - Evil Fanatic_122: 1509029576
+      PC Computer - Ragnarok Online - Evil Fanatic_56: 587400117
+      PC Computer - Ragnarok Online - Evil Fanatic_110: 1018268853
+      PC Computer - Ragnarok Online - Evil Fanatic_129: -2125294338
+      PC Computer - Ragnarok Online - Evil Fanatic_33: 1306679987
+      PC Computer - Ragnarok Online - Evil Fanatic_80: 1274808590
+      PC Computer - Ragnarok Online - Evil Fanatic_23: -153943522
+      PC Computer - Ragnarok Online - Evil Fanatic_43: 420147772
+      PC Computer - Ragnarok Online - Evil Fanatic_92: -298235062
+      PC Computer - Ragnarok Online - Evil Fanatic_95: 976977040
+      PC Computer - Ragnarok Online - Evil Fanatic_128: 44232449
+      PC Computer - Ragnarok Online - Evil Fanatic_116: -2010446310
+      PC Computer - Ragnarok Online - Evil Fanatic_5: 365279076
+      PC Computer - Ragnarok Online - Evil Fanatic_52: 1633405481
+      PC Computer - Ragnarok Online - Evil Fanatic_4: 231253952
+      PC Computer - Ragnarok Online - Evil Fanatic_85: -2043545324
+      PC Computer - Ragnarok Online - Evil Fanatic_10: 1382990160
+      PC Computer - Ragnarok Online - Evil Fanatic_40: -354235700
+      PC Computer - Ragnarok Online - Evil Fanatic_135: -1468891890
+      PC Computer - Ragnarok Online - Evil Fanatic_137: 789538409
+      PC Computer - Ragnarok Online - Evil Fanatic_73: -1537726592
+      PC Computer - Ragnarok Online - Evil Fanatic_31: -956259069
+      PC Computer - Ragnarok Online - Evil Fanatic_105: -1937055577
+      PC Computer - Ragnarok Online - Evil Fanatic_115: 1120770142
+      PC Computer - Ragnarok Online - Evil Fanatic_48: -913319885
+      PC Computer - Ragnarok Online - Evil Fanatic_9: -1834054726
+      PC Computer - Ragnarok Online - Evil Fanatic_102: -1361437949
+      PC Computer - Ragnarok Online - Evil Fanatic_47: 180840602
+      PC Computer - Ragnarok Online - Evil Fanatic_109: -492116474
+      PC Computer - Ragnarok Online - Evil Fanatic_136: -471762914
+      PC Computer - Ragnarok Online - Evil Fanatic_30: -1830604585
+      PC Computer - Ragnarok Online - Evil Fanatic_119: -1460804883
+      PC Computer - Ragnarok Online - Evil Fanatic_71: 1196310129
+      PC Computer - Ragnarok Online - Evil Fanatic_51: -1075772060
+      PC Computer - Ragnarok Online - Evil Fanatic_0: 744337281
+      PC Computer - Ragnarok Online - Evil Fanatic_124: 1537953209
+      PC Computer - Ragnarok Online - Evil Fanatic_121: 170451234
+      PC Computer - Ragnarok Online - Evil Fanatic_12: -957929668
+      PC Computer - Ragnarok Online - Evil Fanatic_72: -1767925661
+      PC Computer - Ragnarok Online - Evil Fanatic_22: -1445020921
+      PC Computer - Ragnarok Online - Evil Fanatic_50: 1850204579
+      PC Computer - Ragnarok Online - Evil Fanatic_63: -1072026979
+      PC Computer - Ragnarok Online - Evil Fanatic_86: 1710659249
+      PC Computer - Ragnarok Online - Evil Fanatic_75: 1262812046
+      PC Computer - Ragnarok Online - Evil Fanatic_125: 889053466
+      PC Computer - Ragnarok Online - Evil Fanatic_19: 865415778
+      PC Computer - Ragnarok Online - Evil Fanatic_89: -1190159685
+      PC Computer - Ragnarok Online - Evil Fanatic_64: 114883205
+      PC Computer - Ragnarok Online - Evil Fanatic_101: 1955221403
+      PC Computer - Ragnarok Online - Evil Fanatic_94: -462653234
+      PC Computer - Ragnarok Online - Evil Fanatic_91: -2101384927
+      PC Computer - Ragnarok Online - Evil Fanatic_133: 889340388
+      PC Computer - Ragnarok Online - Evil Fanatic_106: -1737403489
+      PC Computer - Ragnarok Online - Evil Fanatic_107: 501716608
+      PC Computer - Ragnarok Online - Evil Fanatic_8: 1234614579
+      PC Computer - Ragnarok Online - Evil Fanatic_96: 1733829984
+      PC Computer - Ragnarok Online - Evil Fanatic_138: -799763696
+      PC Computer - Ragnarok Online - Evil Fanatic_32: 1605807813
+      PC Computer - Ragnarok Online - Evil Fanatic_113: -880532733
+      PC Computer - Ragnarok Online - Evil Fanatic_114: -650710043
+      PC Computer - Ragnarok Online - Evil Fanatic_16: -1212363177
+      PC Computer - Ragnarok Online - Evil Fanatic_28: -590186107
+      PC Computer - Ragnarok Online - Evil Fanatic_112: -1612073749
+      PC Computer - Ragnarok Online - Evil Fanatic_20: -212890398
+      PC Computer - Ragnarok Online - Evil Fanatic_104: 110831705
+      PC Computer - Ragnarok Online - Evil Fanatic_18: 473786674
+      PC Computer - Ragnarok Online - Evil Fanatic_45: -1098079316
+      PC Computer - Ragnarok Online - Evil Fanatic_41: 1573436417
+      PC Computer - Ragnarok Online - Evil Fanatic_118: -90353963
+      PC Computer - Ragnarok Online - Evil Fanatic_81: 93166849
+      PC Computer - Ragnarok Online - Evil Fanatic_74: -340265116
+      PC Computer - Ragnarok Online - Evil Fanatic_127: 1789151292
+      PC Computer - Ragnarok Online - Evil Fanatic_61: -668777852
+      PC Computer - Ragnarok Online - Evil Fanatic_117: 809442369
+      PC Computer - Ragnarok Online - Evil Fanatic_120: -1504112896
+      PC Computer - Ragnarok Online - Evil Fanatic_54: 218857820
+      PC Computer - Ragnarok Online - Evil Fanatic_29: -1867811007
+      PC Computer - Ragnarok Online - Evil Fanatic_88: -902850716
+      PC Computer - Ragnarok Online - Evil Fanatic_70: -1718590921
+      PC Computer - Ragnarok Online - Evil Fanatic_17: -652636676
+      PC Computer - Ragnarok Online - Evil Fanatic_123: -1217002627
+      PC Computer - Ragnarok Online - Evil Fanatic_42: -1143358736
+      PC Computer - Ragnarok Online - Evil Fanatic_25: 1241639433
+      PC Computer - Ragnarok Online - Evil Fanatic_35: 1127831885
+      PC Computer - Ragnarok Online - Evil Fanatic_2: -1234842771
+      PC Computer - Ragnarok Online - Evil Fanatic_37: 1605857743
+      PC Computer - Ragnarok Online - Evil Fanatic_82: 1844333728
+      PC Computer - Ragnarok Online - Evil Fanatic_53: 1346798361
+      PC Computer - Ragnarok Online - Evil Fanatic_11: -1961489228
+      PC Computer - Ragnarok Online - Evil Fanatic_27: -747019692
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
