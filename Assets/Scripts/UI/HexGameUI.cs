@@ -64,7 +64,11 @@ public class HexGameUI : MonoBehaviour {
 				DoAreaAttack();
 			}
 			else if(Input.GetKey(KeyCode.LeftShift)){
-				DoPathfinding();
+				// DoPathfinding();
+					if(!selectedUnit)
+						return;
+					selectedUnit.Enemies = grid.Units;
+					selectedUnit.AutomaticTraverEnemy();
 			}else if(inAction){
 				grid.ClearPath();
 				inAction = false;

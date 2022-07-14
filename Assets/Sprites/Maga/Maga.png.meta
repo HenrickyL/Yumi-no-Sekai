@@ -1,0 +1,2484 @@
+fileFormatVersion: 2
+guid: 891640e7d6e1cb64891a37c3830e6b39
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 363247442016489393
+    second: Maga_0
+  - first:
+      213: 4871236550957403970
+    second: Maga_1
+  - first:
+      213: -8710321657962782370
+    second: Maga_2
+  - first:
+      213: 1285553767984525905
+    second: Maga_3
+  - first:
+      213: -2843330629296288921
+    second: Maga_4
+  - first:
+      213: -290827625919644160
+    second: Maga_5
+  - first:
+      213: 3757588343285247831
+    second: Maga_6
+  - first:
+      213: 5118091949084868496
+    second: Maga_7
+  - first:
+      213: 2757694197508119054
+    second: Maga_8
+  - first:
+      213: -2387490644386740049
+    second: Maga_9
+  - first:
+      213: -1556398709493769671
+    second: Maga_10
+  - first:
+      213: 6860058609761689740
+    second: Maga_11
+  - first:
+      213: -4588047789197629165
+    second: Maga_12
+  - first:
+      213: -5670730731346788858
+    second: Maga_13
+  - first:
+      213: -7259528480414259450
+    second: Maga_14
+  - first:
+      213: -5541939234895191540
+    second: Maga_15
+  - first:
+      213: 2621394373149096651
+    second: Maga_16
+  - first:
+      213: -311584446878731064
+    second: Maga_17
+  - first:
+      213: -8141730851810004137
+    second: Maga_18
+  - first:
+      213: 4304946631975667779
+    second: Maga_19
+  - first:
+      213: -6097130303073718150
+    second: Maga_20
+  - first:
+      213: -2024254123744117108
+    second: Maga_21
+  - first:
+      213: -8566049854375032349
+    second: Maga_22
+  - first:
+      213: -8527703905690397519
+    second: Maga_23
+  - first:
+      213: 6081904919577705312
+    second: Maga_24
+  - first:
+      213: 7570123769068268257
+    second: Maga_25
+  - first:
+      213: -4642730050011870067
+    second: Maga_26
+  - first:
+      213: -8181170809507304687
+    second: Maga_27
+  - first:
+      213: 5322550008839943113
+    second: Maga_28
+  - first:
+      213: -2790349469594706487
+    second: Maga_29
+  - first:
+      213: -2672916411331464005
+    second: Maga_30
+  - first:
+      213: -7482288965771278417
+    second: Maga_31
+  - first:
+      213: 1949479864871947719
+    second: Maga_32
+  - first:
+      213: -4968757586957402518
+    second: Maga_33
+  - first:
+      213: 5219783551071697730
+    second: Maga_34
+  - first:
+      213: 1536915944009371590
+    second: Maga_35
+  - first:
+      213: -7812703799468305715
+    second: Maga_36
+  - first:
+      213: 2676824282106764518
+    second: Maga_37
+  - first:
+      213: -331435168079291322
+    second: Maga_38
+  - first:
+      213: -4944429137888174886
+    second: Maga_39
+  - first:
+      213: -2370146475177598824
+    second: Maga_40
+  - first:
+      213: 3271633644192825583
+    second: Maga_41
+  - first:
+      213: -3062547798726543094
+    second: Maga_42
+  - first:
+      213: -2446389091029025850
+    second: Maga_43
+  - first:
+      213: -8800381129102378177
+    second: Maga_44
+  - first:
+      213: 2310372404570469398
+    second: Maga_45
+  - first:
+      213: 4833526357133624450
+    second: Maga_46
+  - first:
+      213: 2969550368396796041
+    second: Maga_47
+  - first:
+      213: 2144502054021892652
+    second: Maga_48
+  - first:
+      213: 7403789131921083574
+    second: Maga_49
+  - first:
+      213: 155268513206227752
+    second: Maga_50
+  - first:
+      213: -4917277469193716897
+    second: Maga_51
+  - first:
+      213: -265284251483094309
+    second: Maga_52
+  - first:
+      213: -3872738113744504359
+    second: Maga_53
+  - first:
+      213: -7575262159358764631
+    second: Maga_54
+  - first:
+      213: 7743065498640758238
+    second: Maga_55
+  - first:
+      213: -1311668068376330843
+    second: Maga_56
+  - first:
+      213: 6719777487510923832
+    second: Maga_57
+  - first:
+      213: 8780560905371363324
+    second: Maga_58
+  - first:
+      213: 2293858087526509114
+    second: Maga_59
+  - first:
+      213: -4396675400286822400
+    second: Maga_60
+  - first:
+      213: 8857930383139901056
+    second: Maga_61
+  - first:
+      213: 5171369875021691964
+    second: Maga_62
+  - first:
+      213: -7996602936680568430
+    second: Maga_63
+  - first:
+      213: 6969825531116484875
+    second: Maga_64
+  - first:
+      213: -6463843848514650822
+    second: Maga_65
+  - first:
+      213: -3271510261691674301
+    second: Maga_66
+  - first:
+      213: -8131660534600277854
+    second: Maga_67
+  - first:
+      213: -1192718000270859940
+    second: Maga_68
+  - first:
+      213: 6819147867508461075
+    second: Maga_69
+  - first:
+      213: -4391447762827374179
+    second: Maga_70
+  - first:
+      213: 6407988954261799660
+    second: Maga_71
+  - first:
+      213: 9136412116818826423
+    second: Maga_72
+  - first:
+      213: 9053570556920330721
+    second: Maga_73
+  - first:
+      213: -602225225641180379
+    second: Maga_74
+  - first:
+      213: -2574410394585112385
+    second: Maga_75
+  - first:
+      213: 630468616663335630
+    second: Maga_76
+  - first:
+      213: 2348872997281529014
+    second: Maga_77
+  - first:
+      213: 4588081358905278353
+    second: Maga_78
+  - first:
+      213: 5118488260458583879
+    second: Maga_79
+  - first:
+      213: 4371128585703575694
+    second: Maga_80
+  - first:
+      213: -1910549905208401620
+    second: Maga_81
+  - first:
+      213: 3358712242960650504
+    second: Maga_82
+  - first:
+      213: -8160612658235450799
+    second: Maga_83
+  - first:
+      213: -8479274572312909387
+    second: Maga_84
+  - first:
+      213: 5674205205171980761
+    second: Maga_85
+  - first:
+      213: -870757350026900666
+    second: Maga_86
+  - first:
+      213: 9130209996636382481
+    second: Maga_87
+  - first:
+      213: -7936551633759835061
+    second: Maga_88
+  - first:
+      213: 5915969070634871397
+    second: Maga_89
+  - first:
+      213: -8780596183478196435
+    second: Maga_90
+  - first:
+      213: -5119489156456178165
+    second: Maga_91
+  - first:
+      213: 1374147946601564043
+    second: Maga_92
+  - first:
+      213: -1784204055991758915
+    second: Maga_93
+  - first:
+      213: 7678519963453000490
+    second: Maga_94
+  - first:
+      213: -5890235919981680698
+    second: Maga_95
+  - first:
+      213: 8348435021654021907
+    second: Maga_96
+  - first:
+      213: 8305066063045884925
+    second: Maga_97
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Maga_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 680
+        width: 36
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf46fabf938a0500800000000000000
+      internalID: 363247442016489393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 680
+        width: 35
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24f07bc85db1a9340800000000000000
+      internalID: 4871236550957403970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_2
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 680
+        width: 29
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e51acb1f998be1780800000000000000
+      internalID: -8710321657962782370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_3
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 681
+        width: 33
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 152f160475437d110800000000000000
+      internalID: 1285553767984525905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_4
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 680
+        width: 36
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76b8ec57bd57a88d0800000000000000
+      internalID: -2843330629296288921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_5
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 688
+        width: 49
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00e703aa0d5c6fbf0800000000000000
+      internalID: -290827625919644160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_6
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 689
+        width: 49
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75f6aad80b2a52430800000000000000
+      internalID: 3757588343285247831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_7
+      rect:
+        serializedVersion: 2
+        x: 418
+        y: 689
+        width: 47
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09f7df8c28d170740800000000000000
+      internalID: 5118091949084868496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_8
+      rect:
+        serializedVersion: 2
+        x: 486
+        y: 681
+        width: 41
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0a90a1034c454620800000000000000
+      internalID: 2757694197508119054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_9
+      rect:
+        serializedVersion: 2
+        x: 552
+        y: 685
+        width: 43
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa882cc88ededded0800000000000000
+      internalID: -2387490644386740049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_10
+      rect:
+        serializedVersion: 2
+        x: 631
+        y: 678
+        width: 49
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93a5fbfae9f866ae0800000000000000
+      internalID: -1556398709493769671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_11
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 680
+        width: 50
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c80a43d95f2d33f50800000000000000
+      internalID: 6860058609761689740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_12
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 677
+        width: 54
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 319eb5028daf350c0800000000000000
+      internalID: -4588047789197629165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_13
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 678
+        width: 47
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60efe25d1748d41b0800000000000000
+      internalID: -5670730731346788858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_14
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 585
+        width: 37
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 607a3184f49f04b90800000000000000
+      internalID: -7259528480414259450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_15
+      rect:
+        serializedVersion: 2
+        x: 63
+        y: 585
+        width: 35
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c02a549d0a31713b0800000000000000
+      internalID: -5541939234895191540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_16
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 585
+        width: 32
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bca72cb2b40116420800000000000000
+      internalID: 2621394373149096651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_17
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 583
+        width: 35
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4b14ea8970dabf0800000000000000
+      internalID: -311584446878731064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_18
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 585
+        width: 37
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753b6015de2c20f80800000000000000
+      internalID: -8141730851810004137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_19
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 585
+        width: 36
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3488ce7372e3ebb30800000000000000
+      internalID: 4304946631975667779
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_20
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 585
+        width: 34
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7075081b44a26ba0800000000000000
+      internalID: -6097130303073718150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_21
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 583
+        width: 35
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8ebc13799768e3e0800000000000000
+      internalID: -2024254123744117108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_22
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 583
+        width: 44
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e980b5da074f1980800000000000000
+      internalID: -8566049854375032349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_23
+      rect:
+        serializedVersion: 2
+        x: 642
+        y: 584
+        width: 45
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4dc9fba7287a980800000000000000
+      internalID: -8527703905690397519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_24
+      rect:
+        serializedVersion: 2
+        x: 703
+        y: 584
+        width: 60
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06b31211d44476450800000000000000
+      internalID: 6081904919577705312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_25
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 584
+        width: 73
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ea2e01b57b7e0960800000000000000
+      internalID: 7570123769068268257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_26
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 492
+        width: 30
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8cc2052e95b19fb0800000000000000
+      internalID: -4642730050011870067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_27
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 493
+        width: 36
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11ba5849e74a67e80800000000000000
+      internalID: -8181170809507304687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_28
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 495
+        width: 40
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c33820780f7dd940800000000000000
+      internalID: 5322550008839943113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_29
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 494
+        width: 38
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cd9b99f0ffa649d0800000000000000
+      internalID: -2790349469594706487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_30
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 495
+        width: 33
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4b6448fa4e7ead0800000000000000
+      internalID: -2672916411331464005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_31
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 496
+        width: 32
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa7c06814d1992890800000000000000
+      internalID: -7482288965771278417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_32
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 493
+        width: 36
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cd087abb91fd0b10800000000000000
+      internalID: 1949479864871947719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_33
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 491
+        width: 32
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6e706edc4d6b0bb0800000000000000
+      internalID: -4968757586957402518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_34
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 496
+        width: 42
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24b3e0eeb75607840800000000000000
+      internalID: 5219783551071697730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_35
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 497
+        width: 48
+        height: 77
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf005c78e8345510800000000000000
+      internalID: 1536915944009371590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_36
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 494
+        width: 65
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc2d851b943b39390800000000000000
+      internalID: -7812703799468305715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_37
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 492
+        width: 83
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ec1d1d808df52520800000000000000
+      internalID: 2676824282106764518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_38
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 395
+        width: 29
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64cdf8c7871866bf0800000000000000
+      internalID: -331435168079291322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_39
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 396
+        width: 35
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adc951355ebd16bb0800000000000000
+      internalID: -4944429137888174886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_40
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 397
+        width: 44
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8902561a65c8b1fd0800000000000000
+      internalID: -2370146475177598824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_41
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 397
+        width: 39
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe0845d277d276d20800000000000000
+      internalID: 3271633644192825583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_42
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 398
+        width: 29
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a09ff3dc005af75d0800000000000000
+      internalID: -3062547798726543094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_43
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 400
+        width: 34
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cbf2de451eac0ed0800000000000000
+      internalID: -2446389091029025850
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_44
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 399
+        width: 46
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3b3dcf4df3ced580800000000000000
+      internalID: -8800381129102378177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_45
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 399
+        width: 40
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 614b9490677101020800000000000000
+      internalID: 2310372404570469398
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_46
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 297
+        width: 32
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2840079dc92241340800000000000000
+      internalID: 4833526357133624450
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_47
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 297
+        width: 32
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 980ebe2a356f53920800000000000000
+      internalID: 2969550368396796041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_48
+      rect:
+        serializedVersion: 2
+        x: 119
+        y: 300
+        width: 35
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a021e814dc2cd10800000000000000
+      internalID: 2144502054021892652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_49
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 299
+        width: 31
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bccd001dfa8fb660800000000000000
+      internalID: 7403789131921083574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_50
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 301
+        width: 31
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 823d57ed3ef972200800000000000000
+      internalID: 155268513206227752
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_51
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 300
+        width: 37
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b3da2d13252cbb0800000000000000
+      internalID: -4917277469193716897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_52
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 301
+        width: 41
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd248d9f065815cf0800000000000000
+      internalID: -265284251483094309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_53
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 299
+        width: 38
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d974264435414ac0800000000000000
+      internalID: -3872738113744504359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_54
+      rect:
+        serializedVersion: 2
+        x: 510
+        y: 298
+        width: 36
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a956f693334fd690800000000000000
+      internalID: -7575262159358764631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_55
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 298
+        width: 36
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed5b017eb05e47b60800000000000000
+      internalID: 7743065498640758238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_56
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 299
+        width: 36
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5adb43167d40ccde0800000000000000
+      internalID: -1311668068376330843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_57
+      rect:
+        serializedVersion: 2
+        x: 682
+        y: 299
+        width: 36
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83a61c0a502714d50800000000000000
+      internalID: 6719777487510923832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_58
+      rect:
+        serializedVersion: 2
+        x: 741
+        y: 300
+        width: 37
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf7a75d3f91dad970800000000000000
+      internalID: 8780560905371363324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_59
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 299
+        width: 37
+        height: 95
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3aac28f6cb65df10800000000000000
+      internalID: 2293858087526509114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_60
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 204
+        width: 35
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 000a43d940fdbf2c0800000000000000
+      internalID: -4396675400286822400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_61
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 203
+        width: 35
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08e813c80c0bdea70800000000000000
+      internalID: 8857930383139901056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_62
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 203
+        width: 34
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3cf2d2908564c740800000000000000
+      internalID: 5171369875021691964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_63
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 204
+        width: 35
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2992f453ffb560190800000000000000
+      internalID: -7996602936680568430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_64
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 205
+        width: 35
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0975a0946bc9b060800000000000000
+      internalID: 6969825531116484875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_65
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 202
+        width: 35
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3db0b54440db46a0800000000000000
+      internalID: -6463843848514650822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_66
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 204
+        width: 33
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34192dc00c24992d0800000000000000
+      internalID: -3271510261691674301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_67
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 204
+        width: 35
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a06611c3d9862f80800000000000000
+      internalID: -8131660534600277854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_68
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 202
+        width: 34
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5124ac4c4d927fe0800000000000000
+      internalID: -1192718000270859940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_69
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 202
+        width: 33
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31e44b92bda72ae50800000000000000
+      internalID: 6819147867508461075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_70
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 202
+        width: 34
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d919dfec6817e03c0800000000000000
+      internalID: -4391447762827374179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_71
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 203
+        width: 35
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2c66fb000cde850800000000000000
+      internalID: 6407988954261799660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_72
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 203
+        width: 37
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b49f88d96e0bce70800000000000000
+      internalID: 9136412116818826423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_73
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 202
+        width: 35
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e9fb22247eb4ad70800000000000000
+      internalID: 9053570556920330721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_74
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 102
+        width: 39
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523c0e6195774a7f0800000000000000
+      internalID: -602225225641180379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_75
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 102
+        width: 36
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb06eacc26bd54cd0800000000000000
+      internalID: -2574410394585112385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_76
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 102
+        width: 38
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec20042dddfdfb800800000000000000
+      internalID: 630468616663335630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_77
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 101
+        width: 39
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bcf871db8fd89020800000000000000
+      internalID: 2348872997281529014
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_78
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 105
+        width: 53
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19ff32eefa32caf30800000000000000
+      internalID: 4588081358905278353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_79
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 107
+        width: 48
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74714a734f5880740800000000000000
+      internalID: 5118488260458583879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_80
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 108
+        width: 46
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e80da6a1a4e59ac30800000000000000
+      internalID: 4371128585703575694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_81
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 101
+        width: 37
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c21a566dbfc5c75e0800000000000000
+      internalID: -1910549905208401620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_82
+      rect:
+        serializedVersion: 2
+        x: 566
+        y: 99
+        width: 41
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 801dc606dfa8c9e20800000000000000
+      internalID: 3358712242960650504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_83
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 7
+        width: 41
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15ad15c260eafbe80800000000000000
+      internalID: -8160612658235450799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_84
+      rect:
+        serializedVersion: 2
+        x: 671
+        y: 7
+        width: 39
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9694c93b0935a80800000000000000
+      internalID: -8479274572312909387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_85
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 100
+        width: 34
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d9c2f42293debe40800000000000000
+      internalID: 5674205205171980761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_86
+      rect:
+        serializedVersion: 2
+        x: 782
+        y: 100
+        width: 32
+        height: 92
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64b061abdc27ae3f0800000000000000
+      internalID: -870757350026900666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_87
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 4
+        width: 29
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1156b363e9505be70800000000000000
+      internalID: 9130209996636382481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_88
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 5
+        width: 29
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4ce238b654bbd190800000000000000
+      internalID: -7936551633759835061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_89
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 6
+        width: 31
+        height: 88
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56aa36d868eb91250800000000000000
+      internalID: 5915969070634871397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_90
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 6
+        width: 32
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d27a1afea4e052680800000000000000
+      internalID: -8780596183478196435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_91
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 9
+        width: 57
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0e17f58cbbe3f8b0800000000000000
+      internalID: -5119489156456178165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_92
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 9
+        width: 53
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87c402e644f11310800000000000000
+      internalID: 1374147946601564043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_93
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 9
+        width: 48
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbfcccb3ddb3d37e0800000000000000
+      internalID: -1784204055991758915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_94
+      rect:
+        serializedVersion: 2
+        x: 509
+        y: 5
+        width: 34
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2b8c5669359f8a60800000000000000
+      internalID: 7678519963453000490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_95
+      rect:
+        serializedVersion: 2
+        x: 561
+        y: 8
+        width: 35
+        height: 91
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c7ee3a73ada14ea0800000000000000
+      internalID: -5890235919981680698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_96
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 8
+        width: 32
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3175e189b699bd370800000000000000
+      internalID: 8348435021654021907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Maga_97
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 9
+        width: 32
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb700c0595814370800000000000000
+      internalID: 8305066063045884925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 72bc8bdf70db55041a2e982325392488
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

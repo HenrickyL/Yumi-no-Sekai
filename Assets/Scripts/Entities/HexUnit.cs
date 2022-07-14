@@ -9,6 +9,7 @@ public class HexUnit : MonoBehaviour {
 
 	public Animator animator;
 	public Transform body;
+	public HexGrid grid;
 	AnimationType animationType;
 	HexDirectionAll animationDirection;
 	const float rotationSpeed = 180f;
@@ -29,22 +30,31 @@ public class HexUnit : MonoBehaviour {
 			return response;
 		} 
 	}
-	List<HexUnit> targets;
-	List<HexUnit> oldTargets;
+	List<HexUnit> attackTargets;
+	List<HexUnit> oldAttackTargets;
+	HexUnit target;
+	List<HexUnit> _enemies;
+	public List<HexUnit> Enemies {
+		get{
+			return _enemies;
+		}
+		set{
+			_enemies = value.Where(x=>x!= this).ToList();
+		}}
 
-	public List<HexUnit> OldTargets { get{return oldTargets;} }
+	public List<HexUnit> OldAttackTargets { get{return oldAttackTargets;} }
 	public List<HexUnit> Targets {
 		get {
-			return targets;
+			return attackTargets;
 		}
 		set{
 			if(value == null || !value.Any()){
-				oldTargets = targets;
-				targets = null;
+				oldAttackTargets = attackTargets;
+				attackTargets = null;
 			}
 			else{
-				targets = value;
-				oldTargets = targets;
+				attackTargets = value;
+				oldAttackTargets = attackTargets;
 			}
 		}
 	}
@@ -248,11 +258,11 @@ public class HexUnit : MonoBehaviour {
 		}
 	}
 
-	float CalcDamageNormalAttack(HexUnit unit){
+	protected virtual float  CalcDamageNormalAttack(HexUnit unit){
 		return status.Strength*(1-status.Defense/100);
 	}
 
-	public void TakeDamage(float value){
+	public  virtual void TakeDamage(float value){
 		this.status.HP = (int)Math.Round(status.HP - value);
 		RefreshStatusBar();
 	}
@@ -284,6 +294,54 @@ public class HexUnit : MonoBehaviour {
 		animator.SetBool($"{animationType}S",
 				animationDirection.IsBack());
 	}
-	
 
+	public void AutomaticTraverEnemy(){
+		if(Enemies!=null && Enemies.Any() && grid){
+			target = FindNearTarget(Enemies);
+			if(target){
+				var enemyNeighbors = target.Location.GetNeighbors();
+				target.Location.EnableHighlight(Color.cyan);
+				grid.ClearPath();
+				grid.FindPath(location,target.Location,(int)TravelSpeed);
+				var path = grid.GetPath();
+				if(path!= null && path.Any()){
+					var way = path.Where(x=>MovePath.Contains(x)).ToList();
+					if(way.Any()){
+						foreach(var c in way){
+							c.EnableHighlight(Color.black);
+						}
+					}else{
+
+						location.EnableHighlight(Color.green);
+					}
+				}
+			}
+		}
+	}
+
+	HexUnit FindNearTarget(List<HexUnit> options){
+		var position = transform.position;
+	
+		return options.Aggregate(
+				(near,x)=>(near == null || 
+					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,near.transform.position) )? x : near);
+	}
+	
+	HexUnit FindNearTargetWithLessLife(List<HexUnit> options){
+		var position = transform.position;
+		return options.Aggregate(
+				(nearLL,x)=>(nearLL == null || 
+					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,nearLL.transform.position) )
+					&& x.status.HP < nearLL.status.HP ? x : nearLL);
+	}
+
+}
+
+public static class HexUnitExtensions {
+	public static List<HexCell> GetCells (this List<HexUnit> units) {
+		return units.Select(u=> u.Location).ToList();
+	}
+	public static List<Transform> GetCellsTrasforms (this List<HexUnit> units) {
+		return units.Select(u=> u.Location.transform).ToList();
+	}
 }
