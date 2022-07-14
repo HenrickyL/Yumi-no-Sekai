@@ -13,7 +13,8 @@ public class HexUnit : MonoBehaviour {
 	AnimationType animationType;
 	HexDirectionAll animationDirection;
 	const float rotationSpeed = 180f;
-	public bool Dead { get;set;}
+	bool live = true;
+	public bool Dead { get{return !live;}}
 	public  float TravelSpeed {
 		get{
 			return  status.Speed*3;
@@ -21,13 +22,13 @@ public class HexUnit : MonoBehaviour {
 	}
 	public List<HexCell> MovePath { 
 		get{
-			var response = location.GetNeighborPerNivel(status.Speed, c=>IsValidDestination(c));
+			var response = location?.GetNeighborPerNivel(status.Speed, c=>IsValidDestination(c));
 			return response;
 		} 
 	}
 	public List<HexCell> AttackPath { 
 		get{
-			var response = location.GetTriangleByDirection(direction,status.Range,c=>IsValidCellAttack(c,status.Range));
+			var response = location?.GetTriangleByDirection(direction,status.Range,c=>IsValidCellAttack(c,status.Range));
 			return response;
 		} 
 	}
@@ -40,7 +41,7 @@ public class HexUnit : MonoBehaviour {
 			return _enemies;
 		}
 		set{
-			_enemies = value.Where(x=>x!= this).ToList();
+			_enemies = value.Where(x=>x!= this && !x.Dead).ToList();
 		}}
 
 	public List<HexUnit> OldAttackTargets { get{return oldAttackTargets;} }
@@ -117,7 +118,8 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	private void RefreshStatusBar(){
-		_statusBar.SetStatus(status);
+		if(_statusBar)
+			_statusBar.SetStatus(status);
 	}
 
 	public void ValidateLocation () {
@@ -147,7 +149,6 @@ public class HexUnit : MonoBehaviour {
 		Vector3 a, b, c = pathToTravel[0].Position;
 		transform.localPosition = c;
 		SwapAnimationType(AnimationType.Walk);
-		// yield return LookAt(pathToTravel[1].Position);
 
 		float t = Time.deltaTime * TravelSpeed;
 		for (int i = 1; i < pathToTravel.Count; i++) {
@@ -204,10 +205,16 @@ public class HexUnit : MonoBehaviour {
 	// 	Orientation = transform.localRotation.eulerAngles.y;
 	// }
 
-	public void Die () {
-		// location.Unit = null;
-		// Destroy(gameObject);
+	public void Die() {
+		ClearHighlights();
+		SwapAnimationType(AnimationType.Die);
+		live = false;
+		grid.Units.Remove(this);
+		this.enabled = false;
+		Destroy(_statusBar);
+
 	}
+	
 
 	public void Save (BinaryWriter writer) {
 		location.coordinates.Save(writer);
@@ -222,6 +229,9 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	private void LateUpdate() {
+		if(DieCondition()){
+			Die();
+		}
 		CamAjust();
 		RefreshStatusBar();
 	}
@@ -302,11 +312,9 @@ public class HexUnit : MonoBehaviour {
 	public virtual bool AutomaticTraverToEnemy(bool indicators = false){
 		if(Enemies!=null && Enemies.Any() && grid){
 			target = FindNearTarget(Enemies);
-			var dir = transform.position - target.transform.position;
-			var direction = Vector3.Angle(dir,Vector3.back).ToHexDirection();
 			if(target){
 				var enemyNeighbors = target.Location.GetNeighbors();
-				var cell = target.Location.GetNeighbor(direction);
+				var cell = target.Location.GetNeighbor( (HexDirection) new System.Random().Next(0,6));
 				Debug.Log(cell);
 				if(indicators){
 					target.Location.EnableHighlight(Color.cyan);
@@ -336,6 +344,7 @@ public class HexUnit : MonoBehaviour {
 			target = FindNearTargetWithLessLife(Enemies);
 			if(target){
 				var isAttackable = AttackPath.Contains(target.location);
+				if(!isAttackable) return false;
 				Targets = new List<HexUnit>(){target};
 				return BasicAttackTargets();
 			}
@@ -348,7 +357,7 @@ public class HexUnit : MonoBehaviour {
 		DefineTarget();
 		if(!target)
 			return false;
-		if(this.AttackPath.Contains(target.location)){
+		if( AttackPath!=null && AttackPath.Contains(target.location)){
 			Targets = new List<HexUnit>(){target};
 			heAttacked = BasicAttackTargets();
 		}
@@ -365,7 +374,7 @@ public class HexUnit : MonoBehaviour {
 		var position = transform.position;
 		return options?.Aggregate(
 				(near,x)=>(near == null || 
-					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,near.transform.position) )? x : near);
+					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,near.transform.position) && !x.Dead)? x : near);
 	}
 	
 	HexUnit FindNearTargetWithLessLife(List<HexUnit> options){
@@ -373,7 +382,7 @@ public class HexUnit : MonoBehaviour {
 		return options.Aggregate(
 				(nearLL,x)=>(nearLL == null || 
 					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,nearLL.transform.position) )
-					&& x.status.HP < nearLL.status.HP ? x : nearLL);
+					&& x.status.HP < nearLL.status.HP  && !x.Dead? x : nearLL);
 	}
 
 	public void ClearHighlights(){
@@ -408,8 +417,8 @@ public class HexUnit : MonoBehaviour {
 		Location.DisableHighlight();
 	}
 
-	public virtual bool DeadCondition(){
-		return status.HP <= 0;
+	public virtual bool DieCondition(){
+		return status.HP <= 0 && !Dead;
 	}
 
 	public bool MoveTo(HexCell cell){
