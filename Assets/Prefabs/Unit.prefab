@@ -48,6 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 1161324388933410698}
   body: {fileID: 5916693375790465057}
+  perfil: {fileID: 2800000, guid: b9e771cceafab6d47a0189e8751f18fb, type: 3}
   grid: {fileID: 0}
   HP: 450
   MaxHp: 500

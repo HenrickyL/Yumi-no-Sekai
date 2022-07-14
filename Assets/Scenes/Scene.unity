@@ -2877,6 +2877,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   grid: {fileID: 1571186511}
+  TurnsText: {fileID: 905195101}
+  selectInfo: {fileID: 970038718}
 --- !u!1 &345848024
 GameObject:
   m_ObjectHideFlags: 0
@@ -7384,7 +7386,7 @@ MonoBehaviour:
   Defense: {fileID: 109514889}
   Speed: {fileID: 1266099697}
   Range: {fileID: 1159948423}
-  imageTerrain: {fileID: 890904132}
+  perfil: {fileID: 890904132}
 --- !u!1 &983414033
 GameObject:
   m_ObjectHideFlags: 0
@@ -16523,7 +16525,6 @@ GameObject:
   - component: {fileID: 3720010518409030678}
   - component: {fileID: 839179274189466016}
   - component: {fileID: 3751500428956008976}
-  - component: {fileID: 4669025305445209801}
   m_Layer: 5
   m_Name: StatusBar
   m_TagString: Untagged
@@ -16531,18 +16532,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &4669025305445209801
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4415855596692474721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8769774977ae9d742ae9752f88503b09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &4838149199774056701
 RectTransform:
   m_ObjectHideFlags: 0

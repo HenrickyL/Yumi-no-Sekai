@@ -10,7 +10,7 @@ public class HexUnit : MonoBehaviour {
 
 	public Animator animator;
 	public Transform body;
-	public RawImage perfil;
+	public Texture2D perfil;
 	public HexGrid grid;
 	AnimationType animationType;
 	HexDirectionAll animationDirection;
@@ -162,12 +162,23 @@ public class HexUnit : MonoBehaviour {
 		return  cell &&( location.Elevation-range <= cell.Elevation &&  cell.Elevation < location.Elevation+range );
 	}
 
-	public void Travel (List<HexCell> path) {
+	protected void Travel (List<HexCell> path) {
 		ClearHighlights();
 		Location = path[path.Count - 1];
 		pathToTravel = path;
 		StopAllCoroutines();
 		StartCoroutine(TravelPath());
+	}
+
+	protected void TravelInMovePath(HexCell cell) {
+		grid.ClearPath();
+		grid.FindPath(location,cell,(int)TravelSpeed);
+		var path = grid.GetPath();
+		if(path!=null && path.Any()){
+			var way  =path.Where(x=>MovePath.Contains(x)).ToList();
+			Travel(way);
+		}
+		grid.ClearPath();
 	}
 
 	IEnumerator TravelPath () {
@@ -286,8 +297,21 @@ public class HexUnit : MonoBehaviour {
 		//https://forum.unity.com/threads/shake-an-object-from-script.138382/
 	}
 
-	public virtual bool BasicAttackTargets(){
+	public virtual bool BasicAttackToTarget(HexCell cell = null){
 		if(Targets !=null && Targets.Any()){
+			if(cell && cell.Unit){
+				Targets = new List<HexUnit>(){cell.Unit};
+			}
+			foreach(var t in Targets){
+				t.TakeDamage(CalcDamageNormalAttack(this));
+			}
+			return true;
+		}
+		return false;
+	}
+	public virtual bool AreaAttackToTargets(){
+		if(Targets !=null && Targets.Any()){
+			Targets = AttackPath.Where(x=>x.Unit).Select(x=>x.Unit).ToList();
 			foreach(var t in Targets){
 				t.TakeDamage(CalcDamageNormalAttack(this));
 			}
@@ -340,7 +364,6 @@ public class HexUnit : MonoBehaviour {
 			if(target){
 				var enemyNeighbors = target.Location.GetNeighbors();
 				var cell = target.Location.GetNeighbor( (HexDirection) new System.Random().Next(0,6));
-				Debug.Log(cell);
 				if(indicators){
 					target.Location.EnableHighlight(Color.cyan);
 				}
@@ -371,7 +394,7 @@ public class HexUnit : MonoBehaviour {
 				var isAttackable = AttackPath.Contains(target.location);
 				if(!isAttackable) return false;
 				Targets = new List<HexUnit>(){target};
-				return BasicAttackTargets();
+				return BasicAttackToTarget();
 			}
 		}
 		return false;
@@ -384,7 +407,7 @@ public class HexUnit : MonoBehaviour {
 			return false;
 		if( AttackPath!=null && AttackPath.Contains(target.location)){
 			Targets = new List<HexUnit>(){target};
-			heAttacked = BasicAttackTargets();
+			heAttacked = BasicAttackToTarget();
 		}
 		if(!heAttacked){
 			return AutomaticTraverToEnemy();
@@ -437,6 +460,18 @@ public class HexUnit : MonoBehaviour {
 			c.EnableHighlight(color);
 		}
 	}
+	public void EnableHighlightMove(Color color){
+		Location.EnableHighlight(color);
+		foreach(var c in MovePath){
+			c.EnableHighlight(color);
+		}
+	}
+	public void EnableHighlightPath(Color color){
+		Location.EnableHighlight(color);
+		foreach(var c in grid.GetPath()){
+			c.EnableHighlight(color);
+		}
+	}
 
 	public void EnableHighlight(Color color){
 		Location.EnableHighlight(color);
@@ -449,19 +484,26 @@ public class HexUnit : MonoBehaviour {
 		return HP <= 0 && !Dead;
 	}
 
-	public bool MoveTo(HexCell cell){
-		grid.ClearPath();
-		grid.FindPath(location,cell,(int)TravelSpeed);
-		var path = grid.GetPath();
-		if(path.Any()){
-			Travel(path);
-			grid.ClearPath();
-			return true;
+	public void MoveTo(HexCell cell){
+		if(cell && MovePath.Contains(cell)){
+			TravelInMovePath(cell);
 		}else{
-			grid.ClearPath();
-			return false;
+			StopAllCoroutines();
+			StartCoroutine(ErrorAnimation());
 		}
 	}
+
+	IEnumerator ErrorAnimation(){
+		ClearHighlights();
+		EnableHighlight(Color.red);
+		yield return new WaitForSeconds(0.5f);
+		ClearHighlight();
+		yield return new WaitForSeconds(0.2f);
+		EnableHighlight(Color.red);
+		yield return new WaitForSeconds(0.3f);
+		ClearHighlight();
+	}
+
 
 }
 
