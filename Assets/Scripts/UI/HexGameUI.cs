@@ -14,6 +14,8 @@ public class HexGameUI : MonoBehaviour {
 		 colorSelectedUnity = new Color(0,0,1,0.3f),
 		 colorMove = new  Color(0.98f,0.83f,0.29f,0.5f),
 		 colorMoveHovered = Color.white,
+		 colorEnemy = new Color(1,0.65f,0,0.5f),
+		 colorEnemyHovered = new Color(1,0.65f,0),
 		 colorAttack = new Color(1,0,0,0.5f),
 		 colorAttackHovered = Color.red,
 		 colorSelected = new Color(0,0,1,0.5f),
@@ -62,7 +64,6 @@ public class HexGameUI : MonoBehaviour {
 					}else if(IsMoveMode){
 						DoMove(currentCell);
 					}					
-
 				}
 			}
 			else if(Input.GetKeyUp(KeyCode.Space)){
@@ -123,21 +124,22 @@ public class HexGameUI : MonoBehaviour {
 						IsAttackMode && next.Unit? colorAttackHovered: colorMoveHovered);
 				}
 				else{
-					SetHighlightHover(previous,next,null, colorHover);
+					SetHighlightHover(previous,next,null, currentCell.Unit && currentCell.Unit.type == UnitType.Enemy? colorEnemy:colorHover);
 				}
 			}
 			else if(selectedUnit){
 				if(next == selectedUnit.Location){
 					SetHighlightHover(previous,next,null, colorSelectedHevered);
 				}else{
-					SetHighlightHover(previous,next,null, colorHover);
+					SetHighlightHover(previous,next,null, currentCell.Unit && currentCell.Unit.type == UnitType.Enemy? colorEnemy:colorHover);
 				}
 			}else{
-					SetHighlightHover(previous,next,null, colorHover);
+					SetHighlightHover(previous,next,null, currentCell.Unit && currentCell.Unit.type == UnitType.Enemy? colorEnemy:colorHover);
 			}
 			
 		}
 	}
+	
 
 	void DoSelection () {
 		UpdateCurrentCell();
