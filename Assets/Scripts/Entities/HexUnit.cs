@@ -116,7 +116,10 @@ public class HexUnit : MonoBehaviour {
 			transform.localPosition = location.Position;
 		}
 	}
-
+	public void Destroy(){
+		location.Unit = null;
+		Destroy(gameObject);
+	}
 	private void RefreshStatusBar(){
 		if(_statusBar)
 			_statusBar.SetStatus(status);
@@ -371,10 +374,13 @@ public class HexUnit : MonoBehaviour {
 		target = FindNearTarget(Enemies);
 	}
 	HexUnit FindNearTarget(List<HexUnit> options){
-		var position = transform.position;
-		return options?.Aggregate(
-				(near,x)=>(near == null || 
-					Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,near.transform.position) && !x.Dead)? x : near);
+		if(options!= null && options.Any()){
+			var position = transform.position;
+			return options.Aggregate(
+					(near,x)=>(near == null || 
+						Vector3.Distance(position,x.transform.position) <  Vector3.Distance(position,near.transform.position) && !x.Dead)? x : near);
+		}
+		return null;
 	}
 	
 	HexUnit FindNearTargetWithLessLife(List<HexUnit> options){

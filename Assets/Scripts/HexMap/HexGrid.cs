@@ -106,7 +106,7 @@ public class HexGrid : MonoBehaviour {
 
 	void ClearUnits () {
 		for (int i = 0; i < units.Count; i++) {
-			units[i].Die();
+			units[i].Destroy();
 		}
 		units.Clear();
 	}
