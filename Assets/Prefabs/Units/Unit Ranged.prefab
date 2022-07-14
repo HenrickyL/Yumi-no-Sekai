@@ -50,6 +50,8 @@ MonoBehaviour:
   body: {fileID: 5916693375790465057}
   perfil: {fileID: 2800000, guid: 9a8df9619e2556a4aa8f64f986eacf31, type: 3}
   grid: {fileID: 0}
+  prefabIndex: 0
+  type: 0
   Name: Maga
   MaxHp: 350
   Range: 3
@@ -100,7 +102,7 @@ Animator:
   m_GameObject: {fileID: 186004951557299114}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 97c3d724a97d11849b8701b6aa4a81ee, type: 2}
+  m_Controller: {fileID: 9100000, guid: a730cfd57ab833b4585c9deeca7823e1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -149,7 +151,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3530003579022248241, guid: 12cd67c1f112b0041b8446e2c9c857d3, type: 3}
+  m_Sprite: {fileID: 363247442016489393, guid: 891640e7d6e1cb64891a37c3830e6b39, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

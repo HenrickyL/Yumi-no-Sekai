@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 public class HexGrid : MonoBehaviour {
 
@@ -35,7 +36,13 @@ public class HexGrid : MonoBehaviour {
 
 	List<HexUnit> units = new List<HexUnit>();
 	public List<HexUnit> Units { get{return units;} }
-
+	public List<HexUnit> Enemies {
+		get{
+			return Units.Where(
+				x=>x!= this && !x.Dead && x.type == UnitType.Enemy
+			).ToList();
+		}
+	}
 
 
 	void Awake () {

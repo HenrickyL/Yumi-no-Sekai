@@ -67,9 +67,11 @@ public class HexGameUI : MonoBehaviour {
 				}
 			}
 			else if(Input.GetKeyUp(KeyCode.Space)){
-				foreach(var u in grid.Units){
+				foreach(var u in grid.Enemies){
 						u.AutomaticAggressiveMovement();	
 				}
+				Turns++;
+				UpdateUI();
 			}
 			else if(Input.GetKeyUp(KeyCode.LeftShift)){
 				DoPathfinding();
@@ -134,7 +136,11 @@ public class HexGameUI : MonoBehaviour {
 					SetHighlightHover(previous,next,null, currentCell.Unit && currentCell.Unit.type == UnitType.Enemy? colorEnemy:colorHover);
 				}
 			}else{
-					SetHighlightHover(previous,next,null, currentCell.Unit && currentCell.Unit.type == UnitType.Enemy? colorEnemy:colorHover);
+				if(currentCell)
+				SetHighlightHover(previous,next,null, currentCell.Unit && currentCell.Unit.type == UnitType.Enemy? colorEnemy:colorHover);
+				else
+				SetHighlightHover(previous,next,null, colorHover);
+
 			}
 			
 		}
