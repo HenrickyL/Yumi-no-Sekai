@@ -4,16 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System;
-using UnityEngine.UI;
 
 public class HexUnit : MonoBehaviour {
 
 	public Animator animator;
-	public RawImage indicator;
+	public Transform body;
 	AnimationType animationType;
 	HexDirectionAll animationDirection;
-	Vector3 camPosInit = Camera.main.transform.position;
-
 	const float rotationSpeed = 180f;
 	public  float TravelSpeed {
 		get{
@@ -41,7 +38,7 @@ public class HexUnit : MonoBehaviour {
 			return targets;
 		}
 		set{
-			if(value == null){
+			if(value == null || !value.Any()){
 				oldTargets = targets;
 				targets = null;
 			}
@@ -53,12 +50,10 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	StatusBar _statusBar;
-	UnitStatus status= new UnitStatus();
+	UnitStatus status;
+	public UnitStatus Status { get{return status;} }
 	
 	public static HexUnit unitPrefab;
-	private int speed=1;
-	public int Speed { get{return speed;} }
-
 	public HexCell Location {
 		get {
 			return location;
@@ -97,10 +92,17 @@ public class HexUnit : MonoBehaviour {
 	List<HexCell> pathToTravel;
 
 
-	private void Awake() {
+	private void OnEnable() {
 		_statusBar = gameObject.GetComponentInChildren<StatusBar>();
+		status= new UnitStatus();
 		status.Default();
+		
 		RefreshStatusBar();
+		animationType = AnimationType.Idle;
+		animationDirection = HexDirectionAll.N;
+		if (location) {
+			transform.localPosition = location.Position;
+		}
 	}
 
 	private void RefreshStatusBar(){
@@ -112,14 +114,14 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	public bool IsValidFullDestination (HexCell cell) {
-		return !cell.IsUnderwater && !cell.Unit;
+		return cell && !cell.IsUnderwater && !cell.Unit;
 	}
 	public bool IsValidDestination (HexCell cell) {
-		return !cell.IsUnderwater && !cell.Unit
+		return  cell && !cell.IsUnderwater && !cell.Unit
 				&& ( location.Elevation-1 <= cell.Elevation &&  cell.Elevation <= location.Elevation+1 );
 	}
 	public bool IsValidCellAttack (HexCell cell, int range=1) {
-		return  ( location.Elevation-range <= cell.Elevation &&  cell.Elevation < location.Elevation+range );
+		return  cell &&( location.Elevation-range <= cell.Elevation &&  cell.Elevation < location.Elevation+range );
 	}
 
 	public void Travel (List<HexCell> path) {
@@ -134,7 +136,7 @@ public class HexUnit : MonoBehaviour {
 		Vector3 a, b, c = pathToTravel[0].Position;
 		transform.localPosition = c;
 		SwapAnimationType(AnimationType.Walk);
-		yield return LookAt(pathToTravel[1].Position);
+		// yield return LookAt(pathToTravel[1].Position);
 
 		float t = Time.deltaTime * TravelSpeed;
 		for (int i = 1; i < pathToTravel.Count; i++) {
@@ -147,7 +149,6 @@ public class HexUnit : MonoBehaviour {
 				d.y = 0f;
 				transform.localRotation = Quaternion.LookRotation(d);
 				yield return null;
-				SwapAnimationType(AnimationType.Idle);
 			}
 			t -= 1f;
 		}
@@ -167,34 +168,30 @@ public class HexUnit : MonoBehaviour {
 		Orientation = transform.localRotation.eulerAngles.y;
 		ListPool<HexCell>.Add(pathToTravel);
 		pathToTravel = null;
+		SwapAnimationType(AnimationType.Idle);
 	}
-	void RefreshIndicator(){
-		indicator.transform.localRotation = 
-			Quaternion.LookRotation(
-				new Vector3(0,-transform.position.y*direction.ToDegrees(),0)
-			);
-	}
+	
 
-	IEnumerator LookAt (Vector3 point) {
-		point.y = transform.localPosition.y;
-		Quaternion fromRotation = transform.localRotation;
-		Quaternion toRotation =
-			Quaternion.LookRotation(point - transform.localPosition);
-		float speed = rotationSpeed / Quaternion.Angle(fromRotation, toRotation);
+	// IEnumerator LookAt (Vector3 point) {
+	// 	point.y = transform.localPosition.y;
+	// 	Quaternion fromRotation = transform.localRotation;
+	// 	Quaternion toRotation =
+	// 		Quaternion.LookRotation(point - transform.localPosition);
+	// 	float speed = rotationSpeed / Quaternion.Angle(fromRotation, toRotation);
 
-		for (
-			float t = Time.deltaTime * speed;
-			t < 1f;
-			t += Time.deltaTime * speed
-		) {
-			transform.localRotation =
-				Quaternion.Slerp(fromRotation, toRotation, t);
-			yield return null;
-		}
+	// 	for (
+	// 		float t = Time.deltaTime * speed;
+	// 		t < 1f;
+	// 		t += Time.deltaTime * speed
+	// 	) {
+	// 		transform.localRotation =
+	// 			Quaternion.Slerp(fromRotation, toRotation, t);
+	// 		yield return null;
+	// 	}
 
-		transform.LookAt(point);
-		Orientation = transform.localRotation.eulerAngles.y;
-	}
+	// 	transform.LookAt(point);
+	// 	Orientation = transform.localRotation.eulerAngles.y;
+	// }
 
 	public void Die () {
 		// location.Unit = null;
@@ -213,60 +210,19 @@ public class HexUnit : MonoBehaviour {
 		);
 	}
 
-	void OnEnable () {
-		animationType = AnimationType.Idle;
-		animationDirection = HexDirectionAll.N;
-
-		if (location) {
-			transform.localPosition = location.Position;
-		}
-		RefreshStatusBar();
-	}
 	private void LateUpdate() {
-		// var cam = Camera.main.transform.transform.forward;
-		// var position = this.transform.position;
-		// var adjust = new Vector3(position.x+cam.x,position.y,position.z+cam.z);
-		// transform.LookAt( adjust);
-		RefreshStatusBar();
 		CamAjust();
-		RefreshAnimation();
-		RefreshIndicator();
+		RefreshStatusBar();
 	}
 
-    private void RefreshAnimation()
-    {
-		animator.SetBool($"Idle",false);
-        switch(animationType){
-			case AnimationType.Walk:
-				animator.SetBool($"{animationType}N", 
-					animationDirection.IsFront());
-				animator.SetBool($"{animationType}S",
-					animationDirection.IsBack());
-				break;
-			case AnimationType.Attack:
-				animator.SetBool($"{animationType}{animationDirection}",true);
-				animator.SetBool($"{animationType}{animationDirection.Mirror()}",false);
-				break;
-			case AnimationType.Die:
-				animator.SetBool($"{animationType}{animationDirection}",true);
-				animator.SetBool($"{animationType}{animationDirection.Mirror()}",false);
-				break;
-			default:
-				SwapAnimationType(AnimationType.Idle);
-				animator.SetBool($"{animationType}",true);
-				animator.SetBool($"{animationType}{animationDirection}",true);
-				break;
-
-		}
-    }
 
     void CamAjust(){
-		var camPosition = Camera.main.transform.position;
-		var horizontalRelation = new Vector3(camPosition.x, transform.position.y, camPosition.z);
-		var relativePos = horizontalRelation - transform.position;
-		var rotation = Quaternion.LookRotation(relativePos);
-		transform.localRotation = rotation;
-		UpdateAnimationType(camPosition);
+		
+		var cam = Camera.main.transform.position;
+		var position = transform.position;
+		var adjust = new Vector3(cam.x, position.y,cam.z);
+		body.LookAt(adjust);
+		UpdateAnimationDirection(cam);
 	}
 
 	public bool IsValidMoveDestination(HexCell cell){
@@ -301,7 +257,7 @@ public class HexUnit : MonoBehaviour {
 		RefreshStatusBar();
 	}
 
-	void UpdateAnimationType(Vector3 camPos){
+	void UpdateAnimationDirection(Vector3 camPos){
 		var position = transform.position;
 		var pos = new Vector2(position.x, position.z);
 		var cam = new Vector2(camPos.x, camPos.z);
@@ -309,14 +265,25 @@ public class HexUnit : MonoBehaviour {
 		var v2 =  pos - cam;
 		float angle = Mathf.Atan2(v2.x, v2.y) * Mathf.Rad2Deg;
 		animationDirection = angle.HalfCircleToDirection();
+		SwapAnimationType(animationType);
 	}
-
-	
 
 	void SwapAnimationType(AnimationType type){
-		animationType = type;
+		if(type != animationType){
+			Debug.Log($"State{animationType}");
+			Debug.Log($"Idle {animator.GetBool($"Idle")} - Walk {animator.GetBool($"Walk")} - Die {animator.GetBool($"Die")} - Attack {animator.GetBool($"Attack")}");
+			animator.SetBool($"Idle",false);
+			animator.SetBool($"Walk",false);
+			animator.SetBool($"Die",false);
+			animator.SetBool($"Attack",false);
+			animationType = type;
+			animator.SetBool($"{animationType}",true);
+		}
+		animator.SetBool($"{animationType}N", 
+				animationDirection.IsFront());
+		animator.SetBool($"{animationType}S",
+				animationDirection.IsBack());
 	}
-
 	
 
 }

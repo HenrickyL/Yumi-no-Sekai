@@ -180,7 +180,7 @@ public class HexGameUI : MonoBehaviour {
 			selectedUnit.IsValidFullDestination(destination) &&
 			selectedUnit.IsValidMoveDestination(destination)) 
 		{
-			grid.FindPath(selectedUnit.Location, destination, 5*selectedUnit.Speed+1);
+			grid.FindPath(selectedUnit.Location, destination, 5*selectedUnit.Status.Speed+1);
 		}
 		else {
 			grid.ClearPath();
@@ -190,7 +190,7 @@ public class HexGameUI : MonoBehaviour {
 		grid.ClearPath();
 		if (currentCell) 
 		{
-			grid.FindPath(selectedUnit.Location, currentCell, 5*selectedUnit.Speed+1);
+			grid.FindPath(selectedUnit.Location, currentCell, 5*selectedUnit.Status.Speed+1);
 		}
 		else {
 			grid.ClearPath();
