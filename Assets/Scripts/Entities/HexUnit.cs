@@ -62,7 +62,7 @@ public class HexUnit : MonoBehaviour {
 	}
 
 	StatusBar _statusBar;
-	UnitStatus status;
+	public UnitStatus status;
 	public UnitStatus Status { get{return status;} }
 	
 	public static HexUnit unitPrefab;
@@ -88,6 +88,7 @@ public class HexUnit : MonoBehaviour {
 
 	HexCell location;
 	HexCell oldLocation;
+	public AttackType attackType; 
 
 
 	public float Orientation {
