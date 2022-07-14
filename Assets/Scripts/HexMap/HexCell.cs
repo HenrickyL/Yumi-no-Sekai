@@ -529,7 +529,7 @@ public class HexCell : MonoBehaviour {
 		highlight.enabled = true;
 	}
 
-	public List<HexCell> GetNeighborPerNivel(int nivel = 1, Func<HexCell,bool> test = null){
+	public List<HexCell> GetAroundPerNivel(int nivel = 1, Func<HexCell,bool> test = null){
 		var res = new List<HexCell>();
 		if(nivel ==0) return res;
 		var queue = new Queue<HexCell>();

@@ -1,29 +1,35 @@
-﻿using System.Linq;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
 public class HexGameUI : MonoBehaviour {
 
 	public HexGrid grid;
 	float waitTime = 1f;
-	HexCell currentCell, hoverCell, previosCurrentCell, destinationCell;
+	HexCell currentCell, hoverCell, previosCell, destinationCell;
+	public Text TurnsText;
+	public UnitInfo selectInfo;
 	private Color colorHover = new Color(0,0,0,0.15f),
 		 colorSelectedUnity = new Color(0,0,1,0.3f),
 		 colorMove = new  Color(0.98f,0.83f,0.29f,0.5f),
 		 colorMoveHovered = Color.white,
-		 colorSelected = Color.white,
 		 colorAttack = new Color(1,0,0,0.5f),
 		 colorAttackHovered = Color.red,
-		 colorSelectedUnityHevered = Color.blue;
+		 colorSelected = new Color(0,0,1,0.5f),
+		 colorSelectedHevered = Color.blue;
 	Color colorActiveAction, colorActiveActionHovered;
 	private List<Color> actionsColors, actionColorHovered;
 	public bool IsAttackMode { get{return unitActionType == UnitActionsEnum.Attack;} }
-	public bool IsMoveMode { get{return unitActionType == UnitActionsEnum.Move;} }
+	public bool IsMoveMode { get{return unitActionType == UnitActionsEnum.Move;}}
+	public bool IsWaitMode { get{return unitActionType == UnitActionsEnum.Wait;} }
+
 	HexUnit selectedUnit, previosSelected;
 	bool inAction = false;
-	UnitActionsEnum unitActionType= UnitActionsEnum.Move;
+	UnitActionsEnum unitActionType= UnitActionsEnum.Wait;
+	UnitActionsEnum subUniActionType= UnitActionsEnum.Wait;
+
+	public int Turns { get; set; }
 	
 	public void SetEditMode (bool toggle) {
 		enabled = !toggle;
@@ -31,48 +37,41 @@ public class HexGameUI : MonoBehaviour {
 		grid.ClearPath();
 	}
 
-	void SetActionMode(int action){
-		unitActionType = (UnitActionsEnum)action;
-	}
 
 	private void OnEnable() {
+		Turns = 0;
 		actionsColors = new List<Color>(){
-			colorMove,colorAttack
+			colorMove,colorAttack, colorSelected
 		};
 		actionColorHovered = new List<Color>(){
-			colorMoveHovered, colorAttackHovered
+			colorMoveHovered, colorAttackHovered, colorSelectedHevered
 		};
-		SetMoveMode();
+		SetWaitMode();
 	}
 	void Update () {
 		if (!EventSystem.current.IsPointerOverGameObject()) {
 			HoveredCell();
-			// CheckTravelEnd();
+			UpdateUI();
 			UpdateCurrentCell();
-			if (Input.GetMouseButtonDown(0)) {
-				if(!selectedUnit){
+			if (Input.GetMouseButtonUp(0)) {
+				if(!selectedUnit || IsWaitMode){
 					DoSelection();
 				}else{
-					if(IsMoveMode){
-						DoMove(currentCell);
-					}else if(IsAttackMode){
+					if(IsAttackMode){
 						DoNormalAttack(currentCell);
-					}
+					}else if(IsMoveMode){
+						DoMove(currentCell);
+					}					
+
 				}
 			}
-			else if(Input.GetKeyUp(KeyCode.Space) && selectedUnit){
-				DoAreaAttack();
+			else if(Input.GetKeyUp(KeyCode.Space)){
+				foreach(var u in grid.Units){
+						u.AutomaticAggressiveMovement();	
+				}
 			}
 			else if(Input.GetKeyUp(KeyCode.LeftShift)){
-				// DoPathfinding();
-					
-					foreach(var u in grid.Units){
-						u.Enemies = grid.Units;	
-						u.AutomaticAggressiveMovement();	
-					}
-			}else if(inAction){
-				grid.ClearPath();
-				inAction = false;
+				DoPathfinding();
 			}
 		}
 	}
@@ -98,15 +97,16 @@ public class HexGameUI : MonoBehaviour {
 		HexCell next = grid.GetCell(ray);
 		if( hoverCell && previous && next && next != previous ){
 			HighlightSelectUnitAction();
-			if(selectedUnit){
+			if(selectedUnit && !IsWaitMode){
 				bool prevInSelect = IsAttackMode?
 					selectedUnit.IsValidAttackDestination(previous):
 					selectedUnit.IsValidMoveDestination(previous);
 				bool nextInSelect = IsAttackMode?
 					selectedUnit.IsValidAttackDestination(next):
 					selectedUnit.IsValidMoveDestination(next);
+				
 				if(prevInSelect && next == selectedUnit.Location){
-					SetHighlightHover(previous,next,colorActiveAction, colorSelectedUnityHevered);
+					SetHighlightHover(previous,next,colorActiveAction, colorSelectedHevered);
 				}
 				else if(prevInSelect && nextInSelect){
 					SetHighlightHover(previous,next,colorActiveAction, colorActiveActionHovered);
@@ -126,56 +126,41 @@ public class HexGameUI : MonoBehaviour {
 					SetHighlightHover(previous,next,null, colorHover);
 				}
 			}
-			else{
-				SetHighlightHover(previous,next,null, colorHover);
+			else if(selectedUnit){
+				if(next == selectedUnit.Location){
+					SetHighlightHover(previous,next,null, colorSelectedHevered);
+				}else{
+					SetHighlightHover(previous,next,null, colorHover);
+				}
+			}else{
+					SetHighlightHover(previous,next,null, colorHover);
 			}
 			
 		}
 	}
 
 	void DoSelection () {
-		grid.ClearPath();
 		UpdateCurrentCell();
 		if(currentCell ){
-			ClearPreviosSelectUnit(selectedUnit);
 			if(currentCell.Unit != selectedUnit){
 				SwapSelectedUnit(currentCell.Unit);
-				HighlightSelectUnitAction();
 			}
 		}
+		SetWaitMode();
 	}
 	void HighlightSelectUnitAction(){
+		previosSelected?.ClearHighlights();
 		if(selectedUnit){
-			selectedUnit.Location.EnableHighlight(colorSelectedUnity);
 			if(unitActionType == UnitActionsEnum.Move){
-				foreach(var cell in selectedUnit.MovePath){
-					cell.EnableHighlight(colorActiveAction);
-				}
+				selectedUnit.EnableHighlightMove(colorMove);
+			}else if(unitActionType == UnitActionsEnum.Attack){
+				selectedUnit.EnableHighlightAttack(colorAttack);
 			}else{
-				foreach(var cell in selectedUnit.AttackPath){
-					if(cell.Unit)
-						cell.EnableHighlight(colorActiveActionHovered);
-					else
-						cell.EnableHighlight(colorActiveAction);
-				}
+				selectedUnit.EnableHighlight(colorSelected);
 			}
 		}
 	}
-	void ClearPreviosSelectUnit(HexUnit unit){
-		if(unit){
-			unit.Location.DisableHighlight();
-			previosCurrentCell?.DisableHighlight();
-			if(unitActionType == UnitActionsEnum.Move){
-				foreach(var c in unit.MovePath){
-					c.DisableHighlight();
-				}
-			}else{
-				foreach(var c in unit.AttackPath){
-					c.DisableHighlight();
-				}
-			}
-		}
-	}
+	
 	
 
 	void DoPathfinding (HexCell destination) {
@@ -185,7 +170,7 @@ public class HexGameUI : MonoBehaviour {
 			selectedUnit.IsValidFullDestination(destination) &&
 			selectedUnit.IsValidMoveDestination(destination)) 
 		{
-			grid.FindPath(selectedUnit.Location, destination, 5*selectedUnit.Status.Speed+1);
+			grid.FindPath(selectedUnit.Location, destination, 5*selectedUnit.Speed+1);
 		}
 		else {
 			grid.ClearPath();
@@ -195,7 +180,7 @@ public class HexGameUI : MonoBehaviour {
 		grid.ClearPath();
 		if (currentCell) 
 		{
-			grid.FindPath(selectedUnit.Location, currentCell, 5*selectedUnit.Status.Speed+1);
+			grid.FindPath(selectedUnit.Location, currentCell, 5*selectedUnit.Speed+1);
 		}
 		else {
 			grid.ClearPath();
@@ -203,91 +188,44 @@ public class HexGameUI : MonoBehaviour {
 	}
 
 	void DoMove (HexCell cell) {
-		if (cell) {
+		if (cell && selectedUnit) {
+			previosCell = currentCell;
 			destinationCell = cell;
-			DoPathfinding(cell);
-			if(grid.HasPath){
-				ClearPreviosSelectUnit(selectedUnit);
-				selectedUnit.Travel(grid.GetPath());
-				grid.ClearPath();
-			}
+			selectedUnit.MoveTo(destinationCell);
+			SetWaitMode();
 			SwapSelectedUnit(null);
 			destinationCell = null;
 		}
 	}
 	private void DoNormalAttack(HexCell cell){
-		if(cell){
-			StartCoroutine(DoNormalAttackAsync(cell));
+		if(selectedUnit &&  cell && cell.Unit){
+			selectedUnit.Targets.Add(cell.Unit);
+			selectedUnit.BasicAttackToTarget();
 		}else{
 			SwapSelectedUnit(null);
-			SetMoveMode();
 		}
+		SetWaitMode();
 	}
 	
-	private IEnumerator DoNormalAttackAsync(HexCell cell)
-    {
-        if(cell && cell.Unit && selectedUnit.IsValidAttackDestination(cell)) {
-			selectedUnit.Targets = new List<HexUnit>(){
-				cell.Unit
-			};
-			HighlightAttack();
-			yield return new WaitForSeconds(waitTime);
-			selectedUnit.BasicAttackTargets();
-		}
-		SwapSelectedUnit(null);
-		SetMoveMode();
-		
-    }
+	
 	private void DoAreaAttack(){
-		StartCoroutine(DoAreaAttackAsync());
+		selectedUnit.AreaAttackToTargets();
 		SwapSelectedUnit(null);
-		SetMoveMode();
+		SetWaitMode();
 	}
-	private IEnumerator DoAreaAttackAsync()
-    {
-		if(selectedUnit){
-			selectedUnit.Targets = selectedUnit.AttackPath.Where(c=>c.Unit!= null).Select(c=>c.Unit).ToList();
-			HighlightAttack();
-			yield return new WaitForSeconds(waitTime);
-			selectedUnit.BasicAttackTargets();
-			SwapSelectedUnit(null);
-			SetMoveMode();
-		}
-		
-    }
 	
-	void HighlightAttack(){
-		if(selectedUnit){
-			ClearPreviosSelectUnit(selectedUnit);
-			selectedUnit.Location.EnableHighlight(Color.white);
-			foreach(var cell in selectedUnit.AttackPath){
-				cell.EnableHighlight(colorAttack);
-			}
-			foreach(var unit in selectedUnit.Targets){
-				unit.Location.EnableHighlight(Color.gray);
-			}
-		}
-	}
-
 	void SwapSelectedUnit(HexUnit unit){
-		ClearPreviosSelectUnit(selectedUnit);
+		previosSelected?.ClearHighlights();
 		previosSelected = selectedUnit;
 		selectedUnit = unit;
 		HighlightSelectUnitAction();
 	}
-	void CheckTravelEnd(){
-		if(selectedUnit && destinationCell){
-			if(selectedUnit.Location == destinationCell){
-				HighlightSelectUnitAction();
-				destinationCell = null;
-			}
-		}
-	}
+	
 	bool UpdateCurrentCell () {
 		HexCell cell =
 			grid.GetCell(Camera.main.ScreenPointToRay(Input.mousePosition));
 		if (cell != currentCell ) {
-			previosCurrentCell = currentCell;
+			previosCell = currentCell;
 			currentCell = cell;
 			return true;
 		}
@@ -296,21 +234,41 @@ public class HexGameUI : MonoBehaviour {
 
 	public void SetAttackMode(){
 		if(selectedUnit){
-			ClearPreviosSelectUnit(selectedUnit);
+			unitActionType = UnitActionsEnum.Attack;
+			colorActiveAction = actionsColors[1];
+			colorActiveActionHovered = actionColorHovered[1];
 		}
-		colorActiveAction = actionsColors[1];
-		colorActiveActionHovered = actionColorHovered[1];
-		unitActionType = UnitActionsEnum.Attack;
+		HighlightSelectUnitAction();
 	}
 	public void SetMoveMode(){
 		if(selectedUnit){
-			ClearPreviosSelectUnit(selectedUnit);
+			unitActionType = UnitActionsEnum.Move;
+			colorActiveAction = actionsColors[0];
+			colorActiveActionHovered = actionColorHovered[0];
 		}
-		colorActiveAction = actionsColors[0];
-		colorActiveActionHovered = actionColorHovered[0];
-		unitActionType = UnitActionsEnum.Move;
+		HighlightSelectUnitAction();
 	}
 
+	public void SetWaitMode(){
+		unitActionType = UnitActionsEnum.Wait;
+		colorActiveAction = actionsColors[2];
+		colorActiveActionHovered = actionColorHovered[2];
+		HighlightSelectUnitAction();
+	}
+
+	
+	public void UpdateUI(){
+		TurnsText.text = Turns<10 ? $"0{Turns}":$"{Turns}";
+		setSelectedUi();
+	}
+	public void setSelectedUi(){
+		if(selectedUnit){
+			selectInfo.gameObject.SetActive(true);
+			selectInfo.SetUnit(selectedUnit);
+		}else{
+			selectInfo.gameObject.SetActive(false);
+		}
+	}
 	
 
 	

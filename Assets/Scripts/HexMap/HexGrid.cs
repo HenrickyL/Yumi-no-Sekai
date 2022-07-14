@@ -10,7 +10,6 @@ public class HexGrid : MonoBehaviour {
 	public HexCell cellPrefab;
 	public Text cellLabelPrefab;
 	public HexGridChunk chunkPrefab;
-	public HexUnit unitPrefab;
 
 	public Texture2D noiseSource;
 
@@ -37,10 +36,11 @@ public class HexGrid : MonoBehaviour {
 	List<HexUnit> units = new List<HexUnit>();
 	public List<HexUnit> Units { get{return units;} }
 
+
+
 	void Awake () {
 		HexMetrics.noiseSource = noiseSource;
 		HexMetrics.InitializeHashGrid(seed);
-		HexUnit.unitPrefab = unitPrefab;
 		CreateMap(cellCountX, cellCountZ);
 	}
 
@@ -106,7 +106,7 @@ public class HexGrid : MonoBehaviour {
 
 	void ClearUnits () {
 		for (int i = 0; i < units.Count; i++) {
-			units[i].Die();
+			units[i].Destroy();
 		}
 		units.Clear();
 	}
@@ -115,7 +115,6 @@ public class HexGrid : MonoBehaviour {
 		if (!HexMetrics.noiseSource) {
 			HexMetrics.noiseSource = noiseSource;
 			HexMetrics.InitializeHashGrid(seed);
-			HexUnit.unitPrefab = unitPrefab;
 		}
 	}
 
@@ -239,12 +238,12 @@ public class HexGrid : MonoBehaviour {
 			chunks[i].Refresh();
 		}
 
-		if (header >= 2) {
-			int unitCount = reader.ReadInt32();
-			for (int i = 0; i < unitCount; i++) {
-				HexUnit.Load(reader, this);
-			}
-		}
+		// if (header >= 2) {
+		// 	int unitCount = reader.ReadInt32();
+		// 	for (int i = 0; i < unitCount; i++) {
+		// 		HexUnit.Load(reader, this);
+		// 	}
+		// }
 	}
 
 	public List<HexCell> GetPath () {
