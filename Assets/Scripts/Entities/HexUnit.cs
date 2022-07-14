@@ -280,8 +280,8 @@ public class HexUnit : MonoBehaviour {
 
 	void SwapAnimationType(AnimationType type){
 		if(type != animationType){
-			Debug.Log($"State{animationType}");
-			Debug.Log($"Idle {animator.GetBool($"Idle")} - Walk {animator.GetBool($"Walk")} - Die {animator.GetBool($"Die")} - Attack {animator.GetBool($"Attack")}");
+			// Debug.Log($"State{animationType}");
+			// Debug.Log($"Idle {animator.GetBool($"Idle")} - Walk {animator.GetBool($"Walk")} - Die {animator.GetBool($"Die")} - Attack {animator.GetBool($"Attack")}");
 			animator.SetBool($"Idle",false);
 			animator.SetBool($"Walk",false);
 			animator.SetBool($"Die",false);
@@ -298,18 +298,22 @@ public class HexUnit : MonoBehaviour {
 	public void AutomaticTraverEnemy(){
 		if(Enemies!=null && Enemies.Any() && grid){
 			target = FindNearTarget(Enemies);
+			var dir = transform.position - target.transform.position;
+			var direction = Vector3.Angle(dir,Vector3.back).ToHexDirection();
+			Debug.Log(direction);
 			if(target){
 				var enemyNeighbors = target.Location.GetNeighbors();
+				var cell = target.Location.GetNeighbor(direction);
+				Debug.Log(cell);
 				target.Location.EnableHighlight(Color.cyan);
 				grid.ClearPath();
-				grid.FindPath(location,target.Location,(int)TravelSpeed);
+				grid.FindPath(location,cell,(int)TravelSpeed);
 				var path = grid.GetPath();
+				Debug.Log(path);
 				if(path!= null && path.Any()){
 					var way = path.Where(x=>MovePath.Contains(x)).ToList();
 					if(way.Any()){
-						foreach(var c in way){
-							c.EnableHighlight(Color.black);
-						}
+						Travel(way);
 					}else{
 
 						location.EnableHighlight(Color.green);
